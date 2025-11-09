@@ -4,50 +4,55 @@ import { MapPin, Briefcase, Users, Calendar, Clock, ArrowLeft, CheckCircle, Star
 import { Card } from '../../components/ui/Card'
 import AnimatedSection from '../../components/AnimatedSection'
 
-export default function JuniorAccountant() {
+export default function ContentWriterIntern() {
   const job = {
-    title: "Junior Accountant",
-    category: "Accounting",
-    openings: 6,
+    title: "Content Writer Intern",
+    category: "Internship",
+    openings: 2,
     location: "Ahmedabad/Hybrid",
-    type: "Full-time",
-    description: "Join our accounting team and help manage financial operations for 20M+ startups across MENA.",
+    type: "Internship - 3 months",
+    description: "Create compelling content for our fintech platform, social media, and marketing campaigns.",
     responsibilities: [
-      "Maintain accurate financial records and bookkeeping",
-      "Process accounts payable and receivable",
-      "Assist with month-end and year-end closing procedures",
-      "Prepare bank reconciliations",
-      "Support senior accountants with financial reporting",
-      "Ensure compliance with accounting standards and company policies",
-      "Handle vendor invoice processing and payment tracking"
+      "Write engaging blog posts and articles about finance and startups",
+      "Create social media content for LinkedIn, Twitter, and Instagram",
+      "Develop email marketing campaigns and newsletters",
+      "Write website copy and product descriptions",
+      "Research industry trends and competitor content",
+      "Collaborate with marketing team on content strategy",
+      "Edit and proofread content for accuracy and clarity",
+      "Optimize content for SEO"
     ],
     requirements: [
-      "Bachelor's degree in Accounting, Finance, or related field",
-      "0-2 years of experience in accounting or bookkeeping",
-      "Knowledge of accounting software (Tally, QuickBooks, or similar)",
-      "Strong attention to detail and accuracy",
-      "Good understanding of GST and basic taxation",
-      "Proficiency in MS Excel",
-      "Excellent organizational and time management skills"
+      "Currently pursuing or completed degree in English, Journalism, Marketing, or related field",
+      "Excellent writing and grammar skills",
+      "Strong research abilities",
+      "Understanding of digital marketing and social media",
+      "Ability to write for different audiences and platforms",
+      "Creative thinking and storytelling skills",
+      "Self-motivated and deadline-oriented",
+      "Portfolio of writing samples"
     ],
     niceToHave: [
-      "CA Inter or pursuing CA",
-      "Experience with fintech or startup environment",
-      "Knowledge of IFRS or Indian GAAP",
-      "Previous experience with multi-currency accounting"
+      "Previous content writing or blogging experience",
+      "Knowledge of fintech or finance industry",
+      "SEO and keyword research skills",
+      "Experience with content management systems (WordPress, etc.)",
+      "Graphic design skills (Canva, Adobe)",
+      "Social media management experience"
     ],
     benefits: [
-      "Competitive salary package",
-      "Health insurance coverage",
-      "Learning and development opportunities",
-      "Work with international clients",
-      "Fast-paced startup environment",
-      "Career growth opportunities"
+      "Stipend of ₹10,000-15,000 per month",
+      "Certificate of completion",
+      "Letter of recommendation",
+      "Potential for full-time conversion",
+      "Mentorship from experienced content marketers",
+      "Remote work flexibility",
+      "Portfolio building opportunities"
     ]
   }
 
   useEffect(() => {
-    const container = document.getElementById("zf_div_ooOnmWjRO5nMpKIA8bXbarn2G3K5WY_F6YwCkDgA4jY")
+    const container = document.getElementById("zf_div_twzyyIbeSwc_qnpRphOdBZnIhkpeL-KlJx32KoKPESs")
     
     if (container && container.querySelector('iframe')) {
       return
@@ -56,16 +61,16 @@ export default function JuniorAccountant() {
     const loadForm = () => {
       try {
         const iframe = document.createElement("iframe")
-        const ifrmSrc = 'https://forms.zohopublic.com/finanshelsllc/form/JrAccountant/formperma/ooOnmWjRO5nMpKIA8bXbarn2G3K5WY_F6YwCkDgA4jY?zf_rszfm=1'
+        const ifrmSrc = 'https://forms.zohopublic.com/finanshelsllc/form/ContentWriter/formperma/twzyyIbeSwc_qnpRphOdBZnIhkpeL-KlJx32KoKPESs?zf_rszfm=1'
         
         iframe.src = ifrmSrc
         iframe.style.border = "none"
         iframe.style.height = "988px"
         iframe.style.width = "100%"
         iframe.style.transition = "all 0.5s ease"
-        iframe.setAttribute("aria-label", 'Jr Accountant')
+        iframe.setAttribute("aria-label", 'Content Writer')
         
-        const container = document.getElementById("zf_div_ooOnmWjRO5nMpKIA8bXbarn2G3K5WY_F6YwCkDgA4jY")
+        const container = document.getElementById("zf_div_twzyyIbeSwc_qnpRphOdBZnIhkpeL-KlJx32KoKPESs")
         if (container) {
           container.innerHTML = ''
           container.appendChild(iframe)
@@ -78,7 +83,7 @@ export default function JuniorAccountant() {
             if (zf_ifrm_data.length === 2 || zf_ifrm_data.length === 3) {
               const zf_perma = zf_ifrm_data[0]
               const zf_ifrm_ht_nw = (parseInt(zf_ifrm_data[1], 10) + 15) + "px"
-              const container = document.getElementById("zf_div_ooOnmWjRO5nMpKIA8bXbarn2G3K5WY_F6YwCkDgA4jY")
+              const container = document.getElementById("zf_div_twzyyIbeSwc_qnpRphOdBZnIhkpeL-KlJx32KoKPESs")
               if (container) {
                 const iframe = container.getElementsByTagName("iframe")[0]
                 if (iframe && iframe.src.indexOf('formperma') > 0 && iframe.src.indexOf(zf_perma) > 0) {
@@ -106,7 +111,7 @@ export default function JuniorAccountant() {
     
     return () => {
       if (cleanup) cleanup()
-      const container = document.getElementById("zf_div_ooOnmWjRO5nMpKIA8bXbarn2G3K5WY_F6YwCkDgA4jY")
+      const container = document.getElementById("zf_div_twzyyIbeSwc_qnpRphOdBZnIhkpeL-KlJx32KoKPESs")
       if (container) {
         container.innerHTML = ''
       }
@@ -115,7 +120,6 @@ export default function JuniorAccountant() {
 
   return (
     <div className="min-h-screen pt-20 bg-white">
-      {/* Hero Section */}
       <section className="py-16 px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff15_1px,transparent_1px),linear-gradient(to_bottom,#ffffff15_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
         
@@ -206,11 +210,9 @@ export default function JuniorAccountant() {
         </div>
       </section>
 
-      {/* Job Details */}
       <section className="py-20 px-6 sm:px-8 lg:px-12 bg-gradient-to-b from-white via-slate-50 to-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            {/* Job Description */}
             <div className="lg:col-span-2 space-y-8">
               <AnimatedSection>
                 <Card className="border-2 border-indigo-100 hover:border-indigo-200 hover:shadow-2xl transition-all duration-500 bg-gradient-to-br from-white to-indigo-50/30">
@@ -307,7 +309,7 @@ export default function JuniorAccountant() {
               <div className="sticky top-24">
                 <Card className="border-2 border-slate-200 shadow-xl overflow-hidden bg-white">
                   <div 
-                    id="zf_div_ooOnmWjRO5nMpKIA8bXbarn2G3K5WY_F6YwCkDgA4jY"
+                    id="zf_div_twzyyIbeSwc_qnpRphOdBZnIhkpeL-KlJx32KoKPESs"
                     className="w-full"
                   />
                 </Card>

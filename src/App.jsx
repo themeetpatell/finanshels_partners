@@ -7,7 +7,11 @@ import JobDetail from './pages/JobDetail'
 import Life from './pages/Life'
 import VirtualDrive from './pages/VirtualDrive'
 import JuniorAccountant from './pages/virtualDrive/JuniorAccountant'
-import VirtualDriveJobDetail from './pages/VirtualDriveJobDetail'
+import SeniorAccountant from './pages/virtualDrive/SeniorAccountant'
+import ContentWriterIntern from './pages/virtualDrive/ContentWriterIntern'
+import WebDeveloperIntern from './pages/virtualDrive/WebDeveloperIntern'
+import RecruiterIntern from './pages/virtualDrive/RecruiterIntern'
+import BusinessDevelopmentIntern from './pages/virtualDrive/BusinessDevelopmentIntern'
 
 function App() {
   return (
@@ -22,7 +26,11 @@ function App() {
             <Route path="/life" element={<Life />} />
             <Route path="/virtual-drive" element={<VirtualDrive />} />
             <Route path="/virtual-drive/vd-junior-accountant" element={<JuniorAccountant />} />
-            <Route path="/virtual-drive/:id" element={<VirtualDriveJobDetail />} />
+            <Route path="/virtual-drive/vd-senior-accountant" element={<SeniorAccountant />} />
+            <Route path="/virtual-drive/vd-content-writer-intern" element={<ContentWriterIntern />} />
+            <Route path="/virtual-drive/vd-web-developer-intern" element={<WebDeveloperIntern />} />
+            <Route path="/virtual-drive/vd-recruiter-intern" element={<RecruiterIntern />} />
+            <Route path="/virtual-drive/vd-business-development-intern" element={<BusinessDevelopmentIntern />} />
           </Routes>
         </main>
         <Footer />

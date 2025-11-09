@@ -4,50 +4,56 @@ import { MapPin, Briefcase, Users, Calendar, Clock, ArrowLeft, CheckCircle, Star
 import { Card } from '../../components/ui/Card'
 import AnimatedSection from '../../components/AnimatedSection'
 
-export default function JuniorAccountant() {
+export default function WebDeveloperIntern() {
   const job = {
-    title: "Junior Accountant",
-    category: "Accounting",
-    openings: 6,
+    title: "Web Developer Intern",
+    category: "Internship",
+    openings: "Multiple",
     location: "Ahmedabad/Hybrid",
-    type: "Full-time",
-    description: "Join our accounting team and help manage financial operations for 20M+ startups across MENA.",
+    type: "Internship - 3-6 months",
+    description: "Build and maintain web applications for our fintech platform using modern technologies.",
     responsibilities: [
-      "Maintain accurate financial records and bookkeeping",
-      "Process accounts payable and receivable",
-      "Assist with month-end and year-end closing procedures",
-      "Prepare bank reconciliations",
-      "Support senior accountants with financial reporting",
-      "Ensure compliance with accounting standards and company policies",
-      "Handle vendor invoice processing and payment tracking"
+      "Develop responsive web applications using React.js",
+      "Build RESTful APIs using Node.js and Express",
+      "Implement UI/UX designs with Tailwind CSS",
+      "Write clean, maintainable, and well-documented code",
+      "Collaborate with designers and product team",
+      "Participate in code reviews and testing",
+      "Debug and troubleshoot technical issues",
+      "Learn and implement new technologies"
     ],
     requirements: [
-      "Bachelor's degree in Accounting, Finance, or related field",
-      "0-2 years of experience in accounting or bookkeeping",
-      "Knowledge of accounting software (Tally, QuickBooks, or similar)",
-      "Strong attention to detail and accuracy",
-      "Good understanding of GST and basic taxation",
-      "Proficiency in MS Excel",
-      "Excellent organizational and time management skills"
+      "Currently pursuing or completed degree in Computer Science, IT, or related field",
+      "Strong foundation in HTML, CSS, and JavaScript",
+      "Basic knowledge of React.js or similar frameworks",
+      "Understanding of responsive web design",
+      "Familiarity with Git and version control",
+      "Problem-solving and debugging skills",
+      "Eagerness to learn and adapt",
+      "Good communication skills"
     ],
     niceToHave: [
-      "CA Inter or pursuing CA",
-      "Experience with fintech or startup environment",
-      "Knowledge of IFRS or Indian GAAP",
-      "Previous experience with multi-currency accounting"
+      "Experience with React.js, Next.js, or Vue.js",
+      "Knowledge of Node.js and backend development",
+      "Understanding of databases (MongoDB, PostgreSQL)",
+      "Experience with Tailwind CSS or similar frameworks",
+      "Previous internship or project experience",
+      "Contributions to open-source projects",
+      "Understanding of Agile/Scrum methodology"
     ],
     benefits: [
-      "Competitive salary package",
-      "Health insurance coverage",
-      "Learning and development opportunities",
-      "Work with international clients",
-      "Fast-paced startup environment",
-      "Career growth opportunities"
+      "Stipend of ₹15,000-25,000 per month",
+      "Hands-on experience with production applications",
+      "Mentorship from senior developers",
+      "Certificate and letter of recommendation",
+      "Potential for full-time offer",
+      "Work on real fintech products",
+      "Flexible work arrangements"
     ]
   }
 
   useEffect(() => {
-    const container = document.getElementById("zf_div_ooOnmWjRO5nMpKIA8bXbarn2G3K5WY_F6YwCkDgA4jY")
+    const container = document.getElementById("zf_div_EP_GDKAYxqPZzr7AWmk0AIw5jR2SEO6wvFmjmeyUFxE")
     
     if (container && container.querySelector('iframe')) {
       return
@@ -56,16 +62,16 @@ export default function JuniorAccountant() {
     const loadForm = () => {
       try {
         const iframe = document.createElement("iframe")
-        const ifrmSrc = 'https://forms.zohopublic.com/finanshelsllc/form/JrAccountant/formperma/ooOnmWjRO5nMpKIA8bXbarn2G3K5WY_F6YwCkDgA4jY?zf_rszfm=1'
+        const ifrmSrc = 'https://forms.zohopublic.com/finanshelsllc/form/JuniorWebDeveloper/formperma/EP_GDKAYxqPZzr7AWmk0AIw5jR2SEO6wvFmjmeyUFxE?zf_rszfm=1'
         
         iframe.src = ifrmSrc
         iframe.style.border = "none"
-        iframe.style.height = "988px"
+        iframe.style.height = "1021px"
         iframe.style.width = "100%"
         iframe.style.transition = "all 0.5s ease"
-        iframe.setAttribute("aria-label", 'Jr Accountant')
+        iframe.setAttribute("aria-label", 'Jr Web Developer')
         
-        const container = document.getElementById("zf_div_ooOnmWjRO5nMpKIA8bXbarn2G3K5WY_F6YwCkDgA4jY")
+        const container = document.getElementById("zf_div_EP_GDKAYxqPZzr7AWmk0AIw5jR2SEO6wvFmjmeyUFxE")
         if (container) {
           container.innerHTML = ''
           container.appendChild(iframe)
@@ -78,7 +84,7 @@ export default function JuniorAccountant() {
             if (zf_ifrm_data.length === 2 || zf_ifrm_data.length === 3) {
               const zf_perma = zf_ifrm_data[0]
               const zf_ifrm_ht_nw = (parseInt(zf_ifrm_data[1], 10) + 15) + "px"
-              const container = document.getElementById("zf_div_ooOnmWjRO5nMpKIA8bXbarn2G3K5WY_F6YwCkDgA4jY")
+              const container = document.getElementById("zf_div_EP_GDKAYxqPZzr7AWmk0AIw5jR2SEO6wvFmjmeyUFxE")
               if (container) {
                 const iframe = container.getElementsByTagName("iframe")[0]
                 if (iframe && iframe.src.indexOf('formperma') > 0 && iframe.src.indexOf(zf_perma) > 0) {
@@ -106,7 +112,7 @@ export default function JuniorAccountant() {
     
     return () => {
       if (cleanup) cleanup()
-      const container = document.getElementById("zf_div_ooOnmWjRO5nMpKIA8bXbarn2G3K5WY_F6YwCkDgA4jY")
+      const container = document.getElementById("zf_div_EP_GDKAYxqPZzr7AWmk0AIw5jR2SEO6wvFmjmeyUFxE")
       if (container) {
         container.innerHTML = ''
       }
@@ -115,7 +121,6 @@ export default function JuniorAccountant() {
 
   return (
     <div className="min-h-screen pt-20 bg-white">
-      {/* Hero Section */}
       <section className="py-16 px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff15_1px,transparent_1px),linear-gradient(to_bottom,#ffffff15_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
         
@@ -206,11 +211,9 @@ export default function JuniorAccountant() {
         </div>
       </section>
 
-      {/* Job Details */}
       <section className="py-20 px-6 sm:px-8 lg:px-12 bg-gradient-to-b from-white via-slate-50 to-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            {/* Job Description */}
             <div className="lg:col-span-2 space-y-8">
               <AnimatedSection>
                 <Card className="border-2 border-indigo-100 hover:border-indigo-200 hover:shadow-2xl transition-all duration-500 bg-gradient-to-br from-white to-indigo-50/30">
@@ -307,7 +310,7 @@ export default function JuniorAccountant() {
               <div className="sticky top-24">
                 <Card className="border-2 border-slate-200 shadow-xl overflow-hidden bg-white">
                   <div 
-                    id="zf_div_ooOnmWjRO5nMpKIA8bXbarn2G3K5WY_F6YwCkDgA4jY"
+                    id="zf_div_EP_GDKAYxqPZzr7AWmk0AIw5jR2SEO6wvFmjmeyUFxE"
                     className="w-full"
                   />
                 </Card>

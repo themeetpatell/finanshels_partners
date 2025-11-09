@@ -4,7 +4,7 @@ export const VIRTUAL_DRIVE_JOBS = [
     title: "Junior Accountant",
     category: "Accounting",
     openings: 6,
-    location: "Gujarat, India",
+    location: "Ahmedabad/Hybrid",
     type: "Full-time",
     description: "Join our accounting team and help manage financial operations for 20M+ startups across MENA.",
     responsibilities: [
@@ -45,7 +45,7 @@ export const VIRTUAL_DRIVE_JOBS = [
     title: "Senior Accountant",
     category: "Accounting",
     openings: 3,
-    location: "Gujarat, India",
+    location: "Ahmedabad/Hybrid",
     type: "Full-time",
     description: "Lead accounting operations and mentor junior team members while ensuring financial accuracy and compliance.",
     responsibilities: [
@@ -90,7 +90,7 @@ export const VIRTUAL_DRIVE_JOBS = [
     title: "Content Writer Intern",
     category: "Internship",
     openings: 2,
-    location: "Gujarat, India (Remote)",
+    location: "Ahmedabad/Hybrid",
     type: "Internship - 3 months",
     description: "Create compelling content for our fintech platform, social media, and marketing campaigns.",
     responsibilities: [
@@ -136,7 +136,7 @@ export const VIRTUAL_DRIVE_JOBS = [
     title: "Web Developer Intern",
     category: "Internship",
     openings: "Multiple",
-    location: "Gujarat, India (Hybrid)",
+    location: "Ahmedabad/Hybrid",
     type: "Internship - 3-6 months",
     description: "Build and maintain web applications for our fintech platform using modern technologies.",
     responsibilities: [
@@ -180,10 +180,10 @@ export const VIRTUAL_DRIVE_JOBS = [
   },
   {
     id: "vd-recruiter-intern",
-    title: "Recruiter Intern",
+    title: "Junior Recruiter",
     category: "Internship",
     openings: "Multiple",
-    location: "Gujarat, India (Hybrid)",
+    location: "Ahmedabad/Hybrid",
     type: "Internship - 3 months",
     description: "Support our talent acquisition efforts and help build world-class teams for our fintech company.",
     responsibilities: [
@@ -229,7 +229,7 @@ export const VIRTUAL_DRIVE_JOBS = [
     title: "Business Development Intern",
     category: "Internship",
     openings: "Multiple",
-    location: "Gujarat, India (Hybrid)",
+    location: "Ahmedabad/Hybrid",
     type: "Internship - 3 months",
     description: "Drive business growth through lead generation, partnership outreach, and appointment setting for our fintech platform.",
     responsibilities: [

@@ -37,44 +37,44 @@ export default function Life() {
   const coreValues = [
     {
       number: "01",
-      title: "Customer First, Always",
-      description: "Every feature, every decision, every interaction starts with what's best for our customers. Their success defines ours.",
+      title: "Customer Obsession",
+      description: "Start with the customer and work backward.",
       gradient: "from-indigo-500 to-purple-600"
     },
     {
       number: "02",
-      title: "Move Fast, Learn Faster",
-      description: "We embrace experimentation, ship quickly, learn from data, and iterate. Velocity and learning compound.",
+      title: "Earn Trust",
+      description: "Be honest. Ask for and act on feedback. Be reachable.",
       gradient: "from-purple-500 to-pink-600"
     },
     {
       number: "03",
-      title: "Own It End-to-End",
-      description: "We take ownership of outcomes, not just tasks. When something breaks, we fix it. When there's a gap, we fill it.",
+      title: "Learn Fast & Be curious",
+      description: "Build a deeper level of subject matter expertise and ask more questions and admit if you don't know.",
       gradient: "from-pink-500 to-indigo-600"
     },
     {
       number: "04",
-      title: "Build with Clarity",
-      description: "Simple beats complex. Clear beats clever. We communicate directly, design intuitively, and code cleanly.",
+      title: "Ownership",
+      description: "Not waiting for others to act, and take initiatives and bring positive results. Be accountable for the results of your actions.",
       gradient: "from-indigo-600 to-purple-500"
     },
     {
       number: "05",
-      title: "Think Long-Term",
-      description: "We make decisions that compound over time. Short-term wins are good, but sustainable growth and lasting impact matter more.",
+      title: "Insight on high standards",
+      description: "Set exceptionally high demands of yourself and the products and services you work on. Continually self-critique your work to make sure the quality is the best it can be.",
       gradient: "from-purple-600 to-pink-500"
     },
     {
       number: "06",
-      title: "Collaborate & Elevate",
-      description: "We win as a team. We share knowledge openly, help each other grow, and celebrate collective success over individual glory.",
+      title: "Innovate and simplify",
+      description: "Make something simpler for customers and find new ways to improve existing services/product.",
       gradient: "from-pink-600 to-indigo-500"
     },
     {
       number: "07",
-      title: "Stay Humble, Stay Hungry",
-      description: "We're proud of our progress but never satisfied. We remain curious, open to feedback, and always ready to learn and improve.",
+      title: "Think Big",
+      description: "Opportunity to do something much bigger or better than the initial focus.",
       gradient: "from-indigo-500 to-purple-600"
     }
   ]

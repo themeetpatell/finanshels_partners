@@ -86,8 +86,9 @@ export default function Footer() {
                   careers@finanshels.com
                 </a>
               </li>
-              <li>Sharjah, UAE (HQ)</li>
-              <li>Dubai, UAE</li>
+              <li>Dubai, UAE (HQ)</li>
+              <li>Ahmedabad, India (Upcoming)</li>
+              <li>Kerala, India</li>
             </ul>
           </div>
         </div>

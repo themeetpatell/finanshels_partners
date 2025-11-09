@@ -27,7 +27,7 @@ export default function VirtualDrive() {
     { id: 'vd-senior-accountant', title: 'Senior Accountant', openings: 3, category: 'Accounting' },
     { id: 'vd-content-writer-intern', title: 'Content Writer Intern', openings: 2, category: 'Internship' },
     { id: 'vd-web-developer-intern', title: 'Web Developer Intern', openings: 'Multiple', category: 'Internship' },
-    { id: 'vd-recruiter-intern', title: 'Recruiter Intern', openings: 'Multiple', category: 'Internship' },
+    { id: 'vd-recruiter-intern', title: 'Junior Recruiter', openings: 'Multiple', category: 'Internship' },
     { id: 'vd-business-development-intern', title: 'Business Development Intern', openings: 'Multiple', category: 'Internship' }
   ]
 
@@ -131,12 +131,12 @@ export default function VirtualDrive() {
           <AnimatedSection animation="fade-up" delay={200}>
             <p className="text-2xl sm:text-3xl text-white/90 mb-12 max-w-4xl leading-relaxed font-medium">
               We're hiring across multiple roles! Join us for a <span className="text-white font-bold">2-day virtual hiring drive</span>{' '}
-              and fast-track your career with Gujarat's fastest-growing fintech.
+              and fast-track your career with UAE's fastest-growing fintech.
             </p>
           </AnimatedSection>
 
           <AnimatedSection animation="fade-up" delay={300}>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
               <div className="flex items-center gap-3 p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
                 <Calendar className="text-purple-300" size={24} />
                 <div>
@@ -152,13 +152,6 @@ export default function VirtualDrive() {
                 </div>
               </div>
               <div className="flex items-center gap-3 p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
-                <MapPin className="text-purple-300" size={24} />
-                <div>
-                  <div className="text-sm text-gray-300">Target</div>
-                  <div className="font-semibold">Gujarat Candidates</div>
-                </div>
-              </div>
-              <div className="flex items-center gap-3 p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
                 <Users className="text-purple-300" size={24} />
                 <div>
                   <div className="text-sm text-gray-300">Openings</div>
@@ -168,14 +161,6 @@ export default function VirtualDrive() {
             </div>
           </AnimatedSection>
 
-          <AnimatedSection animation="scale" delay={400}>
-            <a href="#register">
-              <Button size="lg" className="bg-white text-brand-primary hover:bg-gray-100 shadow-2xl group">
-                Register Now
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
-              </Button>
-            </a>
-          </AnimatedSection>
         </div>
       </section>
 
@@ -200,32 +185,37 @@ export default function VirtualDrive() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {positions.map((position, idx) => (
               <AnimatedSection key={position.id} animation="fade-up" delay={idx * 80}>
-                <Link to={`/virtual-drive/${position.id}`}>
-                  <Card className="h-full hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-2 border-slate-200 hover:border-indigo-400 cursor-pointer group">
-                    <div className="p-8">
-                      <div className="flex items-start justify-between mb-4">
-                        <div className="flex-1">
-                          <div className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-bold bg-indigo-50 text-indigo-700 border border-indigo-100 mb-3">
-                            {position.category}
-                          </div>
-                          <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-indigo-600 transition-colors">
-                            {position.title}
-                          </h3>
+                <Card className="h-full hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-2 border-slate-200 hover:border-indigo-400 group">
+                  <div className="p-8">
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="flex-1">
+                        <div className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-bold bg-indigo-50 text-indigo-700 border border-indigo-100 mb-3">
+                          {position.category}
                         </div>
-                      </div>
-                      <div className="flex items-center gap-2 text-indigo-600 font-bold">
-                        <UserPlus size={20} />
-                        <span>{position.openings} {typeof position.openings === 'number' ? 'Openings' : 'Positions'}</span>
-                      </div>
-                      <div className="mt-4 pt-4 border-t border-slate-200">
-                        <div className="flex items-center gap-2 text-sm text-slate-600 font-semibold group-hover:text-indigo-600 transition-colors">
-                          <span>View Details</span>
-                          <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                        </div>
+                        <h3 className="text-2xl font-bold text-slate-900 mb-3">
+                          {position.title}
+                        </h3>
                       </div>
                     </div>
-                  </Card>
-                </Link>
+                    <div className="flex items-center gap-2 text-indigo-600 font-bold mb-6">
+                      <UserPlus size={20} />
+                      <span>{position.openings} {typeof position.openings === 'number' ? 'Openings' : 'Positions'}</span>
+                    </div>
+                    <div className="space-y-3">
+                      <Link to={`/virtual-drive/${position.id}`} className="block">
+                        <Button variant="primary" className="w-full shadow-lg">
+                          Apply Now
+                        </Button>
+                      </Link>
+                      <Link to={`/virtual-drive/${position.id}`} className="block">
+                        <button className="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-sm text-slate-600 font-semibold hover:text-indigo-600 transition-colors group/btn">
+                          <span>View Details</span>
+                          <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
+                        </button>
+                      </Link>
+                    </div>
+                  </div>
+                </Card>
               </AnimatedSection>
             ))}
           </div>
@@ -287,164 +277,6 @@ export default function VirtualDrive() {
         </div>
       </section>
 
-      {/* Registration Form */}
-      <section id="register" className="py-20 px-6 sm:px-8 lg:px-12 bg-gradient-to-b from-brand-grey to-white">
-        <div className="max-w-4xl mx-auto">
-          <AnimatedSection>
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-100 text-sm font-medium text-brand-primary mb-6">
-                <CheckCircle2 size={16} />
-                Registration
-              </div>
-              <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
-                Register for the drive
-              </h2>
-              <p className="text-xl text-gray-600">
-                Fill in your details and we'll get back to you with the interview schedule
-              </p>
-            </div>
-          </AnimatedSection>
-
-          <AnimatedSection animation="fade-up" delay={200}>
-            <Card className="shadow-2xl">
-              {!submitted ? (
-                <div className="p-8 sm:p-12">
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div>
-                        <Label htmlFor="fullName">Full Name *</Label>
-                        <Input
-                          id="fullName"
-                          name="fullName"
-                          value={formData.fullName}
-                          onChange={handleChange}
-                          error={errors.fullName}
-                          placeholder="John Doe"
-                        />
-                        {errors.fullName && <p className="text-red-500 text-sm mt-1">{errors.fullName}</p>}
-                      </div>
-
-                      <div>
-                        <Label htmlFor="email">Email *</Label>
-                        <Input
-                          id="email"
-                          name="email"
-                          type="email"
-                          value={formData.email}
-                          onChange={handleChange}
-                          error={errors.email}
-                          placeholder="john@example.com"
-                        />
-                        {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div>
-                        <Label htmlFor="phone">Phone *</Label>
-                        <Input
-                          id="phone"
-                          name="phone"
-                          type="tel"
-                          value={formData.phone}
-                          onChange={handleChange}
-                          error={errors.phone}
-                          placeholder="+91 98765 43210"
-                        />
-                        {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
-                      </div>
-
-                      <div>
-                        <Label htmlFor="location">Current Location (Gujarat) *</Label>
-                        <Input
-                          id="location"
-                          name="location"
-                          value={formData.location}
-                          onChange={handleChange}
-                          error={errors.location}
-                          placeholder="Ahmedabad, Gujarat"
-                        />
-                        {errors.location && <p className="text-red-500 text-sm mt-1">{errors.location}</p>}
-                      </div>
-                    </div>
-
-                    <div>
-                      <Label htmlFor="position">Applying For *</Label>
-                      <select
-                        id="position"
-                        name="position"
-                        value={formData.position}
-                        onChange={handleChange}
-                        className={`w-full h-12 px-4 rounded-xl border-2 ${errors.position ? 'border-red-500' : 'border-gray-200'} bg-white text-base focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/20 transition-colors`}
-                      >
-                        <option value="">Select a position</option>
-                        {positions.map(pos => (
-                          <option key={pos.id} value={pos.id}>{pos.title}</option>
-                        ))}
-                      </select>
-                      {errors.position && <p className="text-red-500 text-sm mt-1">{errors.position}</p>}
-                    </div>
-
-                    <div>
-                      <Label htmlFor="experience">Experience / Skills *</Label>
-                      <Textarea
-                        id="experience"
-                        name="experience"
-                        value={formData.experience}
-                        onChange={handleChange}
-                        error={errors.experience}
-                        placeholder="Briefly describe your relevant experience or skills..."
-                        rows={4}
-                      />
-                      {errors.experience && <p className="text-red-500 text-sm mt-1">{errors.experience}</p>}
-                    </div>
-
-                    <div>
-                      <Label htmlFor="resume">Resume (PDF/DOC) *</Label>
-                      <label className={`flex items-center justify-center h-12 w-full rounded-xl border-2 ${errors.resume ? 'border-red-500' : 'border-gray-200'} bg-white cursor-pointer hover:border-brand-primary transition-colors`}>
-                        <span className="text-gray-600">
-                          {fileName || '📎 Upload Resume (Max 5MB)'}
-                        </span>
-                        <input
-                          id="resume"
-                          name="resume"
-                          type="file"
-                          onChange={handleChange}
-                          accept=".pdf,.doc,.docx"
-                          className="hidden"
-                        />
-                      </label>
-                      {errors.resume && <p className="text-red-500 text-sm mt-1">{errors.resume}</p>}
-                    </div>
-
-                    <Button type="submit" variant="primary" size="lg" className="w-full shadow-xl">
-                      Submit Registration
-                    </Button>
-                  </form>
-                </div>
-              ) : (
-                <div className="p-12 text-center">
-                  <div className="flex justify-center mb-6">
-                    <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center">
-                      <CheckCircle2 className="text-green-600" size={40} />
-                    </div>
-                  </div>
-                  <h3 className="text-3xl font-bold text-gray-900 mb-4">
-                    Registration Successful!
-                  </h3>
-                  <p className="text-gray-600 mb-6 text-lg leading-relaxed">
-                    Thank you for registering for the Finanshels Virtual Hiring Drive. 
-                    We'll send you the Google Meet links and interview schedule within 24 hours.
-                  </p>
-                  <p className="text-brand-primary font-semibold">
-                    Check your email for further details
-                  </p>
-                </div>
-              )}
-            </Card>
-          </AnimatedSection>
-        </div>
-      </section>
     </div>
   )
 }

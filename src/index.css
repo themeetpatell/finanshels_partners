@@ -107,3 +107,27 @@ html {
 #khembedjobs [class*="powered"] {
   display: none !important;
 }
+
+/* Zoho Form Styling - Remove embedded look */
+#zf_div_1bpvAVFkoTgOGNi-css5SrkxIKTaWgMi0ArpnLMnIcA iframe,
+#zf_div_ooOnmWjRO5nMpKIA8bXbarn2G3K5WY_F6YwCkDgA4jY iframe,
+#zf_div_twzyyIbeSwc_qnpRphOdBZnIhkpeL-KlJx32KoKPESs iframe,
+#zf_div_EP_GDKAYxqPZzr7AWmk0AIw5jR2SEO6wvFmjmeyUFxE iframe,
+#zf_div_51jMQGnCCjcuYrT-31JGEpYe70jVv76IHR9k9m5eNag iframe,
+#zf_div_eAgUGOQuTXdpa8UJdmAuaKwrKP2tdRWDTkNisE82_CU iframe {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+#zf_div_1bpvAVFkoTgOGNi-css5SrkxIKTaWgMi0ArpnLMnIcA,
+#zf_div_ooOnmWjRO5nMpKIA8bXbarn2G3K5WY_F6YwCkDgA4jY,
+#zf_div_twzyyIbeSwc_qnpRphOdBZnIhkpeL-KlJx32KoKPESs,
+#zf_div_EP_GDKAYxqPZzr7AWmk0AIw5jR2SEO6wvFmjmeyUFxE,
+#zf_div_51jMQGnCCjcuYrT-31JGEpYe70jVv76IHR9k9m5eNag,
+#zf_div_eAgUGOQuTXdpa8UJdmAuaKwrKP2tdRWDTkNisE82_CU {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
