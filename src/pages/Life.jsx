@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { 
   Zap, Heart, Users, TrendingUp, Target, Lightbulb, 
   DollarSign, Heart as HeartPulse, Home, BookOpen, 
-  Palmtree, Baby, Laptop, PartyPopper, Pizza, Bike, 
+  Baby, Laptop, PartyPopper, 
   Dumbbell, Globe, ArrowRight, Award, Clock, Smile,
   Sparkles, Rocket, Coffee
 } from 'lucide-react'
@@ -84,12 +84,8 @@ export default function Life() {
     { icon: HeartPulse, title: "Health insurance", description: "Comprehensive coverage" },
     { icon: Home, title: "Hybrid flexibility", description: "Office + remote options" },
     { icon: BookOpen, title: "Learning budget", description: "Annual L&D allowance" },
-    { icon: Palmtree, title: "Generous PTO", description: "Recharge when you need" },
     { icon: Baby, title: "Parental leave", description: "Paid leave for new parents" },
-    { icon: Laptop, title: "Latest equipment", description: "MacBook Pro + tools" },
     { icon: PartyPopper, title: "Team offsites", description: "Quarterly team events" },
-    { icon: Pizza, title: "Free meals", description: "Lunch & snacks at office" },
-    { icon: Bike, title: "Commute support", description: "Transportation allowance" },
     { icon: Dumbbell, title: "Gym membership", description: "Fitness center access" },
     { icon: Globe, title: "Work from anywhere", description: "Remote-friendly culture" }
   ]

@@ -54,7 +54,7 @@ export default function Home() {
             
             <AnimatedSection animation="fade-up" delay={200}>
               <p className="text-xl sm:text-2xl text-slate-600 mb-14 max-w-3xl mx-auto leading-relaxed font-medium">
-                Join Finanshels and help <span className="text-slate-900 font-semibold">20M+ startups</span> across MENA automate their financial operations.{' '}
+                Join Finanshels and help <span className="text-slate-900 font-semibold">2M+ startups</span> across MENA automate their financial operations.{' '}
                 <span className="text-slate-900 font-semibold">Move fast. Build for founders. Ship excellence.</span>
               </p>
             </AnimatedSection>
@@ -68,7 +68,7 @@ export default function Home() {
                   </Button>
                 </Link>
                 <Link to="/life">
-                  <Button size="lg" variant="outline" className="w-full sm:w-auto text-lg h-14 px-10 hover:bg-slate-50 border-2">
+                  <Button size="lg" variant="outline" className="w-full sm:w-auto text-lg h-14 px-10 hover:bg-white hover:text-indigo-600 border-2">
                     Life at Finanshels
                   </Button>
                 </Link>
@@ -369,7 +369,7 @@ export default function Home() {
                       <span className="block bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Nov 15-16, 2025</span>
                     </h2>
                     <p className="text-xl text-slate-600 mb-8 font-medium leading-relaxed">
-                      <span className="text-slate-900 font-bold">14+ openings</span> across Accounting & Internships. Gujarat candidates - this is your chance!
+                      <span className="text-slate-900 font-bold">14+ openings</span> across Accounting & Internships - this is your chance!
                     </p>
                     <div className="flex flex-col sm:flex-row gap-5">
                       <Link to="/virtual-drive">
@@ -400,8 +400,8 @@ export default function Home() {
                         <div className="text-slate-600 font-semibold text-sm">Google Meet</div>
                       </div>
                       <div className="bg-gradient-to-br from-indigo-50 to-purple-50 p-8 rounded-3xl border-2 border-indigo-100 hover:border-indigo-200 transition-all hover:scale-105 duration-300">
-                        <div className="text-4xl font-extrabold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-2">Gujarat</div>
-                        <div className="text-slate-600 font-semibold text-sm">Target Location</div>
+                        <div className="text-4xl font-extrabold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-2">UAE and India</div>
+                        <div className="text-slate-600 font-semibold text-sm">Offices</div>
                       </div>
                     </div>
                   </div>

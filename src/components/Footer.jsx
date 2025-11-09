@@ -17,7 +17,7 @@ export default function Footer() {
             </div>
             <p className="text-slate-300 text-lg leading-relaxed max-w-md font-medium mb-8">
               Empowering startups across MENA with world-class financial operations, 
-              accounting, and tax services. Founded in 2022, trusted by 20M+ SMBs.
+              accounting, and tax services. Founded in 2022, trusted by 5000+ SMBs.
             </p>
             <div className="flex items-center gap-3">
               <a
