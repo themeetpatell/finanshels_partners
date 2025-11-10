@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Linkedin, Twitter, Mail } from 'lucide-react'
+import { Linkedin, Twitter, Mail, Instagram, Youtube } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -37,7 +37,23 @@ export default function Footer() {
                 <Twitter size={22} />
               </a>
               <a
-                href="mailto:careers@finanshels.com"
+                href="https://www.instagram.com/finanshels"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 hover:scale-110 hover:shadow-lg"
+              >
+                <Instagram size={22} />
+              </a>
+              <a
+                href="https://www.youtube.com/@finanshelshq"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 hover:scale-110 hover:shadow-lg"
+              >
+                <Youtube size={22} />
+              </a>
+              <a
+                href="mailto:talents@finanshels.com"
                 className="p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 hover:scale-110 hover:shadow-lg"
               >
                 <Mail size={22} />
@@ -83,7 +99,7 @@ export default function Footer() {
             <ul className="space-y-4 text-slate-300 font-medium text-base">
               <li>
                 <a href="mailto:careers@finanshels.com" className="hover:text-white transition-colors">
-                  careers@finanshels.com
+                  talents@finanshels.com
                 </a>
               </li>
               <li>Dubai, UAE (HQ)</li>

@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative pt-40 pb-32 px-6 sm:px-8 lg:px-12 bg-white overflow-hidden">
+      <section className="relative pt-40 pb-12 px-6 sm:px-8 lg:px-12 bg-white overflow-hidden">
         {/* Grid pattern background */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] pointer-events-none"></div>
         
@@ -46,7 +46,7 @@ export default function Home() {
                 <span className="relative inline-block">
                   <span className="absolute inset-0 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 blur-2xl opacity-30"></span>
                   <span className="relative bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                    startup world
+                    Business world
                   </span>
                 </span>
               </h1>
@@ -80,7 +80,7 @@ export default function Home() {
 
 
       {/* Company Metrics Section */}
-      <section className="py-32 px-6 sm:px-8 lg:px-12 bg-white">
+      <section className="py-16 px-6 sm:px-8 lg:px-12 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
             <AnimatedSection>
@@ -99,7 +99,7 @@ export default function Home() {
             </AnimatedSection>
             <AnimatedSection delay={200}>
               <p className="text-2xl text-slate-600 max-w-3xl mx-auto font-medium">
-                A rapidly growing team backed by <span className="text-slate-900 font-bold">top investors</span> and trusted by thousands
+                A rapidly growing Accounting and Fintech company backed by <span className="text-slate-900 font-bold">top investors</span> and trusted by thousands
               </p>
             </AnimatedSection>
           </div>
@@ -376,11 +376,6 @@ export default function Home() {
                         <Button size="lg" variant="primary" className="group w-full sm:w-auto shadow-2xl shadow-indigo-500/40">
                           Register Now
                           <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={22} />
-                        </Button>
-                      </Link>
-                      <Link to="/virtual-drive#details">
-                        <Button size="lg" variant="outline" className="w-full sm:w-auto border-2 hover:bg-slate-50">
-                          Learn More
                         </Button>
                       </Link>
                     </div>
