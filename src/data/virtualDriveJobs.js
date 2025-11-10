@@ -122,7 +122,6 @@ export const VIRTUAL_DRIVE_JOBS = [
       "Social media management experience"
     ],
     benefits: [
-      "Stipend of ₹10,000-15,000 per month",
       "Certificate of completion",
       "Letter of recommendation",
       "Potential for full-time conversion",
@@ -133,7 +132,7 @@ export const VIRTUAL_DRIVE_JOBS = [
   },
   {
     id: "vd-web-developer-intern",
-    title: "Web Developer Intern",
+    title: "Junior Web Developer",
     category: "Internship",
     openings: "Multiple",
     location: "Ahmedabad/Hybrid",
@@ -169,7 +168,6 @@ export const VIRTUAL_DRIVE_JOBS = [
       "Understanding of Agile/Scrum methodology"
     ],
     benefits: [
-      "Stipend of ₹15,000-25,000 per month",
       "Hands-on experience with production applications",
       "Mentorship from senior developers",
       "Certificate and letter of recommendation",
@@ -215,7 +213,6 @@ export const VIRTUAL_DRIVE_JOBS = [
       "Social media recruiting skills"
     ],
     benefits: [
-      "Stipend of ₹10,000-12,000 per month",
       "Exposure to full recruitment cycle",
       "Mentorship from HR professionals",
       "Certificate of completion",
@@ -263,7 +260,6 @@ export const VIRTUAL_DRIVE_JOBS = [
       "Bilingual capabilities (English + Hindi/Gujarati)"
     ],
     benefits: [
-      "Stipend of ₹12,000-18,000 per month + incentives",
       "Performance-based bonuses",
       "Sales training and mentorship",
       "Certificate and letter of recommendation",

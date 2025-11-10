@@ -174,7 +174,7 @@ export default function SeniorAccountant() {
                       <Clock className="text-indigo-600 flex-shrink-0 mt-1" size={20} />
                       <div>
                         <div className="font-bold text-slate-900 text-sm">Timing</div>
-                        <div className="text-slate-600 text-sm">9:00 AM - 8:00 PM</div>
+                        <div className="text-slate-600 text-sm">9:00 AM - 6:00 PM</div>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">

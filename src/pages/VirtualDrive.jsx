@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { Calendar, Clock, MapPin, Users, Video, CheckCircle2, ArrowRight, Briefcase, TrendingUp, UserPlus } from 'lucide-react'
+import { Calendar, Clock, MapPin, Users, Video, CheckCircle2, CheckCircle, ArrowRight, Briefcase, TrendingUp, UserPlus } from 'lucide-react'
 import { Button } from '../components/ui/Button'
 import { Input, Textarea, Label } from '../components/ui/Input'
 import { Card } from '../components/ui/Card'
@@ -22,11 +22,78 @@ export default function VirtualDrive() {
   const [submitted, setSubmitted] = useState(false)
   const [fileName, setFileName] = useState('')
 
+  useEffect(() => {
+    const container = document.getElementById("zf_div_jQBxaOyXvB5vbVEwHYzgDthNbYVadDVpRDKRFkkD_Mo")
+    
+    if (container && container.querySelector('iframe')) {
+      return
+    }
+    
+    const loadForm = () => {
+      try {
+        const iframe = document.createElement("iframe")
+        const ifrmSrc = 'https://forms.zohopublic.com/finanshelsllc/form/GetYourFriendAJob/formperma/jQBxaOyXvB5vbVEwHYzgDthNbYVadDVpRDKRFkkD_Mo?zf_rszfm=1'
+        
+        iframe.src = ifrmSrc
+        iframe.style.border = "none"
+        iframe.style.height = "758px"
+        iframe.style.width = "100%"
+        iframe.style.transition = "all 0.5s ease"
+        iframe.setAttribute("aria-label", 'Get Your Friend A Job')
+        
+        const container = document.getElementById("zf_div_jQBxaOyXvB5vbVEwHYzgDthNbYVadDVpRDKRFkkD_Mo")
+        if (container) {
+          container.innerHTML = ''
+          container.appendChild(iframe)
+        }
+        
+        const handleMessage = (event) => {
+          const evntData = event.data
+          if (evntData && evntData.constructor === String) {
+            const zf_ifrm_data = evntData.split("|")
+            if (zf_ifrm_data.length === 2 || zf_ifrm_data.length === 3) {
+              const zf_perma = zf_ifrm_data[0]
+              const zf_ifrm_ht_nw = (parseInt(zf_ifrm_data[1], 10) + 15) + "px"
+              const container = document.getElementById("zf_div_jQBxaOyXvB5vbVEwHYzgDthNbYVadDVpRDKRFkkD_Mo")
+              if (container) {
+                const iframe = container.getElementsByTagName("iframe")[0]
+                if (iframe && iframe.src.indexOf('formperma') > 0 && iframe.src.indexOf(zf_perma) > 0) {
+                  const prevIframeHeight = iframe.style.height
+                  if (prevIframeHeight !== zf_ifrm_ht_nw) {
+                    iframe.style.height = zf_ifrm_ht_nw
+                  }
+                }
+              }
+            }
+          }
+        }
+        
+        window.addEventListener('message', handleMessage)
+        
+        return () => {
+          window.removeEventListener('message', handleMessage)
+        }
+      } catch(e) {
+        console.error('Error loading Zoho form:', e)
+      }
+    }
+    
+    const cleanup = loadForm()
+    
+    return () => {
+      if (cleanup) cleanup()
+      const container = document.getElementById("zf_div_jQBxaOyXvB5vbVEwHYzgDthNbYVadDVpRDKRFkkD_Mo")
+      if (container) {
+        container.innerHTML = ''
+      }
+    }
+  }, [])
+
   const positions = [
     { id: 'vd-junior-accountant', title: 'Junior Accountant', openings: 6, category: 'Accounting' },
     { id: 'vd-senior-accountant', title: 'Senior Accountant', openings: 3, category: 'Accounting' },
     { id: 'vd-content-writer-intern', title: 'Content Writer Intern', openings: 2, category: 'Internship' },
-    { id: 'vd-web-developer-intern', title: 'Web Developer Intern', openings: 'Multiple', category: 'Internship' },
+    { id: 'vd-web-developer-intern', title: 'Junior Web Developer', openings: 'Multiple', category: 'Internship' },
     { id: 'vd-recruiter-intern', title: 'Junior Recruiter', openings: 'Multiple', category: 'Internship' },
     { id: 'vd-business-development-intern', title: 'Business Development Intern', openings: 'Multiple', category: 'Internship' }
   ]
@@ -148,7 +215,7 @@ export default function VirtualDrive() {
                 <Clock className="text-purple-300" size={24} />
                 <div>
                   <div className="text-sm text-gray-300">Timing</div>
-                  <div className="font-semibold">9 AM - 8 PM</div>
+                  <div className="font-semibold">9 AM - 6 PM</div>
                 </div>
               </div>
               <div className="flex items-center gap-3 p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
@@ -274,6 +341,67 @@ export default function VirtualDrive() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Referral Section */}
+      <section className="py-24 px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff15_1px,transparent_1px),linear-gradient(to_bottom,#ffffff15_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+        
+        <div className="max-w-7xl mx-auto relative z-10">
+          <AnimatedSection animation="scale">
+            <div className="bg-white/95 backdrop-blur-xl rounded-3xl p-10 sm:p-16 shadow-2xl">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                  <div className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-sm font-bold mb-6 shadow-xl">
+                    💰 Referral Program
+                  </div>
+                  <h2 className="text-4xl sm:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight leading-tight">
+                    Get Your Friend A Job
+                    <span className="block bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Earn up to ₹20,000</span>
+                  </h2>
+                  <p className="text-xl text-slate-600 mb-8 font-medium leading-relaxed">
+                    Know someone who'd be a great fit? <span className="text-slate-900 font-bold">Refer them and earn rewards</span> when they join the team!
+                  </p>
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0">
+                        <CheckCircle className="text-emerald-600" size={18} />
+                      </div>
+                      <div>
+                        <div className="font-bold text-slate-900">Easy Process</div>
+                        <div className="text-slate-600 text-sm">Simply fill the form with your friend's details</div>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0">
+                        <CheckCircle className="text-emerald-600" size={18} />
+                      </div>
+                      <div>
+                        <div className="font-bold text-slate-900">Track Status</div>
+                        <div className="text-slate-600 text-sm">Get updates on their application progress</div>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0">
+                        <CheckCircle className="text-emerald-600" size={18} />
+                      </div>
+                      <div>
+                        <div className="font-bold text-slate-900">Earn Rewards</div>
+                        <div className="text-slate-600 text-sm">Get paid when your referral joins</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div 
+                    id="zf_div_jQBxaOyXvB5vbVEwHYzgDthNbYVadDVpRDKRFkkD_Mo"
+                    className="w-full min-h-[758px]"
+                  />
+                </div>
+              </div>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
