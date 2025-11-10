@@ -476,58 +476,58 @@ export default function Home() {
       </section>
 
       {/* Referral Section */}
-      <section className="py-24 px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 relative overflow-hidden">
+      <section className="py-16 px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 relative overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff15_1px,transparent_1px),linear-gradient(to_bottom,#ffffff15_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
         
-        <div className="max-w-7xl mx-auto relative z-10">
+        <div className="max-w-6xl mx-auto relative z-10">
           <AnimatedSection animation="scale">
-            <div className="bg-white/95 backdrop-blur-xl rounded-3xl p-10 sm:p-16 shadow-2xl">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                  <div className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-sm font-bold mb-6 shadow-xl">
+            <div className="bg-white/95 backdrop-blur-xl rounded-2xl p-6 sm:p-8 shadow-2xl">
+              <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
+                <div className="lg:col-span-2">
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-xs font-bold mb-4 shadow-lg">
                     💰 Referral Program
                   </div>
-                  <h2 className="text-4xl sm:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight leading-tight">
+                  <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight leading-tight">
                     Get Your Friend A Job
-                    <span className="block bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Earn up to ₹20,000</span>
+                    <span className="block bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent text-2xl sm:text-3xl mt-1">Earn up to ₹20,000</span>
                   </h2>
-                  <p className="text-xl text-slate-600 mb-8 font-medium leading-relaxed">
-                    Know someone who'd be a great fit? <span className="text-slate-900 font-bold">Refer them and earn rewards</span> when they join the team!
+                  <p className="text-base text-slate-600 mb-6 font-medium leading-relaxed">
+                    Know someone who'd be a great fit? <span className="text-slate-900 font-bold">Refer them and earn rewards</span> when they join!
                   </p>
-                  <div className="space-y-4">
-                    <div className="flex items-start gap-3">
-                      <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0">
-                        <CheckCircle className="text-emerald-600" size={18} />
+                  <div className="space-y-3">
+                    <div className="flex items-start gap-2">
+                      <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <CheckCircle className="text-emerald-600" size={14} />
                       </div>
                       <div>
-                        <div className="font-bold text-slate-900">Easy Process</div>
-                        <div className="text-slate-600 text-sm">Simply fill the form with your friend's details</div>
+                        <div className="font-bold text-slate-900 text-sm">Easy Process</div>
+                        <div className="text-slate-600 text-xs">Fill the form with details</div>
                       </div>
                     </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0">
-                        <CheckCircle className="text-emerald-600" size={18} />
+                    <div className="flex items-start gap-2">
+                      <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <CheckCircle className="text-emerald-600" size={14} />
                       </div>
                       <div>
-                        <div className="font-bold text-slate-900">Track Status</div>
-                        <div className="text-slate-600 text-sm">Get updates on their application progress</div>
+                        <div className="font-bold text-slate-900 text-sm">Track Status</div>
+                        <div className="text-slate-600 text-xs">Get application updates</div>
                       </div>
                     </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0">
-                        <CheckCircle className="text-emerald-600" size={18} />
+                    <div className="flex items-start gap-2">
+                      <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <CheckCircle className="text-emerald-600" size={14} />
                       </div>
                       <div>
-                        <div className="font-bold text-slate-900">Earn Rewards</div>
-                        <div className="text-slate-600 text-sm">Get paid when your referral joins</div>
+                        <div className="font-bold text-slate-900 text-sm">Earn Rewards</div>
+                        <div className="text-slate-600 text-xs">Get paid when they join</div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div>
+                <div className="lg:col-span-3">
                   <div 
                     id="zf_div_jQBxaOyXvB5vbVEwHYzgDthNbYVadDVpRDKRFkkD_Mo"
-                    className="w-full min-h-[758px]"
+                    className="w-full min-h-[758px] bg-white rounded-xl overflow-hidden"
                   />
                 </div>
               </div>
