@@ -123,29 +123,6 @@ export const TESTIMONIALS = [
   }
 ]
 
-export const ACHIEVEMENTS = [
-  {
-    icon: "🏆",
-    title: "Best FinTech Startup",
-    description: "MENA Startup Awards 2024"
-  },
-  {
-    icon: "🚀",
-    title: "Fastest Growing",
-    description: "300% YoY Revenue Growth"
-  },
-  {
-    icon: "⭐",
-    title: "Top Rated",
-    description: "4.97/5 on Trustpilot"
-  },
-  {
-    icon: "💰",
-    title: "Well Funded",
-    description: "Backed by MBRIF, in5, Kube VC"
-  }
-]
-
 export const COMPANY_VALUES = [
   {
     icon: "🎯",

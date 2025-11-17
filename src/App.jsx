@@ -5,13 +5,11 @@ import Home from './pages/Home'
 import Jobs from './pages/Jobs'
 import JobDetail from './pages/JobDetail'
 import Life from './pages/Life'
-import VirtualDrive from './pages/VirtualDrive'
-import JuniorAccountant from './pages/virtualDrive/JuniorAccountant'
-import SeniorAccountant from './pages/virtualDrive/SeniorAccountant'
-import ContentWriterIntern from './pages/virtualDrive/ContentWriterIntern'
-import WebDeveloperIntern from './pages/virtualDrive/WebDeveloperIntern'
-import RecruiterIntern from './pages/virtualDrive/RecruiterIntern'
-import BusinessDevelopmentIntern from './pages/virtualDrive/BusinessDevelopmentIntern'
+import DubaiWalkIn from './pages/DubaiWalkIn'
+import FieldSalesExecutive from './pages/dubaiWalkIn/FieldSalesExecutive'
+import BusinessDevelopment from './pages/dubaiWalkIn/BusinessDevelopment'
+import PartnershipsManager from './pages/dubaiWalkIn/PartnershipsManager'
+import AppointmentSetter from './pages/dubaiWalkIn/AppointmentSetter'
 
 function App() {
   return (
@@ -24,13 +22,11 @@ function App() {
             <Route path="/jobs" element={<Jobs />} />
             <Route path="/jobs/:id" element={<JobDetail />} />
             <Route path="/life" element={<Life />} />
-            <Route path="/virtual-drive" element={<VirtualDrive />} />
-            <Route path="/virtual-drive/vd-junior-accountant" element={<JuniorAccountant />} />
-            <Route path="/virtual-drive/vd-senior-accountant" element={<SeniorAccountant />} />
-            <Route path="/virtual-drive/vd-content-writer-intern" element={<ContentWriterIntern />} />
-            <Route path="/virtual-drive/vd-web-developer-intern" element={<WebDeveloperIntern />} />
-            <Route path="/virtual-drive/vd-recruiter-intern" element={<RecruiterIntern />} />
-            <Route path="/virtual-drive/vd-business-development-intern" element={<BusinessDevelopmentIntern />} />
+            <Route path="/dubai-walkin" element={<DubaiWalkIn />} />
+            <Route path="/dubai-walkin/field-sales-executive" element={<FieldSalesExecutive />} />
+            <Route path="/dubai-walkin/business-development" element={<BusinessDevelopment />} />
+            <Route path="/dubai-walkin/partnerships-manager" element={<PartnershipsManager />} />
+            <Route path="/dubai-walkin/appointment-setter" element={<AppointmentSetter />} />
           </Routes>
         </main>
         <Footer />

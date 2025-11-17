@@ -15,7 +15,7 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Jobs', path: '/jobs' },
-    { name: 'Virtual Drive', path: '/virtual-drive' },
+    { name: 'Dubai Walkin', path: '/dubai-walkin' },
     { name: 'Life at Finanshels', path: '/life' },
   ]
 

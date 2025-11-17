@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Users, MapPin, Zap, Star, Award, TrendingUp, Target, Sparkles, Building, CheckCircle } from 'lucide-react'
+import { ArrowRight, Users, MapPin, Zap, Star, Award, TrendingUp, Target, Sparkles, Building, CheckCircle, Calendar, Clock, CheckCircle2, Briefcase } from 'lucide-react'
 import { Button } from '../components/ui/Button'
 import { Card } from '../components/ui/Card'
 import StatCard from '../components/StatCard'
@@ -11,7 +11,7 @@ import AnimatedSection from '../components/AnimatedSection'
 import FloatingCard from '../components/FloatingCard'
 import AnimatedCounter from '../components/AnimatedCounter'
 import { TEAMS } from '../data/jobs'
-import { LEADERSHIP_TEAM, TESTIMONIALS, ACHIEVEMENTS, COMPANY_VALUES } from '../data/team'
+import { LEADERSHIP_TEAM, TESTIMONIALS, COMPANY_VALUES } from '../data/team'
 
 export default function Home() {
 
@@ -257,24 +257,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Achievements */}
-      <section className="py-12 px-6 sm:px-8 lg:px-12 bg-slate-50 border-y border-slate-200">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            {ACHIEVEMENTS.map((achievement, idx) => (
-              <AnimatedSection key={idx} animation="fade-up" delay={idx * 50}>
-                <div className="text-center p-4">
-                  <div className="text-3xl mb-2">{achievement.icon}</div>
-                  <h3 className="text-sm font-bold text-slate-900 mb-1">
-                    {achievement.title}
-                  </h3>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Company Values */}
       <section className="py-20 px-6 sm:px-8 lg:px-12 bg-gradient-to-b from-white to-brand-light">
         <div className="max-w-7xl mx-auto">
@@ -419,55 +401,221 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Virtual Drive Banner */}
-      <section className="py-24 px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff15_1px,transparent_1px),linear-gradient(to_bottom,#ffffff15_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+      {/* Dubai Walk-In Banner */}
+      <section className="py-12 px-6 sm:px-8 lg:px-12 bg-slate-900 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-amber-500/20 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+        </div>
         
         <div className="max-w-7xl mx-auto relative z-10">
-          <AnimatedSection animation="scale">
-            <Card className="bg-white/95 backdrop-blur-xl hover:shadow-2xl transition-all duration-500 border-2 border-transparent hover:border-white overflow-hidden">
-              <div className="p-10 sm:p-16">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                  <div>
-                    <div className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-sm font-bold mb-6 animate-pulse shadow-xl">
-                      🔥 Happening Soon
+          <AnimatedSection animation="fade-up">
+            <Card className="bg-gradient-to-br from-slate-50 to-white border-none shadow-2xl overflow-hidden">
+              <div className="p-6 sm:p-8 lg:p-10">
+                {/* Header */}
+                <div className="text-center mb-8">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-100 border border-amber-200 text-amber-800 text-sm font-bold mb-4">
+                    <MapPin size={16} />
+                    <span>Dubai Walk-In Career Drive</span>
+                  </div>
+                  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-3 tracking-tight">
+                    Join Our Team in Dubai
+                  </h2>
+              <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto font-medium">
+                Walk in with your CV • Meet our team face-to-face • 3-step process
+              </p>
+                </div>
+
+                {/* Quick Info Bar */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                  <div className="flex items-center gap-3 p-4 rounded-xl bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-100">
+                    <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center flex-shrink-0">
+                      <Calendar className="text-white" size={18} />
                     </div>
-                    <h2 className="text-4xl sm:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight leading-tight">
-                      Virtual Hiring Drive
-                      <span className="block bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Nov 15-16, 2025</span>
-                    </h2>
-                    <p className="text-xl text-slate-600 mb-8 font-medium leading-relaxed">
-                      <span className="text-slate-900 font-bold">14+ openings</span> across Accounting & Internships - this is your chance!
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-5">
-                      <Link to="/virtual-drive">
-                        <Button size="lg" variant="primary" className="group w-full sm:w-auto shadow-2xl shadow-indigo-500/40">
-                          Register Now
-                          <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={22} />
-                        </Button>
+                    <div>
+                      <div className="text-xs text-slate-600 font-semibold uppercase tracking-wide">Date</div>
+                      <div className="font-bold text-slate-900">Saturday, Nov 23</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3 p-4 rounded-xl bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-100">
+                    <div className="w-10 h-10 rounded-xl bg-amber-600 flex items-center justify-center flex-shrink-0">
+                      <Clock className="text-white" size={18} />
+                    </div>
+                    <div>
+                      <div className="text-xs text-slate-600 font-semibold uppercase tracking-wide">Time</div>
+                      <div className="font-bold text-slate-900">10 AM - 5 PM</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3 p-4 rounded-xl bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-100">
+                    <div className="w-10 h-10 rounded-xl bg-emerald-600 flex items-center justify-center flex-shrink-0">
+                      <Building className="text-white" size={18} />
+                    </div>
+                    <div>
+                      <div className="text-xs text-slate-600 font-semibold uppercase tracking-wide">Venue</div>
+                      <div className="font-bold text-slate-900 text-sm">Dubai Production City</div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Main Content */}
+                <div className="mb-6">
+                  {/* Open Positions */}
+                  <div>
+                    <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                      <div className="w-1.5 h-8 bg-gradient-to-b from-blue-600 to-cyan-600 rounded-full"></div>
+                      Open Positions
+                    </h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <Link to="/dubai-walkin/field-sales-executive" className="block group">
+                        <div className="relative p-6 rounded-2xl bg-gradient-to-br from-white via-blue-50/30 to-white border border-slate-200 hover:border-blue-400 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+                          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-400/10 to-cyan-400/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500"></div>
+                          <div className="relative">
+                            <div className="flex items-start justify-between mb-4">
+                              <div className="flex items-center gap-4">
+                                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center flex-shrink-0 shadow-lg shadow-blue-500/30 group-hover:shadow-blue-500/50 transition-all group-hover:scale-110">
+                                  <Target className="text-white" size={24} />
+                                </div>
+                                <div>
+                                  <div className="inline-flex px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-bold mb-2">
+                                    Sales
+                                  </div>
+                                  <h4 className="font-extrabold text-slate-900 text-lg group-hover:text-blue-600 transition-colors leading-tight">
+                                    Field Sales Executive
+                                  </h4>
+                                </div>
+                              </div>
+                            </div>
+                            <p className="text-slate-600 text-sm mb-4 leading-relaxed">Cold calling & lead generation</p>
+                            <div className="flex items-center justify-between">
+                              <div className="flex items-center gap-2 text-slate-700">
+                                <Users size={16} className="text-blue-600" />
+                                <span className="text-sm font-semibold">2 Openings</span>
+                              </div>
+                              <div className="flex items-center gap-1 text-blue-600 font-bold text-sm group-hover:gap-2 transition-all">
+                                Apply Now
+                                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
+
+                      <Link to="/dubai-walkin/business-development" className="block group">
+                        <div className="relative p-6 rounded-2xl bg-gradient-to-br from-white via-indigo-50/30 to-white border border-slate-200 hover:border-indigo-400 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+                          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-indigo-400/10 to-purple-400/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500"></div>
+                          <div className="relative">
+                            <div className="flex items-start justify-between mb-4">
+                              <div className="flex items-center gap-4">
+                                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center flex-shrink-0 shadow-lg shadow-indigo-500/30 group-hover:shadow-indigo-500/50 transition-all group-hover:scale-110">
+                                  <TrendingUp className="text-white" size={24} />
+                                </div>
+                                <div>
+                                  <div className="inline-flex px-3 py-1 rounded-full bg-indigo-100 text-indigo-700 text-xs font-bold mb-2">
+                                    Business Development
+                                  </div>
+                                  <h4 className="font-extrabold text-slate-900 text-lg group-hover:text-indigo-600 transition-colors leading-tight">
+                                    Business Development Executive
+                                  </h4>
+                                </div>
+                              </div>
+                            </div>
+                            <p className="text-slate-600 text-sm mb-4 leading-relaxed">Build relationships & close deals</p>
+                            <div className="flex items-center justify-between">
+                              <div className="flex items-center gap-2 text-slate-700">
+                                <Users size={16} className="text-indigo-600" />
+                                <span className="text-sm font-semibold">2 Openings</span>
+                              </div>
+                              <div className="flex items-center gap-1 text-indigo-600 font-bold text-sm group-hover:gap-2 transition-all">
+                                Apply Now
+                                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
+                      
+                      <Link to="/dubai-walkin/partnerships-manager" className="block group">
+                        <div className="relative p-6 rounded-2xl bg-gradient-to-br from-white via-amber-50/30 to-white border border-slate-200 hover:border-amber-400 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+                          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-amber-400/10 to-orange-400/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500"></div>
+                          <div className="relative">
+                            <div className="flex items-start justify-between mb-4">
+                              <div className="flex items-center gap-4">
+                                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center flex-shrink-0 shadow-lg shadow-amber-500/30 group-hover:shadow-amber-500/50 transition-all group-hover:scale-110">
+                                  <Users className="text-white" size={24} />
+                                </div>
+                                <div>
+                                  <div className="inline-flex px-3 py-1 rounded-full bg-amber-100 text-amber-700 text-xs font-bold mb-2">
+                                    Strategic Partnerships
+                                  </div>
+                                  <h4 className="font-extrabold text-slate-900 text-lg group-hover:text-amber-600 transition-colors leading-tight">
+                                    Partnerships Manager
+                                  </h4>
+                                </div>
+                              </div>
+                            </div>
+                            <p className="text-slate-600 text-sm mb-4 leading-relaxed">Build strategic alliances</p>
+                            <div className="flex items-center justify-between">
+                              <div className="flex items-center gap-2 text-slate-700">
+                                <Users size={16} className="text-amber-600" />
+                                <span className="text-sm font-semibold">2 Openings</span>
+                              </div>
+                              <div className="flex items-center gap-1 text-amber-600 font-bold text-sm group-hover:gap-2 transition-all">
+                                Apply Now
+                                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
+                      
+                      <Link to="/dubai-walkin/appointment-setter" className="block group">
+                        <div className="relative p-6 rounded-2xl bg-gradient-to-br from-white via-emerald-50/30 to-white border border-slate-200 hover:border-emerald-400 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+                          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-emerald-400/10 to-teal-400/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500"></div>
+                          <div className="relative">
+                            <div className="flex items-start justify-between mb-4">
+                              <div className="flex items-center gap-4">
+                                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center flex-shrink-0 shadow-lg shadow-emerald-500/30 group-hover:shadow-emerald-500/50 transition-all group-hover:scale-110">
+                                  <Briefcase className="text-white" size={24} />
+                                </div>
+                                <div>
+                                  <div className="inline-flex px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-bold mb-2">
+                                    Sales Support
+                                  </div>
+                                  <h4 className="font-extrabold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors leading-tight">
+                                    Appointment Setter
+                                  </h4>
+                                </div>
+                              </div>
+                            </div>
+                            <p className="text-slate-600 text-sm mb-4 leading-relaxed">Schedule & qualify leads</p>
+                            <div className="flex items-center justify-between">
+                              <div className="flex items-center gap-2 text-slate-700">
+                                <Users size={16} className="text-emerald-600" />
+                                <span className="text-sm font-semibold">2 Openings</span>
+                              </div>
+                              <div className="flex items-center gap-1 text-emerald-600 font-bold text-sm group-hover:gap-2 transition-all">
+                                Apply Now
+                                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </Link>
                     </div>
                   </div>
-                  <div className="hidden lg:block">
-                    <div className="grid grid-cols-2 gap-6">
-                      <div className="bg-gradient-to-br from-indigo-50 to-purple-50 p-8 rounded-3xl border-2 border-indigo-100 hover:border-indigo-200 transition-all hover:scale-105 duration-300">
-                        <div className="text-4xl font-extrabold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-2">14+</div>
-                        <div className="text-slate-600 font-semibold text-sm">Open Positions</div>
-                      </div>
-                      <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-3xl border-2 border-purple-100 hover:border-purple-200 transition-all hover:scale-105 duration-300">
-                        <div className="text-4xl font-extrabold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">2 Days</div>
-                        <div className="text-slate-600 font-semibold text-sm">Fast Process</div>
-                      </div>
-                      <div className="bg-gradient-to-br from-pink-50 to-indigo-50 p-8 rounded-3xl border-2 border-pink-100 hover:border-pink-200 transition-all hover:scale-105 duration-300">
-                        <div className="text-4xl font-extrabold bg-gradient-to-r from-pink-600 to-indigo-600 bg-clip-text text-transparent mb-2">Virtual</div>
-                        <div className="text-slate-600 font-semibold text-sm">Google Meet</div>
-                      </div>
-                      <div className="bg-gradient-to-br from-indigo-50 to-purple-50 p-8 rounded-3xl border-2 border-indigo-100 hover:border-indigo-200 transition-all hover:scale-105 duration-300">
-                        <div className="text-4xl font-extrabold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-2">UAE and India</div>
-                        <div className="text-slate-600 font-semibold text-sm">Offices</div>
-                      </div>
-                    </div>
-                  </div>
+
+                </div>
+
+                {/* CTA */}
+                <div className="text-center pt-6 border-t-2 border-slate-200">
+                  <Link to="/dubai-walkin">
+                    <Button size="lg" className="group shadow-xl bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white">
+                      View Full Details & Register
+                      <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
+                    </Button>
+                  </Link>
+                  <p className="text-sm text-slate-500 mt-4">Walk-ins welcome • Bring your CV and ID</p>
                 </div>
               </div>
             </Card>
@@ -476,20 +624,20 @@ export default function Home() {
       </section>
 
       {/* Referral Section */}
-      <section className="py-16 px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 relative overflow-hidden">
+      <section className="py-10 px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 relative overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff15_1px,transparent_1px),linear-gradient(to_bottom,#ffffff15_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
         
-        <div className="max-w-6xl mx-auto relative z-10">
+        <div className="max-w-7xl mx-auto relative z-10">
           <AnimatedSection animation="scale">
-            <div className="bg-white/95 backdrop-blur-xl rounded-2xl p-6 sm:p-8 shadow-2xl">
-              <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
-                <div className="lg:col-span-2">
+            <div className="bg-white/95 backdrop-blur-xl rounded-2xl p-6 shadow-2xl">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+                <div>
                   <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-xs font-bold mb-4 shadow-lg">
                     💰 Referral Program
                   </div>
                   <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight leading-tight">
                     Get Your Friend A Job
-                    <span className="block bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent text-2xl sm:text-3xl mt-1">Earn up to ₹20,000</span>
+                    <span className="block bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent text-2xl sm:text-3xl mt-1">Earn up to AED 1,000</span>
                   </h2>
                   <p className="text-base text-slate-600 mb-6 font-medium leading-relaxed">
                     Know someone who'd be a great fit? <span className="text-slate-900 font-bold">Refer them and earn rewards</span> when they join!
@@ -524,10 +672,10 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <div className="lg:col-span-3">
+                <div>
                   <div 
                     id="zf_div_jQBxaOyXvB5vbVEwHYzgDthNbYVadDVpRDKRFkkD_Mo"
-                    className="w-full min-h-[758px] bg-white rounded-xl overflow-hidden"
+                    className="w-full bg-white rounded-xl overflow-hidden"
                   />
                 </div>
               </div>
