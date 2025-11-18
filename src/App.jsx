@@ -10,26 +10,34 @@ import FieldSalesExecutive from './pages/dubaiWalkIn/FieldSalesExecutive'
 import BusinessDevelopment from './pages/dubaiWalkIn/BusinessDevelopment'
 import PartnershipsManager from './pages/dubaiWalkIn/PartnershipsManager'
 import AppointmentSetter from './pages/dubaiWalkIn/AppointmentSetter'
+import Onboarding from './pages/Onboarding'
 
 function App() {
   return (
     <Router>
       <div className="flex flex-col min-h-screen">
-        <Navbar />
-        <main className="flex-1">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/jobs" element={<Jobs />} />
-            <Route path="/jobs/:id" element={<JobDetail />} />
-            <Route path="/life" element={<Life />} />
-            <Route path="/dubai-walkin" element={<DubaiWalkIn />} />
-            <Route path="/dubai-walkin/field-sales-executive" element={<FieldSalesExecutive />} />
-            <Route path="/dubai-walkin/business-development" element={<BusinessDevelopment />} />
-            <Route path="/dubai-walkin/partnerships-manager" element={<PartnershipsManager />} />
-            <Route path="/dubai-walkin/appointment-setter" element={<AppointmentSetter />} />
-          </Routes>
-        </main>
-        <Footer />
+        <Routes>
+          <Route path="/onboarding" element={<Onboarding />} />
+          <Route path="*" element={
+            <>
+              <Navbar />
+              <main className="flex-1">
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/jobs" element={<Jobs />} />
+                  <Route path="/jobs/:id" element={<JobDetail />} />
+                  <Route path="/life" element={<Life />} />
+                  <Route path="/dubai-walkin" element={<DubaiWalkIn />} />
+                  <Route path="/dubai-walkin/field-sales-executive" element={<FieldSalesExecutive />} />
+                  <Route path="/dubai-walkin/business-development" element={<BusinessDevelopment />} />
+                  <Route path="/dubai-walkin/partnerships-manager" element={<PartnershipsManager />} />
+                  <Route path="/dubai-walkin/appointment-setter" element={<AppointmentSetter />} />
+                </Routes>
+              </main>
+              <Footer />
+            </>
+          } />
+        </Routes>
       </div>
     </Router>
   )

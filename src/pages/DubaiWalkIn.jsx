@@ -1,31 +1,92 @@
-import { useState } from 'react'
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { Calendar, Clock, MapPin, Users, Building, CheckCircle2, ArrowRight, Briefcase, TrendingUp, UserPlus, Phone } from 'lucide-react'
+import { Calendar, Clock, MapPin, Users, Building, ArrowRight, Briefcase, TrendingUp, UserPlus, Phone } from 'lucide-react'
 import { Button } from '../components/ui/Button'
-import { Input, Textarea, Label } from '../components/ui/Input'
 import { Card } from '../components/ui/Card'
 import AnimatedSection from '../components/AnimatedSection'
 
 export default function DubaiWalkIn() {
-  const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
-    phone: '',
-    position: '',
-    experience: '',
-    resume: null,
-    coverNote: ''
-  })
-
-  const [errors, setErrors] = useState({})
-  const [submitted, setSubmitted] = useState(false)
-  const [fileName, setFileName] = useState('')
+  useEffect(() => {
+    const container = document.getElementById("zf_div_Nd5iBx1DHYXNsmCcT0cDv18NwH_OrTNqcZIfRTVKcac");
+    
+    if (container && container.children.length === 0) {
+      try {
+        const iframe = document.createElement("iframe");
+        let ifrmSrc = 'https://forms.zohopublic.com/finanshelsllc/form/RegisterNow/formperma/Nd5iBx1DHYXNsmCcT0cDv18NwH_OrTNqcZIfRTVKcac?zf_rszfm=1';
+        
+        try {
+          if (typeof window.ZFAdvLead !== "undefined" && typeof window.zfutm_zfAdvLead !== "undefined") {
+            for (let prmIdx = 0; prmIdx < window.ZFAdvLead.utmPNameArr.length; prmIdx++) {
+              let utmPm = window.ZFAdvLead.utmPNameArr[prmIdx];
+              utmPm = (window.ZFAdvLead.isSameDomian && (window.ZFAdvLead.utmcustPNameArr.indexOf(utmPm) == -1)) ? "zf_" + utmPm : utmPm;
+              const utmVal = window.zfutm_zfAdvLead.zfautm_gC_enc(window.ZFAdvLead.utmPNameArr[prmIdx]);
+              if (typeof utmVal !== "undefined" && utmVal != "") {
+                ifrmSrc = ifrmSrc + (ifrmSrc.indexOf('?') > 0 ? '&' : '?') + utmPm + '=' + utmVal;
+              }
+            }
+          }
+          if (typeof window.ZFLead !== "undefined" && typeof window.zfutm_zfLead !== "undefined") {
+            for (let prmIdx = 0; prmIdx < window.ZFLead.utmPNameArr.length; prmIdx++) {
+              const utmPm = window.ZFLead.utmPNameArr[prmIdx];
+              const utmVal = window.zfutm_zfLead.zfutm_gC_enc(window.ZFLead.utmPNameArr[prmIdx]);
+              if (typeof utmVal !== "undefined" && utmVal != "") {
+                ifrmSrc = ifrmSrc + (ifrmSrc.indexOf('?') > 0 ? '&' : '?') + utmPm + '=' + utmVal;
+              }
+            }
+          }
+        } catch (e) {}
+        
+        iframe.src = ifrmSrc;
+        iframe.style.border = "none";
+        iframe.style.height = "100%";
+        iframe.style.width = "100%";
+        iframe.style.transition = "all 0.5s ease";
+        iframe.setAttribute("aria-label", 'Register Now');
+        
+        container.appendChild(iframe);
+        
+        const messageHandler = (event) => {
+          const evntData = event.data;
+          if (evntData && evntData.constructor == String) {
+            const zf_ifrm_data = evntData.split("|");
+            if (zf_ifrm_data.length == 2 || zf_ifrm_data.length == 3) {
+              const zf_perma = zf_ifrm_data[0];
+              const zf_ifrm_ht_nw = (parseInt(zf_ifrm_data[1], 10) + 15) + "px";
+              const iframeEl = container.getElementsByTagName("iframe")[0];
+              
+              if (iframeEl && (iframeEl.src).indexOf('formperma') > 0 && (iframeEl.src).indexOf(zf_perma) > 0) {
+                const prevIframeHeight = iframeEl.style.height;
+                let zf_tout = false;
+                
+                if (zf_ifrm_data.length == 3) {
+                  iframeEl.scrollIntoView();
+                  zf_tout = true;
+                }
+                
+                if (prevIframeHeight != zf_ifrm_ht_nw) {
+                  if (zf_tout) {
+                    setTimeout(() => {
+                      iframeEl.style.height = zf_ifrm_ht_nw;
+                    }, 500);
+                  } else {
+                    iframeEl.style.height = zf_ifrm_ht_nw;
+                  }
+                }
+              }
+            }
+          }
+        };
+        
+        window.addEventListener('message', messageHandler, false);
+      } catch (e) {}
+    }
+  }, [])
 
   const positions = [
-    { id: 'dw-field-sales-executive', title: 'Field Sales Executive', openings: 2, category: 'Sales', experience: '1-3 years', link: '/dubai-walkin/field-sales-executive' },
+    { id: 'dw-field-sales-executive', title: 'Field Sales Executive', openings: 2, category: 'Sales', experience: '2-4 years', link: '/dubai-walkin/field-sales-executive' },
     { id: 'dw-business-development', title: 'Business Development Executive', openings: 2, category: 'Business Development', experience: '2-4 years', link: '/dubai-walkin/business-development' },
-    { id: 'dw-partnerships-manager', title: 'Partnerships Manager', openings: 2, category: 'Partnerships', experience: '3-5 years', link: '/dubai-walkin/partnerships-manager' },
-    { id: 'dw-appointment-setter', title: 'Appointment Setter', openings: 2, category: 'Partnerships', experience: '1-3 years', link: '/dubai-walkin/appointment-setter' }
+    { id: 'dw-partnerships-manager', title: 'Partnerships Manager', openings: 2, category: 'Partnerships', experience: '2-4 years', link: '/dubai-walkin/partnerships-manager' },
+    { id: 'dw-appointment-setter', title: 'Appointment Setter', openings: 2, category: 'Partnerships', experience: '2-4 years', link: '/dubai-walkin/appointment-setter' }
   ]
 
   const processSteps = [
@@ -49,44 +110,6 @@ export default function DubaiWalkIn() {
     }
   ]
 
-  const handleChange = (e) => {
-    const { name, value, files } = e.target
-    if (name === 'resume' && files) {
-      setFormData(prev => ({ ...prev, resume: files[0] }))
-      setFileName(files[0].name)
-      setErrors(prev => ({ ...prev, resume: '' }))
-    } else {
-      setFormData(prev => ({ ...prev, [name]: value }))
-      setErrors(prev => ({ ...prev, [name]: '' }))
-    }
-  }
-
-  const validate = () => {
-    const newErrors = {}
-    
-    if (!formData.fullName.trim()) newErrors.fullName = 'Name is required'
-    if (!formData.email.trim()) {
-      newErrors.email = 'Email is required'
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = 'Email is invalid'
-    }
-    if (!formData.phone.trim()) newErrors.phone = 'Phone is required'
-    if (!formData.position) newErrors.position = 'Position is required'
-    if (!formData.experience.trim()) newErrors.experience = 'Experience details are required'
-    if (!formData.resume) newErrors.resume = 'Resume is required'
-
-    setErrors(newErrors)
-    return Object.keys(newErrors).length === 0
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    if (validate()) {
-      setSubmitted(true)
-      window.scrollTo({ top: 0, behavior: 'smooth' })
-    }
-  }
-
   return (
     <div className="min-h-screen pt-20 bg-gradient-to-b from-brand-light to-white">
       {/* Hero Section */}
@@ -106,7 +129,7 @@ export default function DubaiWalkIn() {
           </AnimatedSection>
 
           <AnimatedSection animation="fade-up" delay={100}>
-            <h1 className="text-6xl sm:text-7xl lg:text-8xl font-extrabold mb-8 tracking-tighter leading-[0.95] text-white">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold mb-6 sm:mb-8 tracking-tighter leading-tight sm:leading-[0.95] text-white">
               Dubai Walk-In<br />
               <span className="bg-gradient-to-r from-blue-200 via-cyan-200 to-blue-200 bg-clip-text text-transparent">
                 Career Drive 2025
@@ -115,7 +138,7 @@ export default function DubaiWalkIn() {
           </AnimatedSection>
 
           <AnimatedSection animation="fade-up" delay={200}>
-            <p className="text-2xl sm:text-3xl text-white/90 mb-12 max-w-4xl leading-relaxed font-medium">
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/90 mb-8 sm:mb-12 max-w-4xl leading-relaxed font-medium">
               Walk in with your CV! We're hiring for <span className="text-white font-bold">Sales & Business Development roles</span>.{' '}
               Meet our team face-to-face and experience our 3-step interview process.
             </p>
@@ -123,32 +146,32 @@ export default function DubaiWalkIn() {
 
           <AnimatedSection animation="fade-up" delay={300}>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-              <div className="flex items-center gap-3 p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
-                <Calendar className="text-blue-200" size={24} />
+              <div className="flex items-center gap-2 sm:gap-3 p-3 sm:p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
+                <Calendar className="text-blue-200 flex-shrink-0" size={20} />
                 <div>
-                  <div className="text-sm text-gray-200">Date</div>
-                  <div className="font-semibold">Nov 23, 2025</div>
+                  <div className="text-xs sm:text-sm text-gray-200">Date</div>
+                  <div className="font-semibold text-sm sm:text-base">Nov 23, 2025</div>
                 </div>
               </div>
-              <div className="flex items-center gap-3 p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
-                <Clock className="text-amber-200" size={24} />
+              <div className="flex items-center gap-2 sm:gap-3 p-3 sm:p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
+                <Clock className="text-amber-200 flex-shrink-0" size={20} />
                 <div>
-                  <div className="text-sm text-gray-200">Timing</div>
-                  <div className="font-semibold">10 AM - 5 PM</div>
+                  <div className="text-xs sm:text-sm text-gray-200">Timing</div>
+                  <div className="font-semibold text-sm sm:text-base">10 AM - 5 PM</div>
                 </div>
               </div>
-              <div className="flex items-center gap-3 p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
-                <MapPin className="text-emerald-200" size={24} />
+              <div className="flex items-center gap-2 sm:gap-3 p-3 sm:p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
+                <MapPin className="text-emerald-200 flex-shrink-0" size={20} />
                 <div>
-                  <div className="text-sm text-gray-200">Venue</div>
-                  <div className="font-semibold text-xs">Publishing Pavilion, Dubai Production City</div>
+                  <div className="text-xs sm:text-sm text-gray-200">Venue</div>
+                  <div className="font-semibold text-xs sm:text-sm">Publishing Pavilion, Dubai Production City</div>
                 </div>
               </div>
-              <div className="flex items-center gap-3 p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
-                <Users className="text-indigo-200" size={24} />
+              <div className="flex items-center gap-2 sm:gap-3 p-3 sm:p-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20">
+                <Users className="text-indigo-200 flex-shrink-0" size={20} />
                 <div>
-                  <div className="text-sm text-gray-200">Openings</div>
-                  <div className="font-semibold">Multiple Positions</div>
+                  <div className="text-xs sm:text-sm text-gray-200">Openings</div>
+                  <div className="font-semibold text-sm sm:text-base">Multiple Positions</div>
                 </div>
               </div>
             </div>
@@ -166,10 +189,10 @@ export default function DubaiWalkIn() {
                 <Briefcase size={16} />
                 Open Positions
               </div>
-              <h2 className="text-5xl sm:text-6xl font-extrabold text-slate-900 mb-6 tracking-tighter">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-4 sm:mb-6 tracking-tighter">
                 We're Looking For
               </h2>
-              <p className="text-xl text-slate-600 max-w-3xl mx-auto font-medium">
+              <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto font-medium">
                 High-energy sales professionals who can drive growth and build relationships
               </p>
             </div>
@@ -218,10 +241,10 @@ export default function DubaiWalkIn() {
                 <TrendingUp size={16} />
                 Selection Process
               </div>
-              <h2 className="text-5xl sm:text-6xl font-extrabold text-slate-900 mb-6 tracking-tighter">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-4 sm:mb-6 tracking-tighter">
                 How It Works
               </h2>
-              <p className="text-xl text-slate-600 max-w-3xl mx-auto font-medium">
+              <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto font-medium">
                 Simple, fast, and transparent - from registration to final interview in one day
               </p>
             </div>
@@ -260,166 +283,28 @@ export default function DubaiWalkIn() {
                 <UserPlus size={16} />
                 Pre-Register Now
               </div>
-              <h2 className="text-5xl sm:text-6xl font-extrabold text-slate-900 mb-6 tracking-tighter">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-4 sm:mb-6 tracking-tighter">
                 Confirm Your Spot
               </h2>
-              <p className="text-xl text-slate-600 max-w-2xl mx-auto font-medium">
+              <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-2xl mx-auto font-medium">
                 Pre-register to fast-track your interview and skip the queue
               </p>
             </div>
           </AnimatedSection>
 
-          {submitted ? (
-            <AnimatedSection animation="scale">
-              <Card className="border-2 border-green-200 bg-white">
-                <div className="p-12 text-center">
-                  <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-6">
-                    <CheckCircle2 className="text-green-600" size={40} />
-                  </div>
-                  <h3 className="text-3xl font-bold text-slate-900 mb-4">Registration Successful!</h3>
-                  <p className="text-lg text-slate-600 mb-8">
-                    We've received your application. See you at the walk-in drive!
-                  </p>
-                  <div className="space-y-2 text-left max-w-md mx-auto bg-slate-50 p-6 rounded-xl">
-                    <p className="text-sm font-semibold text-slate-900">Walk-In Details:</p>
-                    <p className="text-sm text-slate-700"><strong>Date:</strong> November 23, 2025</p>
-                    <p className="text-sm text-slate-700"><strong>Time:</strong> 10 AM - 5 PM</p>
-                    <p className="text-sm text-slate-700"><strong>Venue:</strong> 413, Publishing Pavilion, Dubai Production City, Dubai, UAE</p>
-                    <p className="text-sm text-slate-700 mt-4"><strong>Don't forget to bring:</strong> Updated CV, Original ID, and this confirmation</p>
-                  </div>
-                </div>
-              </Card>
-            </AnimatedSection>
-          ) : (
-            <AnimatedSection animation="fade-up" delay={100}>
-              <Card className="border-2 border-orange-200 bg-white shadow-2xl">
-                <form onSubmit={handleSubmit} className="p-8 sm:p-12">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <div>
-                      <Label htmlFor="fullName">Full Name *</Label>
-                      <Input
-                        id="fullName"
-                        name="fullName"
-                        value={formData.fullName}
-                        onChange={handleChange}
-                        error={errors.fullName}
-                        placeholder="Enter your full name"
-                      />
-                    </div>
-
-                    <div>
-                      <Label htmlFor="email">Email Address *</Label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        error={errors.email}
-                        placeholder="your.email@example.com"
-                      />
-                    </div>
-
-                    <div>
-                      <Label htmlFor="phone">Phone Number *</Label>
-                      <Input
-                        id="phone"
-                        name="phone"
-                        type="tel"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        error={errors.phone}
-                        placeholder="+971 XX XXX XXXX"
-                      />
-                    </div>
-
-                    <div>
-                      <Label htmlFor="position">Position Applying For *</Label>
-                      <select
-                        id="position"
-                        name="position"
-                        value={formData.position}
-                        onChange={handleChange}
-                        className={`w-full px-4 py-3 rounded-xl border-2 ${
-                          errors.position ? 'border-red-300 bg-red-50' : 'border-slate-200 bg-white'
-                        } focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none transition-all text-slate-900 font-medium`}
-                      >
-                        <option value="">Select a position</option>
-                        {positions.map(pos => (
-                          <option key={pos.id} value={pos.id}>{pos.title}</option>
-                        ))}
-                      </select>
-                      {errors.position && <p className="text-red-600 text-sm mt-1">{errors.position}</p>}
-                    </div>
-                  </div>
-
-                  <div className="mb-6">
-                    <Label htmlFor="experience">Relevant Experience *</Label>
-                    <Textarea
-                      id="experience"
-                      name="experience"
-                      value={formData.experience}
-                      onChange={handleChange}
-                      error={errors.experience}
-                      rows={3}
-                      placeholder="Brief description of your relevant experience..."
-                    />
-                  </div>
-
-                  <div className="mb-6">
-                    <Label htmlFor="resume">Upload Resume (PDF) *</Label>
-                    <div className="relative">
-                      <input
-                        type="file"
-                        id="resume"
-                        name="resume"
-                        accept=".pdf"
-                        onChange={handleChange}
-                        className="hidden"
-                      />
-                      <label
-                        htmlFor="resume"
-                        className={`flex items-center justify-center gap-3 w-full px-6 py-4 rounded-xl border-2 ${
-                          errors.resume ? 'border-red-300 bg-red-50' : 'border-slate-200 bg-white'
-                        } cursor-pointer hover:border-orange-400 hover:bg-orange-50 transition-all`}
-                      >
-                        <ArrowRight size={20} className="text-orange-600" />
-                        <span className="text-slate-700 font-medium">
-                          {fileName || 'Choose file to upload'}
-                        </span>
-                      </label>
-                    </div>
-                    {errors.resume && <p className="text-red-600 text-sm mt-1">{errors.resume}</p>}
-                  </div>
-
-                  <div className="mb-8">
-                    <Label htmlFor="coverNote">Additional Notes (Optional)</Label>
-                    <Textarea
-                      id="coverNote"
-                      name="coverNote"
-                      value={formData.coverNote}
-                      onChange={handleChange}
-                      rows={3}
-                      placeholder="Any additional information you'd like to share..."
-                    />
-                  </div>
-
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 shadow-xl"
-                  >
-                    Pre-Register for Walk-In
-                    <ArrowRight className="ml-2" size={20} />
-                  </Button>
-
-                  <p className="text-sm text-slate-600 mt-6 text-center">
-                    * Registration is optional. You can also walk in directly with your CV.
-                  </p>
-                </form>
-              </Card>
-            </AnimatedSection>
-          )}
+          <AnimatedSection animation="fade-up" delay={100}>
+            <Card className="border-2 border-orange-200 bg-white shadow-2xl">
+              <div className="p-8 sm:p-12">
+                <div 
+                  id="zf_div_Nd5iBx1DHYXNsmCcT0cDv18NwH_OrTNqcZIfRTVKcac"
+                  className="w-full"
+                />
+              </div>
+              <p className="text-sm text-slate-600 pb-8 text-center">
+                * Registration is optional. You can also walk in directly with your CV.
+              </p>
+            </Card>
+          </AnimatedSection>
         </div>
       </section>
 
@@ -427,10 +312,10 @@ export default function DubaiWalkIn() {
       <section className="py-20 px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
         <div className="max-w-4xl mx-auto text-center">
           <AnimatedSection>
-            <h2 className="text-4xl sm:text-5xl font-extrabold mb-6 tracking-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 sm:mb-6 tracking-tight">
               Questions About The Walk-In Drive?
             </h2>
-            <p className="text-xl text-white/80 mb-8 font-medium">
+            <p className="text-base sm:text-lg md:text-xl text-white/80 mb-6 sm:mb-8 font-medium">
               Contact our recruitment team for more information
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

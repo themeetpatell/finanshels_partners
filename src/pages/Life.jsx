@@ -4,7 +4,7 @@ import {
   DollarSign, Heart as HeartPulse, Home, BookOpen, 
   Baby, Laptop, PartyPopper, 
   Dumbbell, Globe, ArrowRight, Award, Clock, Smile,
-  Sparkles, Rocket, Coffee
+  Sparkles, Rocket, Coffee, Check
 } from 'lucide-react'
 import { Button } from '../components/ui/Button'
 import { Card } from '../components/ui/Card'
@@ -121,7 +121,64 @@ export default function Life() {
   ]
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
+      {/* Onboarding Sidebar */}
+      <div className="hidden xl:block fixed right-0 top-1/2 -translate-y-1/2 z-40 w-80">
+        <AnimatedSection animation="fade-left">
+          <Card className="border-2 border-orange-300 shadow-2xl bg-gradient-to-br from-orange-50 to-amber-50 m-4">
+            <div className="p-6">
+              <div className="flex items-center gap-2 mb-4">
+                <Sparkles className="text-orange-600 animate-pulse" size={20} />
+                <div className="text-sm font-extrabold text-orange-700 uppercase">New Joiner?</div>
+              </div>
+              
+              <h3 className="text-xl font-extrabold text-slate-900 mb-3 leading-tight">
+                Preview Our Digital Onboarding
+              </h3>
+              
+              <p className="text-sm text-slate-700 mb-4 leading-relaxed">
+                Experience our interactive onboarding journey with 22 steps, 6 badges, and gamification!
+              </p>
+
+              {/* Mini Preview */}
+              <div className="mb-4 p-3 rounded-lg bg-white border border-orange-200">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="flex-1 h-1.5 bg-slate-200 rounded-full overflow-hidden">
+                    <div className="h-full w-2/3 bg-gradient-to-r from-blue-500 to-cyan-500"></div>
+                  </div>
+                  <div className="text-xs font-bold text-blue-600">67%</div>
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="p-2 rounded-lg bg-gradient-to-br from-red-50 to-pink-50 border border-red-100 text-center">
+                    <div className="text-xl mb-1">❤️</div>
+                    <div className="text-[10px] font-bold text-slate-800">Values</div>
+                  </div>
+                  <div className="p-2 rounded-lg bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200 text-center">
+                    <div className="text-xl mb-1">🏆</div>
+                    <div className="text-[10px] font-bold text-slate-800">Badges</div>
+                  </div>
+                </div>
+              </div>
+
+              <Link to="/onboarding">
+                <Button 
+                  size="sm"
+                  className="w-full bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 text-white font-bold shadow-xl group"
+                >
+                  Start Preview
+                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={16} />
+                </Button>
+              </Link>
+
+              {/* Badge Icon */}
+              <div className="absolute -top-3 -right-3 w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center shadow-xl text-xl ring-2 ring-amber-200 animate-bounce">
+                ✨
+              </div>
+            </div>
+          </Card>
+        </AnimatedSection>
+      </div>
+
       {/* Hero Section */}
       <section className="relative pt-48 pb-40 px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 text-white overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
@@ -508,6 +565,58 @@ export default function Life() {
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={22} />
               </Button>
             </Link>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Mobile Onboarding CTA - Shows on small screens */}
+      <section className="xl:hidden py-20 px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-orange-50 to-amber-50">
+        <div className="max-w-2xl mx-auto">
+          <AnimatedSection>
+            <Card className="border-2 border-orange-300 shadow-2xl bg-gradient-to-br from-white to-orange-50">
+              <div className="p-8">
+                <div className="flex items-center gap-2 mb-4">
+                  <Sparkles className="text-orange-600 animate-pulse" size={24} />
+                  <div className="text-sm font-extrabold text-orange-700 uppercase">New Joiner Experience</div>
+                </div>
+                
+                <h3 className="text-3xl font-extrabold text-slate-900 mb-4 leading-tight">
+                  Experience Our{' '}
+                  <span className="bg-gradient-to-r from-orange-500 to-amber-600 bg-clip-text text-transparent">
+                    World-Class Onboarding
+                  </span>
+                </h3>
+                
+                <p className="text-lg text-slate-700 mb-6 leading-relaxed">
+                  Preview our interactive digital onboarding with 22 steps, 6 badges, and gamification!
+                </p>
+
+                <div className="grid grid-cols-3 gap-3 mb-6">
+                  <div className="text-center p-3 rounded-xl bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-200">
+                    <div className="text-2xl font-extrabold text-blue-600 mb-1">22</div>
+                    <div className="text-xs text-slate-600 font-semibold">Steps</div>
+                  </div>
+                  <div className="text-center p-3 rounded-xl bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200">
+                    <div className="text-2xl font-extrabold text-amber-600 mb-1">6</div>
+                    <div className="text-xs text-slate-600 font-semibold">Badges</div>
+                  </div>
+                  <div className="text-center p-3 rounded-xl bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-200">
+                    <div className="text-2xl font-extrabold text-purple-600 mb-1">30m</div>
+                    <div className="text-xs text-slate-600 font-semibold">Duration</div>
+                  </div>
+                </div>
+
+                <Link to="/onboarding">
+                  <Button 
+                    size="lg"
+                    className="w-full bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 text-white font-bold shadow-xl text-lg group"
+                  >
+                    Preview Onboarding Experience
+                    <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
+                  </Button>
+                </Link>
+              </div>
+            </Card>
           </AnimatedSection>
         </div>
       </section>

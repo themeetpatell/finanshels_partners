@@ -90,35 +90,35 @@ export default function BusinessDevelopment() {
   
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white pt-20">
-      <div className="py-16 px-6 sm:px-8 lg:px-12">
+      <div className="py-12 sm:py-16 px-4 sm:px-6 lg:px-12">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
             {/* Main Content - Left Side */}
             <div className="lg:col-span-2">
           <AnimatedSection animation="fade-up">
-            <Link to="/dubai-walkin" className="inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-700 font-semibold mb-8 group">
-              <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
+            <Link to="/dubai-walkin" className="inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-700 font-semibold mb-6 sm:mb-8 group text-sm sm:text-base">
+              <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
               Back to Dubai Walk-In
             </Link>
 
-            <div className="mb-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-sm font-bold mb-4">
+            <div className="mb-6 sm:mb-8">
+              <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-xs sm:text-sm font-bold mb-3 sm:mb-4">
                 💼 Business Development
               </div>
-              <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 mb-4 tracking-tight">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-4 tracking-tight">
                 Business Development Executive
               </h1>
-              <div className="flex flex-wrap gap-4 text-slate-600 font-medium">
+              <div className="flex flex-wrap gap-3 sm:gap-4 text-slate-600 font-medium text-sm sm:text-base">
                 <div className="flex items-center gap-2">
-                  <MapPin size={18} className="text-indigo-600" />
+                  <MapPin size={16} className="text-indigo-600 flex-shrink-0" />
                   Dubai, UAE
                 </div>
                 <div className="flex items-center gap-2">
-                  <Briefcase size={18} className="text-indigo-600" />
+                  <Briefcase size={16} className="text-indigo-600 flex-shrink-0" />
                   Full-Time
                 </div>
                 <div className="flex items-center gap-2">
-                  <Users size={18} className="text-indigo-600" />
+                  <Users size={16} className="text-indigo-600 flex-shrink-0" />
                   Multiple Openings
                 </div>
               </div>
@@ -127,16 +127,16 @@ export default function BusinessDevelopment() {
 
           <AnimatedSection animation="fade-up" delay={100}>
             <Card className="mb-6 bg-gradient-to-br from-indigo-50 to-purple-50 border-2 border-indigo-200">
-              <div className="p-8">
-                <div className="flex items-center gap-3 mb-4">
-                  <Calendar className="text-indigo-600" size={28} />
-                  <h3 className="text-2xl font-bold text-slate-900">Walk-In Details</h3>
+              <div className="p-4 sm:p-6 md:p-8">
+                <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                  <Calendar className="text-indigo-600 flex-shrink-0" size={24} />
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-900">Walk-In Details</h3>
                 </div>
-                <div className="space-y-2 text-slate-700 font-medium">
+                <div className="space-y-2 text-slate-700 font-medium text-sm sm:text-base">
                   <p><strong>Date:</strong> November 23, 2025 (Saturday)</p>
                   <p><strong>Time:</strong> 10:00 AM - 5:00 PM</p>
-                  <p><strong>Venue:</strong> 413, Publishing Pavilion, Dubai Production City, Dubai, UAE</p>
-                  <p className="text-indigo-600 font-bold mt-4">Walk in with your CV and meet our team!</p>
+                  <p className="break-words"><strong>Venue:</strong> 413, Publishing Pavilion, Dubai Production City, Dubai, UAE</p>
+                  <p className="text-indigo-600 font-bold mt-3 sm:mt-4">Walk in with your CV and meet our team!</p>
                 </div>
               </div>
             </Card>
@@ -144,12 +144,12 @@ export default function BusinessDevelopment() {
 
           <AnimatedSection animation="fade-up" delay={200}>
             <Card className="mb-6">
-              <div className="p-8">
-                <h2 className="text-2xl font-bold text-slate-900 mb-4">About the Role</h2>
-                <p className="text-slate-700 leading-relaxed mb-4">
+              <div className="p-4 sm:p-6 md:p-8">
+                <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3 sm:mb-4">About the Role</h2>
+                <p className="text-sm sm:text-base text-slate-700 leading-relaxed mb-3 sm:mb-4">
                   We're seeking dynamic Business Development Executives to drive growth and build lasting relationships with startups and SMBs across the MENA region. You'll be responsible for understanding client needs, presenting solutions, and closing deals that drive mutual success.
                 </p>
-                <p className="text-slate-700 leading-relaxed">
+                <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
                   This role is perfect for relationship builders who can understand complex business challenges and position our fintech solutions to solve them. You'll work closely with our product and customer success teams to ensure client satisfaction.
                 </p>
               </div>
@@ -158,39 +158,39 @@ export default function BusinessDevelopment() {
 
           <AnimatedSection animation="fade-up" delay={300}>
             <Card className="mb-6">
-              <div className="p-8">
-                <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-                  <Target className="text-indigo-600" size={28} />
+              <div className="p-4 sm:p-6 md:p-8">
+                <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 sm:mb-6 flex items-center gap-2">
+                  <Target className="text-indigo-600 flex-shrink-0" size={24} />
                   Key Responsibilities
                 </h2>
-                <ul className="space-y-4">
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="text-green-600 flex-shrink-0 mt-1" size={20} />
-                    <span className="text-slate-700">Build and maintain relationships with key decision-makers at startups and SMBs</span>
+                <ul className="space-y-3 sm:space-y-4">
+                  <li className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircle className="text-green-600 flex-shrink-0 mt-1" size={18} />
+                    <span className="text-sm sm:text-base text-slate-700">Build and maintain relationships with key decision-makers at startups and SMBs</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="text-green-600 flex-shrink-0 mt-1" size={20} />
-                    <span className="text-slate-700">Conduct product demonstrations and present Finanshels' value proposition</span>
+                  <li className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircle className="text-green-600 flex-shrink-0 mt-1" size={18} />
+                    <span className="text-sm sm:text-base text-slate-700">Conduct product demonstrations and present Finanshels' value proposition</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="text-green-600 flex-shrink-0 mt-1" size={20} />
-                    <span className="text-slate-700">Understand client business needs and recommend appropriate solutions</span>
+                  <li className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircle className="text-green-600 flex-shrink-0 mt-1" size={18} />
+                    <span className="text-sm sm:text-base text-slate-700">Understand client business needs and recommend appropriate solutions</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="text-green-600 flex-shrink-0 mt-1" size={20} />
-                    <span className="text-slate-700">Negotiate contracts and close deals to achieve sales targets</span>
+                  <li className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircle className="text-green-600 flex-shrink-0 mt-1" size={18} />
+                    <span className="text-sm sm:text-base text-slate-700">Negotiate contracts and close deals to achieve sales targets</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="text-green-600 flex-shrink-0 mt-1" size={20} />
-                    <span className="text-slate-700">Manage the full sales cycle from qualification to closing</span>
+                  <li className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircle className="text-green-600 flex-shrink-0 mt-1" size={18} />
+                    <span className="text-sm sm:text-base text-slate-700">Manage the full sales cycle from qualification to closing</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="text-green-600 flex-shrink-0 mt-1" size={20} />
-                    <span className="text-slate-700">Collaborate with marketing and product teams for aligned messaging</span>
+                  <li className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircle className="text-green-600 flex-shrink-0 mt-1" size={18} />
+                    <span className="text-sm sm:text-base text-slate-700">Collaborate with marketing and product teams for aligned messaging</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="text-green-600 flex-shrink-0 mt-1" size={20} />
-                    <span className="text-slate-700">Maintain accurate records in CRM and provide regular sales forecasts</span>
+                  <li className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircle className="text-green-600 flex-shrink-0 mt-1" size={18} />
+                    <span className="text-sm sm:text-base text-slate-700">Maintain accurate records in CRM and provide regular sales forecasts</span>
                   </li>
                 </ul>
               </div>
@@ -199,32 +199,32 @@ export default function BusinessDevelopment() {
 
           <AnimatedSection animation="fade-up" delay={400}>
             <Card className="mb-6">
-              <div className="p-8">
-                <h2 className="text-2xl font-bold text-slate-900 mb-6">Required Qualifications</h2>
-                <ul className="space-y-4">
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="text-indigo-600 flex-shrink-0 mt-1" size={20} />
-                    <span className="text-slate-700">2-4 years of experience in B2B sales or business development</span>
+              <div className="p-4 sm:p-6 md:p-8">
+                <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 sm:mb-6">Required Qualifications</h2>
+                <ul className="space-y-3 sm:space-y-4">
+                  <li className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircle className="text-indigo-600 flex-shrink-0 mt-1" size={18} />
+                    <span className="text-sm sm:text-base text-slate-700">2-4 years of experience in B2B sales or business development</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="text-indigo-600 flex-shrink-0 mt-1" size={20} />
-                    <span className="text-slate-700">Proven track record of closing deals and meeting/exceeding targets</span>
+                  <li className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircle className="text-indigo-600 flex-shrink-0 mt-1" size={18} />
+                    <span className="text-sm sm:text-base text-slate-700">Proven track record of closing deals and meeting/exceeding targets</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="text-indigo-600 flex-shrink-0 mt-1" size={20} />
-                    <span className="text-slate-700">Strong presentation and negotiation skills</span>
+                  <li className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircle className="text-indigo-600 flex-shrink-0 mt-1" size={18} />
+                    <span className="text-sm sm:text-base text-slate-700">Strong presentation and negotiation skills</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="text-indigo-600 flex-shrink-0 mt-1" size={20} />
-                    <span className="text-slate-700">Excellent relationship-building abilities</span>
+                  <li className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircle className="text-indigo-600 flex-shrink-0 mt-1" size={18} />
+                    <span className="text-sm sm:text-base text-slate-700">Excellent relationship-building abilities</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="text-indigo-600 flex-shrink-0 mt-1" size={20} />
-                    <span className="text-slate-700">Experience with CRM tools and sales processes</span>
+                  <li className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircle className="text-indigo-600 flex-shrink-0 mt-1" size={18} />
+                    <span className="text-sm sm:text-base text-slate-700">Experience with CRM tools and sales processes</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="text-indigo-600 flex-shrink-0 mt-1" size={20} />
-                    <span className="text-slate-700">Bachelor's degree in Business, Marketing, or related field</span>
+                  <li className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircle className="text-indigo-600 flex-shrink-0 mt-1" size={18} />
+                    <span className="text-sm sm:text-base text-slate-700">Bachelor's degree in Business, Marketing, or related field</span>
                   </li>
                 </ul>
               </div>
@@ -233,24 +233,24 @@ export default function BusinessDevelopment() {
 
           <AnimatedSection animation="fade-up" delay={500}>
             <Card className="mb-6">
-              <div className="p-8">
-                <h2 className="text-2xl font-bold text-slate-900 mb-6">Preferred Skills</h2>
-                <ul className="space-y-4">
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="text-blue-600 flex-shrink-0 mt-1" size={20} />
-                    <span className="text-slate-700">Experience in fintech or B2B SaaS sales</span>
+              <div className="p-4 sm:p-6 md:p-8">
+                <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 sm:mb-6">Preferred Skills</h2>
+                <ul className="space-y-3 sm:space-y-4">
+                  <li className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircle className="text-blue-600 flex-shrink-0 mt-1" size={18} />
+                    <span className="text-sm sm:text-base text-slate-700">Experience in fintech or B2B SaaS sales</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="text-blue-600 flex-shrink-0 mt-1" size={20} />
-                    <span className="text-slate-700">Understanding of financial services and accounting</span>
+                  <li className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircle className="text-blue-600 flex-shrink-0 mt-1" size={18} />
+                    <span className="text-sm sm:text-base text-slate-700">Understanding of financial services and accounting</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="text-blue-600 flex-shrink-0 mt-1" size={20} />
-                    <span className="text-slate-700">Knowledge of the MENA startup ecosystem</span>
+                  <li className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircle className="text-blue-600 flex-shrink-0 mt-1" size={18} />
+                    <span className="text-sm sm:text-base text-slate-700">Knowledge of the MENA startup ecosystem</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="text-blue-600 flex-shrink-0 mt-1" size={20} />
-                    <span className="text-slate-700">Multilingual abilities (Arabic is a plus)</span>
+                  <li className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircle className="text-blue-600 flex-shrink-0 mt-1" size={18} />
+                    <span className="text-sm sm:text-base text-slate-700">Multilingual abilities (Arabic is a plus)</span>
                   </li>
                 </ul>
               </div>
@@ -258,29 +258,29 @@ export default function BusinessDevelopment() {
           </AnimatedSection>
 
           <AnimatedSection animation="fade-up" delay={600}>
-            <Card className="mb-8">
-              <div className="p-8">
-                <h2 className="text-2xl font-bold text-slate-900 mb-6">What We Offer</h2>
-                <ul className="space-y-4">
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="text-green-600 flex-shrink-0 mt-1" size={20} />
-                    <span className="text-slate-700">Competitive base salary + attractive commission structure</span>
+            <Card className="mb-6 sm:mb-8">
+              <div className="p-4 sm:p-6 md:p-8">
+                <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 sm:mb-6">What We Offer</h2>
+                <ul className="space-y-3 sm:space-y-4">
+                  <li className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircle className="text-green-600 flex-shrink-0 mt-1" size={18} />
+                    <span className="text-sm sm:text-base text-slate-700">Competitive base salary + attractive commission structure</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="text-green-600 flex-shrink-0 mt-1" size={20} />
-                    <span className="text-slate-700">Health insurance and visa sponsorship</span>
+                  <li className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircle className="text-green-600 flex-shrink-0 mt-1" size={18} />
+                    <span className="text-sm sm:text-base text-slate-700">Health insurance and visa sponsorship</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="text-green-600 flex-shrink-0 mt-1" size={20} />
-                    <span className="text-slate-700">Professional development and career growth opportunities</span>
+                  <li className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircle className="text-green-600 flex-shrink-0 mt-1" size={18} />
+                    <span className="text-sm sm:text-base text-slate-700">Professional development and career growth opportunities</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="text-green-600 flex-shrink-0 mt-1" size={20} />
-                    <span className="text-slate-700">Work with a fast-growing fintech backed by MBRIF and in5 Tech</span>
+                  <li className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircle className="text-green-600 flex-shrink-0 mt-1" size={18} />
+                    <span className="text-sm sm:text-base text-slate-700">Work with a fast-growing fintech backed by MBRIF and in5 Tech</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="text-green-600 flex-shrink-0 mt-1" size={20} />
-                    <span className="text-slate-700">Collaborative team environment in Dubai</span>
+                  <li className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircle className="text-green-600 flex-shrink-0 mt-1" size={18} />
+                    <span className="text-sm sm:text-base text-slate-700">Collaborative team environment in Dubai</span>
                   </li>
                 </ul>
               </div>
@@ -291,12 +291,12 @@ export default function BusinessDevelopment() {
             {/* Sidebar Form - Right Side */}
             <div className="lg:col-span-1">
               <AnimatedSection>
-                <div className="sticky top-24">
+                <div className="lg:sticky lg:top-24">
                   <Card className="shadow-xl bg-white overflow-hidden">
-                    <div className="bg-gradient-to-r from-indigo-600 to-purple-600 p-6 text-white">
-                      <FileText className="mb-2" size={28} />
-                      <h3 className="text-2xl font-bold mb-1">Apply Now</h3>
-                      <p className="text-indigo-50 text-sm">Join our business development team</p>
+                    <div className="bg-gradient-to-r from-indigo-600 to-purple-600 p-4 sm:p-6 text-white">
+                      <FileText className="mb-2" size={24} />
+                      <h3 className="text-xl sm:text-2xl font-bold mb-1">Apply Now</h3>
+                      <p className="text-indigo-50 text-xs sm:text-sm">Join our business development team</p>
                     </div>
                     
                     <div 
@@ -313,4 +313,3 @@ export default function BusinessDevelopment() {
     </div>
   )
 }
-

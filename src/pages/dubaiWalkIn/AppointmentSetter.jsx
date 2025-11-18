@@ -90,35 +90,35 @@ export default function AppointmentSetter() {
   
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white pt-20">
-      <div className="py-16 px-6 sm:px-8 lg:px-12">
+      <div className="py-12 sm:py-16 px-4 sm:px-6 lg:px-12">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
             {/* Main Content - Left Side */}
             <div className="lg:col-span-2">
           <AnimatedSection animation="fade-up">
-                <Link to="/dubai-walkin" className="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-semibold mb-8 group">
-                  <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
+                <Link to="/dubai-walkin" className="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-semibold mb-6 sm:mb-8 group text-sm sm:text-base">
+                  <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
                   Back to Dubai Walk-In
                 </Link>
 
-                <div className="mb-8">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-sm font-bold mb-4">
+                <div className="mb-6 sm:mb-8">
+                  <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-xs sm:text-sm font-bold mb-3 sm:mb-4">
                     📞 Sales Support
                   </div>
-                  <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 mb-4 tracking-tight">
+                  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-4 tracking-tight">
                     Appointment Setter
                   </h1>
-                  <div className="flex flex-wrap gap-4 text-slate-600 font-medium">
+                  <div className="flex flex-wrap gap-3 sm:gap-4 text-slate-600 font-medium text-sm sm:text-base">
                     <div className="flex items-center gap-2">
-                      <MapPin size={18} className="text-emerald-600" />
+                      <MapPin size={16} className="text-emerald-600 flex-shrink-0" />
                       Dubai, UAE
                     </div>
                     <div className="flex items-center gap-2">
-                      <Briefcase size={18} className="text-emerald-600" />
+                      <Briefcase size={16} className="text-emerald-600 flex-shrink-0" />
                       Full-Time
                     </div>
                     <div className="flex items-center gap-2">
-                      <Users size={18} className="text-emerald-600" />
+                      <Users size={16} className="text-emerald-600 flex-shrink-0" />
                       Multiple Openings
                     </div>
                   </div>
@@ -127,16 +127,16 @@ export default function AppointmentSetter() {
 
           <AnimatedSection animation="fade-up" delay={100}>
             <Card className="mb-6 bg-gradient-to-br from-emerald-50 to-teal-50 border-2 border-emerald-200">
-              <div className="p-8">
-                <div className="flex items-center gap-3 mb-4">
-                  <Calendar className="text-emerald-600" size={28} />
-                  <h3 className="text-2xl font-bold text-slate-900">Walk-In Details</h3>
+              <div className="p-4 sm:p-6 md:p-8">
+                <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                  <Calendar className="text-emerald-600 flex-shrink-0" size={24} />
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-900">Walk-In Details</h3>
                 </div>
-                <div className="space-y-2 text-slate-700 font-medium">
+                <div className="space-y-2 text-slate-700 font-medium text-sm sm:text-base">
                   <p><strong>Date:</strong> November 23, 2025 (Saturday)</p>
                   <p><strong>Time:</strong> 10:00 AM - 5:00 PM</p>
-                  <p><strong>Venue:</strong> 413, Publishing Pavilion, Dubai Production City, Dubai, UAE</p>
-                  <p className="text-emerald-600 font-bold mt-4">Walk in with your CV and meet our team!</p>
+                  <p className="break-words"><strong>Venue:</strong> 413, Publishing Pavilion, Dubai Production City, Dubai, UAE</p>
+                  <p className="text-emerald-600 font-bold mt-3 sm:mt-4">Walk in with your CV and meet our team!</p>
                 </div>
               </div>
             </Card>
@@ -144,12 +144,12 @@ export default function AppointmentSetter() {
 
           <AnimatedSection animation="fade-up" delay={200}>
             <Card className="mb-6">
-              <div className="p-8">
-                <h2 className="text-2xl font-bold text-slate-900 mb-4">About the Role</h2>
-                <p className="text-slate-700 leading-relaxed mb-4">
+              <div className="p-4 sm:p-6 md:p-8">
+                <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3 sm:mb-4">About the Role</h2>
+                <p className="text-sm sm:text-base text-slate-700 leading-relaxed mb-3 sm:mb-4">
                   We're looking for enthusiastic Appointment Setters to join our sales team in Dubai. You'll be the first point of contact for potential clients, responsible for qualifying leads and booking meetings for our business development team.
                 </p>
-                <p className="text-slate-700 leading-relaxed">
+                <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
                   This is an excellent entry-level role for individuals who are passionate about sales and want to build a career in the fintech industry. You'll receive comprehensive training and have clear growth opportunities.
                 </p>
               </div>
@@ -158,15 +158,15 @@ export default function AppointmentSetter() {
 
           <AnimatedSection animation="fade-up" delay={300}>
             <Card className="mb-6">
-              <div className="p-8">
-                <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-                  <Target className="text-emerald-600" size={28} />
+              <div className="p-4 sm:p-6 md:p-8">
+                <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 sm:mb-6 flex items-center gap-2">
+                  <Target className="text-emerald-600 flex-shrink-0" size={24} />
                   Key Responsibilities
                 </h2>
-                <ul className="space-y-4">
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="text-green-600 flex-shrink-0 mt-1" size={20} />
-                    <span className="text-slate-700">Make outbound calls to potential clients from provided lead lists</span>
+                <ul className="space-y-3 sm:space-y-4">
+                  <li className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircle className="text-green-600 flex-shrink-0 mt-1" size={18} />
+                    <span className="text-sm sm:text-base text-slate-700">Make outbound calls to potential clients from provided lead lists</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="text-green-600 flex-shrink-0 mt-1" size={20} />
@@ -309,10 +309,10 @@ export default function AppointmentSetter() {
               <AnimatedSection>
                 <div className="sticky top-24">
                   <Card className="shadow-xl bg-white overflow-hidden">
-                    <div className="bg-gradient-to-r from-emerald-600 to-teal-600 p-6 text-white">
-                      <FileText className="mb-2" size={28} />
-                      <h3 className="text-2xl font-bold mb-1">Apply Now</h3>
-                      <p className="text-emerald-50 text-sm">Join our sales team</p>
+                    <div className="bg-gradient-to-r from-emerald-600 to-teal-600 p-4 sm:p-6 text-white">
+                      <FileText className="mb-2" size={24} />
+                      <h3 className="text-xl sm:text-2xl font-bold mb-1">Apply Now</h3>
+                      <p className="text-emerald-50 text-xs sm:text-sm">Join our sales team</p>
                     </div>
                     
                     <div 
