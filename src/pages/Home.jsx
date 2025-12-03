@@ -1,720 +1,346 @@
-import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Users, MapPin, Zap, Star, Award, TrendingUp, Target, Sparkles, Building, CheckCircle, Calendar, Clock, CheckCircle2, Briefcase } from 'lucide-react'
-import { Button } from '../components/ui/Button'
-import { Card } from '../components/ui/Card'
-import StatCard from '../components/StatCard'
-import TeamCard from '../components/TeamCard'
-import TestimonialCard from '../components/TestimonialCard'
-import LeadershipCard from '../components/LeadershipCard'
-import AnimatedSection from '../components/AnimatedSection'
-import FloatingCard from '../components/FloatingCard'
-import AnimatedCounter from '../components/AnimatedCounter'
-import { TEAMS } from '../data/jobs'
-import { LEADERSHIP_TEAM, TESTIMONIALS, COMPANY_VALUES } from '../data/team'
+import { ArrowRight, Globe2, HeartHandshake, LineChart, Rocket, ShieldCheck, Sparkles, Users, Gauge } from 'lucide-react'
+
+const partnerTypes = [
+  {
+    title: 'Referral partners',
+    description: 'Consultants, creators, and connectors who introduce UAE businesses that need finance, tax, or audit help.',
+    badge: 'Earn up to AED 1500 / 40%',
+    highlights: ['Shared OKRs in week 1', 'Live attribution + payouts', 'Scripts and follow-ups ready'],
+  },
+  {
+    title: 'Channel partners',
+    description: 'Companies that bundle Finanshels or co-sell 10–50 qualified leads per quarter with agreed governance.',
+    badge: 'Co-sell & resale',
+    highlights: ['Revenue share or wholesale', 'Named pod and SLA visibility', 'Quarterly business reviews'],
+  },
+  {
+    title: 'Strategic alliances',
+    description: 'Tech or marketing alliances that activate 50+ qualified leads a quarter and want co-marketing + product hooks.',
+    badge: 'Founder backed',
+    highlights: ['Founder sponsor', 'Co-built offers and roadmaps', 'Joint campaigns that can scale'],
+  },
+]
+
+const proofPoints = [
+  { label: 'Clients supported', value: '5,000+', detail: 'SMBs and venture-backed across MENA' },
+  { label: 'Response time', value: '<24h', detail: 'Partner desk updates and decisions' },
+  { label: 'Go-live speed', value: '<10 days', detail: 'From intro to live finance pod' },
+  { label: 'Retention', value: '97%', detail: 'We keep the clients you send' },
+]
+
+const motions = [
+  { title: 'Alignment', detail: 'ICP, messaging, and approval paths locked in. No vague intros.', icon: Sparkles },
+  { title: 'Offer & enablement', detail: 'Referral, co-sell, or embedded pricing + scripts tailored to your audience.', icon: HeartHandshake },
+  { title: 'Launch', detail: 'Campaigns, events, and sales motions go live with named owners.', icon: Rocket },
+  { title: 'Review & evolve', detail: 'Pipeline, ARR, and NPS tracked with a QBR cadence.', icon: Gauge },
+]
+
+const valueProps = [
+  { title: 'Week 1: shared plan', description: 'OKRs, ICP, and owners documented so every intro is qualified and trackable.', icon: Gauge },
+  { title: 'Enablement that ships', description: 'Approved scripts, one-pagers, and email flows ready for your channels.', icon: LineChart },
+  { title: 'Compliance-grade delivery', description: 'Finance, tax, audit, AML, and strike-off handled locally in the UAE.', icon: Globe2 },
+  { title: 'Leadership access', description: 'Founders join strategic reviews to unblock decisions fast.', icon: ShieldCheck },
+]
+
+const referralSteps = [
+  { title: 'Apply', detail: 'Join the referral desk and get paired with your partnership lead.', icon: Sparkles },
+  { title: 'Share intros', detail: 'Pass UAE businesses that need bookkeeping, VAT, corporate tax, or audits.', icon: HeartHandshake },
+  { title: 'Track & earn', detail: 'See stage-by-stage attribution and earn up to AED 1,500 or 40% per deal.', icon: Rocket },
+]
+
+const referralExtras = [
+  'Live tracker with payout dates, not spreadsheets',
+  '4.9★ on Trustpilot with 700+ happy clients—easy social proof',
+  'Experiences for annual/quarterly milestones (safari, Burj Khalifa, yacht)',
+  'Visibility perks like investor dinners and podcast features',
+]
+
+const commitments = [
+  'Shared OKRs and ICP alignment in week one.',
+  'Partner-branded playbook for your motion: referral, co-sell, or embedded.',
+  'Live attribution plus payout schedule—no opaque spreadsheets.',
+  'Executive sponsorship for strategic partners and QBRs with ARR + NPS.',
+]
 
 export default function Home() {
-
-  useEffect(() => {
-    const container = document.getElementById("zf_div_jQBxaOyXvB5vbVEwHYzgDthNbYVadDVpRDKRFkkD_Mo")
-    
-    if (container && container.querySelector('iframe')) {
-      return
-    }
-    
-    const loadForm = () => {
-      try {
-        const iframe = document.createElement("iframe")
-        const ifrmSrc = 'https://forms.zohopublic.com/finanshelsllc/form/GetYourFriendAJob/formperma/jQBxaOyXvB5vbVEwHYzgDthNbYVadDVpRDKRFkkD_Mo?zf_rszfm=1'
-        
-        iframe.src = ifrmSrc
-        iframe.style.border = "none"
-        iframe.style.height = "758px"
-        iframe.style.width = "100%"
-        iframe.style.transition = "all 0.5s ease"
-        iframe.setAttribute("aria-label", 'Get Your Friend A Job')
-        
-        const container = document.getElementById("zf_div_jQBxaOyXvB5vbVEwHYzgDthNbYVadDVpRDKRFkkD_Mo")
-        if (container) {
-          container.innerHTML = ''
-          container.appendChild(iframe)
-        }
-        
-        const handleMessage = (event) => {
-          const evntData = event.data
-          if (evntData && evntData.constructor === String) {
-            const zf_ifrm_data = evntData.split("|")
-            if (zf_ifrm_data.length === 2 || zf_ifrm_data.length === 3) {
-              const zf_perma = zf_ifrm_data[0]
-              const zf_ifrm_ht_nw = (parseInt(zf_ifrm_data[1], 10) + 15) + "px"
-              const container = document.getElementById("zf_div_jQBxaOyXvB5vbVEwHYzgDthNbYVadDVpRDKRFkkD_Mo")
-              if (container) {
-                const iframe = container.getElementsByTagName("iframe")[0]
-                if (iframe && iframe.src.indexOf('formperma') > 0 && iframe.src.indexOf(zf_perma) > 0) {
-                  const prevIframeHeight = iframe.style.height
-                  if (prevIframeHeight !== zf_ifrm_ht_nw) {
-                    iframe.style.height = zf_ifrm_ht_nw
-                  }
-                }
-              }
-            }
-          }
-        }
-        
-        window.addEventListener('message', handleMessage)
-        
-        return () => {
-          window.removeEventListener('message', handleMessage)
-        }
-      } catch(e) {
-        console.error('Error loading Zoho form:', e)
-      }
-    }
-    
-    const cleanup = loadForm()
-    
-    return () => {
-      if (cleanup) cleanup()
-      const container = document.getElementById("zf_div_jQBxaOyXvB5vbVEwHYzgDthNbYVadDVpRDKRFkkD_Mo")
-      if (container) {
-        container.innerHTML = ''
-      }
-    }
-  }, [])
-
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative pt-40 pb-12 px-6 sm:px-8 lg:px-12 bg-white overflow-hidden">
-        {/* Grid pattern background */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] pointer-events-none"></div>
-        
-        {/* Gradient orbs */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-indigo-400/30 to-purple-400/30 rounded-full blur-3xl animate-float"></div>
-          <div className="absolute top-20 right-1/4 w-96 h-96 bg-gradient-to-br from-purple-400/30 to-pink-400/30 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="max-w-5xl mx-auto text-center">
-            <AnimatedSection animation="fade-down">
-              <div className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-white border border-slate-200 text-sm font-semibold text-slate-700 mb-10 shadow-sm hover:shadow-md transition-all hover:border-slate-300">
-                <span className="relative flex h-2.5 w-2.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
-                </span>
-                We're hiring across all teams
+    <div className="space-y-20 pb-24">
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(56,189,248,0.12),transparent_35%),radial-gradient(circle_at_80%_10%,rgba(167,139,250,0.1),transparent_40%),radial-gradient(circle_at_50%_80%,rgba(59,130,246,0.08),transparent_35%)]" />
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-20">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur text-sm font-semibold text-cyan-200">
+                Partnership desk — decisions in under a week
               </div>
-            </AnimatedSection>
-            
-            <AnimatedSection animation="fade-up" delay={100}>
-              <h1 className="text-6xl sm:text-7xl lg:text-8xl font-extrabold text-slate-900 mb-8 tracking-tighter leading-[0.95]">
-                Build the finance<br/>
-                engine for the{' '}
-                <span className="relative inline-block">
-                  <span className="absolute inset-0 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 blur-2xl opacity-30"></span>
-                  <span className="relative bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                    Business world
-                  </span>
-                </span>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white tracking-tight">
+                Send the intro. We deliver revenue, compliance confidence, and happy clients.
               </h1>
-            </AnimatedSection>
-            
-            <AnimatedSection animation="fade-up" delay={200}>
-              <p className="text-xl sm:text-2xl text-slate-600 mb-14 max-w-3xl mx-auto leading-relaxed font-medium">
-                Join Finanshels and help <span className="text-slate-900 font-semibold">2M+ startups</span> across MENA automate their financial operations.{' '}
-                <span className="text-slate-900 font-semibold">Move fast. Build for founders. Ship excellence.</span>
+              <p className="text-lg text-slate-300 leading-relaxed">
+                We run finance, tax, audit, and compliance for UAE companies. Partners get a documented plan, transparent attribution, and the confidence that every client you send is handled by operators who move fast.
               </p>
-            </AnimatedSection>
-
-            <AnimatedSection animation="scale" delay={300}>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
-                <Link to="/jobs">
-                  <Button size="lg" variant="primary" className="group w-full sm:w-auto text-lg h-14 px-10 shadow-2xl shadow-indigo-500/30 hover:shadow-indigo-500/50">
-                    See open roles
-                    <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={22} />
-                  </Button>
+              <div className="flex flex-wrap gap-4">
+                <Link
+                  to="/partnerships"
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-500 text-slate-950 font-semibold shadow-lg shadow-indigo-500/20 hover:scale-[1.02] transition-transform"
+                >
+                  Explore programs <ArrowRight size={18} />
                 </Link>
-                <Link to="/life">
-                  <Button size="lg" variant="outline" className="w-full sm:w-auto text-lg h-14 px-10 hover:bg-white hover:text-indigo-600 border-2">
-                    Life at Finanshels
-                  </Button>
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-white/20 text-white font-semibold hover:bg-white/5 transition-all"
+                >
+                  Talk to partnerships
                 </Link>
               </div>
-            </AnimatedSection>
+              <div className="flex flex-wrap items-center gap-6 pt-4 text-sm text-slate-300">
+                <div className="flex items-center gap-2">
+                  <ShieldCheck size={18} className="text-cyan-400" />
+                  <span>Compliance-grade delivery</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <HeartHandshake size={18} className="text-indigo-400" />
+                  <span>Partner-first governance</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Globe2 size={18} className="text-purple-400" />
+                  <span>Built for MENA, globally aligned</span>
+                </div>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="absolute inset-0 blur-3xl bg-gradient-to-br from-cyan-500/10 via-indigo-500/10 to-purple-600/10" />
+              <div className="relative rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-8 shadow-2xl shadow-indigo-900/30">
+                <div className="flex items-center gap-3 pb-4 border-b border-white/10">
+                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center text-slate-950 font-bold">
+                    FP
+                  </div>
+                  <div>
+                    <p className="text-sm text-slate-300">Outcome commitments</p>
+                    <p className="text-lg font-semibold text-white">What partners can hold us to</p>
+                  </div>
+                </div>
+                <ul className="space-y-3 pt-4">
+                  {commitments.map((item) => (
+                    <li key={item} className="flex gap-3 text-slate-200">
+                      <ArrowRight size={16} className="text-cyan-300 mt-1 flex-shrink-0" />
+                      <span className="leading-relaxed">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="grid grid-cols-2 gap-4 pt-6">
+                  {proofPoints.map((item) => (
+                    <div key={item.label} className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                      <p className="text-xs uppercase tracking-wide text-slate-400 font-semibold">{item.label}</p>
+                      <p className="text-2xl font-bold text-white mt-2">{item.value}</p>
+                      <p className="text-sm text-slate-300">{item.detail}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-
-      {/* Company Metrics Section */}
-      <section className="py-16 px-6 sm:px-8 lg:px-12 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <AnimatedSection>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-50 border border-indigo-100 text-sm font-bold text-indigo-700 mb-6">
-                <Sparkles size={16} />
-                Trusted by Thousands
-              </div>
-            </AnimatedSection>
-            <AnimatedSection delay={100}>
-              <h2 className="text-5xl sm:text-6xl font-extrabold text-slate-900 mb-6 tracking-tighter">
-                Building the Future of{' '}
-                <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                  MENA Fintech
-                </span>
-              </h2>
-            </AnimatedSection>
-            <AnimatedSection delay={200}>
-              <p className="text-2xl text-slate-600 max-w-3xl mx-auto font-medium">
-                A rapidly growing Accounting and Fintech company backed by <span className="text-slate-900 font-bold">top investors</span> and trusted by thousands
+      <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="rounded-3xl border border-white/10 bg-gradient-to-r from-white/5 via-white/10 to-white/5 p-8 shadow-2xl shadow-slate-900/40">
+          <div className="flex items-center justify-between gap-6 flex-wrap">
+            <div>
+              <p className="text-sm font-semibold text-cyan-200 uppercase tracking-[0.2em]">Signals we won&apos;t drop your intro</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2">Proof you can share with clients and leadership.</h2>
+              <p className="text-slate-300 leading-relaxed mt-2">
+                Give your client confidence. We already run finance, tax, audit, AML, and strike-off for thousands across MENA. You get transparent numbers and fast answers.
               </p>
-            </AnimatedSection>
+            </div>
           </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            <AnimatedSection animation="fade-up" delay={0}>
-              <FloatingCard>
-                <Card className="h-full hover:shadow-2xl transition-all duration-500 border-2 border-slate-100 hover:border-indigo-200 bg-gradient-to-br from-white to-indigo-50/30">
-                  <div className="p-6 text-center">
-                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 mb-3 shadow-lg">
-                      <Users className="text-white" size={24} />
-                    </div>
-                    <div className="text-4xl font-extrabold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-2">
-                      <AnimatedCounter end={135} duration={2000} />+
-                    </div>
-                    <div className="text-slate-700 font-bold text-sm">Team Members</div>
-                  </div>
-                </Card>
-              </FloatingCard>
-            </AnimatedSection>
-            
-            <AnimatedSection animation="fade-up" delay={100}>
-              <FloatingCard>
-                <Card className="h-full hover:shadow-2xl transition-all duration-500 border-2 border-slate-100 hover:border-purple-200 bg-gradient-to-br from-white to-purple-50/30">
-                  <div className="p-6 text-center">
-                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-pink-600 mb-3 shadow-lg">
-                      <Building className="text-white" size={24} />
-                    </div>
-                    <div className="text-4xl font-extrabold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
-                      <AnimatedCounter end={5000} duration={2000} />+
-                    </div>
-                    <div className="text-slate-700 font-bold text-sm">Active Clients</div>
-                  </div>
-                </Card>
-              </FloatingCard>
-            </AnimatedSection>
-            
-            <AnimatedSection animation="fade-up" delay={200}>
-              <FloatingCard>
-                <Card className="h-full hover:shadow-2xl transition-all duration-500 border-2 border-slate-100 hover:border-pink-200 bg-gradient-to-br from-white to-pink-50/30">
-                  <div className="p-6 text-center">
-                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-pink-500 to-indigo-600 mb-3 shadow-lg">
-                      <Star className="text-white" size={24} />
-                    </div>
-                    <div className="text-4xl font-extrabold bg-gradient-to-r from-pink-600 to-indigo-600 bg-clip-text text-transparent mb-2">
-                      4.9<span className="text-3xl">/5</span>
-                    </div>
-                    <div className="text-slate-700 font-bold text-sm">Client Rating</div>
-                  </div>
-                </Card>
-              </FloatingCard>
-            </AnimatedSection>
-          </div>
-
-          {/* Backed By Section */}
-          <div className="mt-16">
-            <AnimatedSection>
-              <div className="bg-gradient-to-br from-slate-50 to-white rounded-2xl border border-slate-200 p-8 shadow-md">
-                <div className="text-center">
-                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-xs font-bold text-slate-700 mb-6">
-                    <Award size={14} className="text-indigo-600" />
-                    Backed by leading investors
-                  </div>
-                  <div className="flex flex-wrap items-center justify-center gap-12 md:gap-16">
-                    <div className="group cursor-pointer">
-                      <div className="text-2xl md:text-3xl font-black text-slate-300 group-hover:text-slate-900 transition-all duration-300 group-hover:scale-110 transform">
-                        MBRIF
-                      </div>
-                    </div>
-                    <div className="w-px h-8 bg-slate-300"></div>
-                    <div className="group cursor-pointer">
-                      <div className="text-2xl md:text-3xl font-black text-slate-300 group-hover:text-slate-900 transition-all duration-300 group-hover:scale-110 transform">
-                        in5 Tech
-                      </div>
-                    </div>
-                    <div className="w-px h-8 bg-slate-300"></div>
-                    <div className="group cursor-pointer">
-                      <div className="text-2xl md:text-3xl font-black text-slate-300 group-hover:text-slate-900 transition-all duration-300 group-hover:scale-110 transform">
-                        Kube VC
-                      </div>
-                    </div>
-                  </div>
-                </div>
+          <div className="grid md:grid-cols-4 gap-4 mt-6">
+            {proofPoints.map((item) => (
+              <div key={item.label} className="rounded-2xl border border-white/10 bg-slate-950/60 p-4">
+                <p className="text-xs uppercase tracking-wide text-slate-400 font-semibold">{item.label}</p>
+                <p className="text-2xl font-bold text-white mt-2">{item.value}</p>
+                <p className="text-sm text-slate-300">{item.detail}</p>
               </div>
-            </AnimatedSection>
-          </div>
-        </div>
-      </section>
-
-      {/* Company Values */}
-      <section className="py-20 px-6 sm:px-8 lg:px-12 bg-gradient-to-b from-white to-brand-light">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
-              What drives us
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Our values aren't just words on a wall - they guide every decision we make
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {COMPANY_VALUES.map((value, idx) => (
-              <Card key={idx} className="hover:shadow-xl hover:border-brand-primary/50 transition-all duration-300 group">
-                <div className="p-8">
-                  <div className="text-5xl mb-4 group-hover:scale-110 transition-transform">
-                    {value.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">
-                    {value.title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    {value.description}
-                  </p>
-                </div>
-              </Card>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Leadership Team */}
-      <section className="py-20 px-6 sm:px-8 lg:px-12 bg-gradient-to-b from-white to-slate-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <AnimatedSection>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-50 border border-indigo-100 text-sm font-bold text-indigo-700 mb-6">
-                <Users size={16} />
-                Leadership Team
-              </div>
-            </AnimatedSection>
-            <AnimatedSection delay={100}>
-              <h2 className="text-5xl sm:text-6xl font-extrabold text-slate-900 mb-6 tracking-tighter">
-                Meet our leaders
-              </h2>
-            </AnimatedSection>
-            <AnimatedSection delay={200}>
-              <p className="text-2xl text-slate-600 max-w-3xl mx-auto font-medium">
-                Experienced founders and operators from <span className="text-slate-900 font-bold">world's top companies</span>
-              </p>
-            </AnimatedSection>
+      <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="flex items-center justify-between gap-6 flex-wrap mb-10">
+          <div>
+            <p className="text-sm font-semibold text-cyan-200 uppercase tracking-[0.2em]">Programs</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mt-3">Pick the motion that fits. We make it easy to start.</h2>
           </div>
-
-          {/* Horizontal Scrolling Leadership Team */}
-          <div className="relative">
-            <div className="overflow-x-auto scrollbar-hide pb-8" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-              <div className="flex gap-6 px-4" style={{ width: 'max-content' }}>
-                {LEADERSHIP_TEAM.map((leader, idx) => (
-                  <div key={leader.name} className="w-[240px] flex-shrink-0">
-                    <Card className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border border-slate-200 hover:border-indigo-300 overflow-hidden h-full">
-                      <div className="p-5 text-center">
-                        <div className="relative mb-3 inline-block">
-                          <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl blur-lg opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-                          <img 
-                            src={leader.image} 
-                            alt={leader.name}
-                            className="w-20 h-20 rounded-2xl mx-auto ring-2 ring-slate-100 group-hover:ring-indigo-200 transition-all duration-500 relative object-cover"
-                          />
-                          <a
-                            href={leader.linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="absolute -bottom-1 -right-1 p-1.5 bg-gradient-to-br from-indigo-600 to-purple-600 text-white rounded-lg hover:from-indigo-700 hover:to-purple-700 transition-all shadow-lg shadow-indigo-500/30 hover:scale-110"
-                            onClick={(e) => e.stopPropagation()}
-                          >
-                            <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
-                              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                            </svg>
-                          </a>
-                        </div>
-                        
-                        <h3 className="text-sm font-bold text-slate-900 mb-1 leading-tight">
-                          {leader.name}
-                        </h3>
-                        <div className="text-xs text-indigo-600 font-semibold mb-2">
-                          {leader.role}
-                        </div>
-                        <p className="text-xs text-slate-600 leading-relaxed line-clamp-2">
-                          {leader.bio}
-                        </p>
-                      </div>
-                    </Card>
-                  </div>
-                ))}
+                <Link
+                  to="/services"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/15 text-white hover:bg-white/5 transition-all"
+                >
+                  See how we work <ArrowRight size={16} />
+                </Link>
+        </div>
+        <div className="grid lg:grid-cols-3 gap-6">
+          {partnerTypes.map((type) => (
+            <div key={type.title} className="relative rounded-3xl border border-white/10 bg-white/5 p-6 shadow-xl shadow-slate-900/30 overflow-hidden">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(34,211,238,0.1),transparent_35%),radial-gradient(circle_at_80%_0%,rgba(129,140,248,0.12),transparent_35%)]" />
+              <div className="relative">
+                <span className="inline-flex px-3 py-1 rounded-full bg-white/10 text-xs font-semibold text-cyan-100 border border-white/15">{type.badge}</span>
+                <h3 className="text-2xl font-semibold text-white mt-4 mb-2">{type.title}</h3>
+                <p className="text-slate-300 leading-relaxed">{type.description}</p>
+                <div className="mt-6 space-y-2">
+                  {type.highlights.map((point) => (
+                    <div key={point} className="flex items-center gap-2 text-sm text-slate-200">
+                      <ArrowRight size={14} className="text-cyan-300" />
+                      <span>{point}</span>
+                    </div>
+                  ))}
+                </div>
+                <Link to="/contact" className="inline-flex items-center gap-2 text-cyan-200 font-semibold mt-6">
+                  Start a pilot <ArrowRight size={16} />
+                </Link>
               </div>
             </div>
-            {/* Gradient overlays for scroll indication */}
-            <div className="absolute left-0 top-0 bottom-8 w-20 bg-gradient-to-r from-white to-transparent pointer-events-none"></div>
-            <div className="absolute right-0 top-0 bottom-8 w-20 bg-gradient-to-l from-white to-transparent pointer-events-none"></div>
-          </div>
+          ))}
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-20 px-6 sm:px-8 lg:px-12 bg-slate-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <AnimatedSection>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-50 border border-indigo-100 text-sm font-bold text-indigo-700 mb-6">
-                <Star size={16} className="fill-indigo-700" />
-                What our team says
-              </div>
-            </AnimatedSection>
-            <AnimatedSection delay={100}>
-              <h2 className="text-5xl sm:text-6xl font-extrabold text-slate-900 mb-6 tracking-tighter">
-                Hear from our people
-              </h2>
-            </AnimatedSection>
-            <AnimatedSection delay={200}>
-              <p className="text-xl text-slate-600 max-w-3xl mx-auto font-medium">
-                Real stories from team members who are <span className="text-slate-900 font-bold">building something special</span>
-              </p>
-            </AnimatedSection>
-          </div>
-
-          {/* Horizontal Scrolling Testimonials */}
-          <div className="relative">
-            <div className="overflow-x-auto scrollbar-hide pb-8" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-              <div className="flex gap-6 px-4" style={{ width: 'max-content' }}>
-                {TESTIMONIALS.map((testimonial, idx) => (
-                  <div key={idx} className="w-[400px] flex-shrink-0">
-                    <TestimonialCard testimonial={testimonial} />
+      <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="grid md:grid-cols-2 gap-12 items-start">
+          <div className="space-y-4">
+            <p className="text-sm font-semibold text-cyan-200 uppercase tracking-[0.2em]">Why Finanshels</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white">What you get in week one.</h2>
+                <p className="text-slate-300 leading-relaxed">
+                  A clear plan, enablement that ships, and named owners. Everything is documented so your leadership and your clients know exactly how we&apos;ll operate.
+                </p>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {valueProps.map(({ title, description, icon: Icon }) => (
+                <div key={title} className="rounded-2xl border border-white/10 bg-white/5 p-4 space-y-2">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400/30 to-purple-500/30 flex items-center justify-center text-cyan-200">
+                    <Icon size={18} />
                   </div>
-                ))}
+                  <h3 className="text-lg font-semibold text-white">{title}</h3>
+                  <p className="text-sm text-slate-300 leading-relaxed">{description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900/80 to-slate-900 p-8 shadow-2xl shadow-slate-900/50">
+            <div className="flex items-center gap-3 mb-6">
+              <Users className="text-cyan-300" size={22} />
+              <div>
+                <p className="text-sm text-slate-400">Partner success pod</p>
+                <p className="text-xl font-semibold text-white">Operators who own outcomes</p>
               </div>
             </div>
-            {/* Gradient overlays for scroll indication */}
-            <div className="absolute left-0 top-0 bottom-8 w-20 bg-gradient-to-r from-slate-50 to-transparent pointer-events-none"></div>
-            <div className="absolute right-0 top-0 bottom-8 w-20 bg-gradient-to-l from-slate-50 to-transparent pointer-events-none"></div>
-          </div>
-        </div>
-      </section>
-
-      {/* Dubai Walk-In Banner */}
-      <section className="py-12 px-6 sm:px-8 lg:px-12 bg-slate-900 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-amber-500/20 rounded-full blur-3xl animate-float"></div>
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
-        </div>
-        
-        <div className="max-w-7xl mx-auto relative z-10">
-          <AnimatedSection animation="fade-up">
-            <Card className="bg-gradient-to-br from-slate-50 to-white border-none shadow-2xl overflow-hidden">
-              <div className="p-6 sm:p-8 lg:p-10">
-                {/* Header */}
-                <div className="text-center mb-8">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-100 border border-amber-200 text-amber-800 text-sm font-bold mb-4">
-                    <MapPin size={16} />
-                    <span>Dubai Walk-In Career Drive</span>
-                  </div>
-                  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-3 tracking-tight">
-                    Join Our Team in Dubai
-                  </h2>
-              <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto font-medium">
-                Walk in with your CV • Meet our team face-to-face • 3-step process
-              </p>
-                </div>
-
-                {/* Quick Info Bar */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-                  <div className="flex items-center gap-3 p-4 rounded-xl bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-100">
-                    <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center flex-shrink-0">
-                      <Calendar className="text-white" size={18} />
-                    </div>
-                    <div>
-                      <div className="text-xs text-slate-600 font-semibold uppercase tracking-wide">Date</div>
-                      <div className="font-bold text-slate-900">Saturday, Nov 23</div>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3 p-4 rounded-xl bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-100">
-                    <div className="w-10 h-10 rounded-xl bg-amber-600 flex items-center justify-center flex-shrink-0">
-                      <Clock className="text-white" size={18} />
-                    </div>
-                    <div>
-                      <div className="text-xs text-slate-600 font-semibold uppercase tracking-wide">Time</div>
-                      <div className="font-bold text-slate-900">10 AM - 5 PM</div>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3 p-4 rounded-xl bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-100">
-                    <div className="w-10 h-10 rounded-xl bg-emerald-600 flex items-center justify-center flex-shrink-0">
-                      <Building className="text-white" size={18} />
-                    </div>
-                    <div>
-                      <div className="text-xs text-slate-600 font-semibold uppercase tracking-wide">Venue</div>
-                      <div className="font-bold text-slate-900 text-sm">Dubai Production City</div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Main Content */}
-                <div className="mb-6">
-                  {/* Open Positions */}
-                  <div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-                      <div className="w-1.5 h-8 bg-gradient-to-b from-blue-600 to-cyan-600 rounded-full"></div>
-                      Open Positions
-                    </h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <Link to="/dubai-walkin/field-sales-executive" className="block group">
-                        <div className="relative p-6 rounded-2xl bg-gradient-to-br from-white via-blue-50/30 to-white border border-slate-200 hover:border-blue-400 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
-                          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-400/10 to-cyan-400/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500"></div>
-                          <div className="relative">
-                            <div className="flex items-start justify-between mb-4">
-                              <div className="flex items-center gap-4">
-                                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center flex-shrink-0 shadow-lg shadow-blue-500/30 group-hover:shadow-blue-500/50 transition-all group-hover:scale-110">
-                                  <Target className="text-white" size={24} />
-                                </div>
-                                <div>
-                                  <div className="inline-flex px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-bold mb-2">
-                                    Sales
-                                  </div>
-                                  <h4 className="font-extrabold text-slate-900 text-lg group-hover:text-blue-600 transition-colors leading-tight">
-                                    Field Sales Executive
-                                  </h4>
-                                </div>
-                              </div>
-                            </div>
-                            <p className="text-slate-600 text-sm mb-4 leading-relaxed">Cold calling & lead generation</p>
-                            <div className="flex items-center justify-between">
-                              <div className="flex items-center gap-2 text-slate-700">
-                                <Users size={16} className="text-blue-600" />
-                                <span className="text-sm font-semibold">2 Openings</span>
-                              </div>
-                              <div className="flex items-center gap-1 text-blue-600 font-bold text-sm group-hover:gap-2 transition-all">
-                                Apply Now
-                                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </Link>
-
-                      <Link to="/dubai-walkin/business-development" className="block group">
-                        <div className="relative p-6 rounded-2xl bg-gradient-to-br from-white via-indigo-50/30 to-white border border-slate-200 hover:border-indigo-400 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
-                          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-indigo-400/10 to-purple-400/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500"></div>
-                          <div className="relative">
-                            <div className="flex items-start justify-between mb-4">
-                              <div className="flex items-center gap-4">
-                                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center flex-shrink-0 shadow-lg shadow-indigo-500/30 group-hover:shadow-indigo-500/50 transition-all group-hover:scale-110">
-                                  <TrendingUp className="text-white" size={24} />
-                                </div>
-                                <div>
-                                  <div className="inline-flex px-3 py-1 rounded-full bg-indigo-100 text-indigo-700 text-xs font-bold mb-2">
-                                    Business Development
-                                  </div>
-                                  <h4 className="font-extrabold text-slate-900 text-lg group-hover:text-indigo-600 transition-colors leading-tight">
-                                    Business Development Executive
-                                  </h4>
-                                </div>
-                              </div>
-                            </div>
-                            <p className="text-slate-600 text-sm mb-4 leading-relaxed">Build relationships & close deals</p>
-                            <div className="flex items-center justify-between">
-                              <div className="flex items-center gap-2 text-slate-700">
-                                <Users size={16} className="text-indigo-600" />
-                                <span className="text-sm font-semibold">2 Openings</span>
-                              </div>
-                              <div className="flex items-center gap-1 text-indigo-600 font-bold text-sm group-hover:gap-2 transition-all">
-                                Apply Now
-                                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </Link>
-                      
-                      <Link to="/dubai-walkin/partnerships-manager" className="block group">
-                        <div className="relative p-6 rounded-2xl bg-gradient-to-br from-white via-amber-50/30 to-white border border-slate-200 hover:border-amber-400 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
-                          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-amber-400/10 to-orange-400/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500"></div>
-                          <div className="relative">
-                            <div className="flex items-start justify-between mb-4">
-                              <div className="flex items-center gap-4">
-                                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center flex-shrink-0 shadow-lg shadow-amber-500/30 group-hover:shadow-amber-500/50 transition-all group-hover:scale-110">
-                                  <Users className="text-white" size={24} />
-                                </div>
-                                <div>
-                                  <div className="inline-flex px-3 py-1 rounded-full bg-amber-100 text-amber-700 text-xs font-bold mb-2">
-                                    Strategic Partnerships
-                                  </div>
-                                  <h4 className="font-extrabold text-slate-900 text-lg group-hover:text-amber-600 transition-colors leading-tight">
-                                    Partnerships Manager
-                                  </h4>
-                                </div>
-                              </div>
-                            </div>
-                            <p className="text-slate-600 text-sm mb-4 leading-relaxed">Build strategic alliances</p>
-                            <div className="flex items-center justify-between">
-                              <div className="flex items-center gap-2 text-slate-700">
-                                <Users size={16} className="text-amber-600" />
-                                <span className="text-sm font-semibold">2 Openings</span>
-                              </div>
-                              <div className="flex items-center gap-1 text-amber-600 font-bold text-sm group-hover:gap-2 transition-all">
-                                Apply Now
-                                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </Link>
-                      
-                      <Link to="/dubai-walkin/appointment-setter" className="block group">
-                        <div className="relative p-6 rounded-2xl bg-gradient-to-br from-white via-emerald-50/30 to-white border border-slate-200 hover:border-emerald-400 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
-                          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-emerald-400/10 to-teal-400/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500"></div>
-                          <div className="relative">
-                            <div className="flex items-start justify-between mb-4">
-                              <div className="flex items-center gap-4">
-                                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center flex-shrink-0 shadow-lg shadow-emerald-500/30 group-hover:shadow-emerald-500/50 transition-all group-hover:scale-110">
-                                  <Briefcase className="text-white" size={24} />
-                                </div>
-                                <div>
-                                  <div className="inline-flex px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-bold mb-2">
-                                    Sales Support
-                                  </div>
-                                  <h4 className="font-extrabold text-slate-900 text-lg group-hover:text-emerald-600 transition-colors leading-tight">
-                                    Appointment Setter
-                                  </h4>
-                                </div>
-                              </div>
-                            </div>
-                            <p className="text-slate-600 text-sm mb-4 leading-relaxed">Schedule & qualify leads</p>
-                            <div className="flex items-center justify-between">
-                              <div className="flex items-center gap-2 text-slate-700">
-                                <Users size={16} className="text-emerald-600" />
-                                <span className="text-sm font-semibold">2 Openings</span>
-                              </div>
-                              <div className="flex items-center gap-1 text-emerald-600 font-bold text-sm group-hover:gap-2 transition-all">
-                                Apply Now
-                                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </Link>
-                    </div>
-                  </div>
-
-                </div>
-
-                {/* CTA */}
-                <div className="text-center pt-6 border-t-2 border-slate-200">
-                  <Link to="/dubai-walkin">
-                    <Button size="lg" className="group shadow-xl bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white">
-                      View Full Details & Register
-                      <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
-                    </Button>
-                  </Link>
-                  <p className="text-sm text-slate-500 mt-4">Walk-ins welcome • Bring your CV and ID</p>
-                </div>
-              </div>
-            </Card>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* Referral Section */}
-      <section className="py-10 px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff15_1px,transparent_1px),linear-gradient(to_bottom,#ffffff15_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
-        
-        <div className="max-w-7xl mx-auto relative z-10">
-          <AnimatedSection animation="scale">
-            <div className="bg-white/95 backdrop-blur-xl rounded-2xl p-6 shadow-2xl">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+            <div className="space-y-4">
+              <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 p-4">
                 <div>
-                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-xs font-bold mb-4 shadow-lg">
-                    💰 Referral Program
-                  </div>
-                  <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight leading-tight">
-                    Get Your Friend A Job
-                    <span className="block bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent text-2xl sm:text-3xl mt-1">Earn up to AED 1,000</span>
-                  </h2>
-                  <p className="text-base text-slate-600 mb-6 font-medium leading-relaxed">
-                    Know someone who'd be a great fit? <span className="text-slate-900 font-bold">Refer them and earn rewards</span> when they join!
-                  </p>
-                  <div className="space-y-3">
-                    <div className="flex items-start gap-2">
-                      <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <CheckCircle className="text-emerald-600" size={14} />
-                      </div>
-                      <div>
-                        <div className="font-bold text-slate-900 text-sm">Easy Process</div>
-                        <div className="text-slate-600 text-xs">Fill the form with details</div>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <CheckCircle className="text-emerald-600" size={14} />
-                      </div>
-                      <div>
-                        <div className="font-bold text-slate-900 text-sm">Track Status</div>
-                        <div className="text-slate-600 text-xs">Get application updates</div>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <CheckCircle className="text-emerald-600" size={14} />
-                      </div>
-                      <div>
-                        <div className="font-bold text-slate-900 text-sm">Earn Rewards</div>
-                        <div className="text-slate-600 text-xs">Get paid when they join</div>
-                      </div>
-                    </div>
-                  </div>
+                  <p className="text-sm text-slate-300">Activation to first revenue</p>
+                  <p className="text-lg font-semibold text-white">Under 30 days</p>
                 </div>
+                <ShieldCheck className="text-cyan-300" />
+              </div>
+              <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 p-4">
                 <div>
-                  <div 
-                    id="zf_div_jQBxaOyXvB5vbVEwHYzgDthNbYVadDVpRDKRFkkD_Mo"
-                    className="w-full bg-white rounded-xl overflow-hidden"
-                  />
+                  <p className="text-sm text-slate-300">Dedicated partner desk</p>
+                  <p className="text-lg font-semibold text-white">One channel lead + AE</p>
                 </div>
+                <HeartHandshake className="text-indigo-300" />
+              </div>
+              <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 p-4">
+                <div>
+                  <p className="text-sm text-slate-300">Visibility</p>
+                  <p className="text-lg font-semibold text-white">Live attribution & SLAs</p>
+                </div>
+                <LineChart className="text-purple-300" />
               </div>
             </div>
-          </AnimatedSection>
+          </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-32 px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-600 rounded-full blur-3xl opacity-20 animate-float"></div>
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-600 rounded-full blur-3xl opacity-20 animate-float" style={{ animationDelay: '2s' }}></div>
-        </div>
-        
-        <div className="max-w-5xl mx-auto text-center relative z-10">
-          <AnimatedSection>
-            <h2 className="text-5xl sm:text-6xl font-extrabold mb-8 tracking-tighter leading-tight text-white">
-              Ready to make an impact?
-            </h2>
-          </AnimatedSection>
-          <AnimatedSection delay={100}>
-            <p className="text-2xl sm:text-3xl text-white/90 mb-12 leading-relaxed font-medium max-w-3xl mx-auto">
-              Join Finanshels and help shape the future of finance operations for startups across MENA
-            </p>
-          </AnimatedSection>
-          <AnimatedSection delay={200}>
-            <Link to="/jobs">
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="group bg-white/10 backdrop-blur-xl text-white border-2 border-white hover:bg-white hover:text-slate-900 shadow-2xl text-lg h-16 px-12"
-              >
-                View open roles
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={22} />
-              </Button>
+      <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="rounded-3xl border border-white/10 bg-gradient-to-r from-white/5 via-white/10 to-white/5 p-10 shadow-2xl shadow-slate-900/40">
+          <div className="flex items-center justify-between gap-6 flex-wrap">
+            <div>
+              <p className="text-sm font-semibold text-cyan-200 uppercase tracking-[0.2em]">Operating rhythm</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mt-3">No generic PDFs. We co-design and run the play.</h2>
+            </div>
+            <Link
+              to="/services"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white font-semibold border border-white/15 hover:bg-white/20 transition-all"
+            >
+              View services <ArrowRight size={16} />
             </Link>
-          </AnimatedSection>
+          </div>
+          <div className="grid md:grid-cols-4 gap-4 mt-8">
+            {motions.map(({ title, detail, icon: Icon }) => (
+              <div key={title} className="rounded-2xl border border-white/10 bg-slate-950/60 p-4 space-y-2">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400/30 to-purple-500/30 flex items-center justify-center text-cyan-200">
+                  <Icon size={18} />
+                </div>
+                <h3 className="text-lg font-semibold text-white">{title}</h3>
+                <p className="text-sm text-slate-300 leading-relaxed">{detail}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-10">
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-2xl shadow-slate-900/40">
+              <div className="flex items-center gap-3 mb-4">
+                <Rocket className="text-cyan-300" size={22} />
+                <div>
+                  <p className="text-sm text-slate-300">Referral program</p>
+                  <p className="text-xl font-semibold text-white">Earn up to AED 1,500 or 40% per client.</p>
+                </div>
+              </div>
+            <ul className="space-y-4">
+              {referralSteps.map(({ title, detail, icon: Icon }) => (
+                <li key={title} className="flex gap-3 text-slate-200 leading-relaxed rounded-2xl border border-white/10 bg-slate-950/60 p-3">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400/30 to-purple-500/30 flex items-center justify-center text-cyan-200 flex-shrink-0">
+                    <Icon size={18} />
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-white">{title}</p>
+                    <p className="text-sm text-slate-300 leading-relaxed">{detail}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="rounded-3xl border border-white/10 bg-gradient-to-b from-cyan-500/15 via-indigo-500/10 to-purple-600/10 p-8 shadow-xl shadow-indigo-900/40">
+            <p className="text-sm font-semibold text-cyan-200 uppercase tracking-[0.2em] mb-3">Let&apos;s build</p>
+            <h3 className="text-2xl font-bold text-white mb-4">Ready to design the next partner motion?</h3>
+            <p className="text-slate-200 leading-relaxed mb-6">
+              We respond in under 24 hours with a tailored plan, not a brochure. You&apos;ll see the OKRs, owners, and enablement you can expect in week one.
+            </p>
+            <div className="flex flex-col gap-3">
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-full bg-white text-slate-900 font-semibold shadow-lg hover:scale-[1.01] transition-transform"
+              >
+                Book the intro <ArrowRight size={16} />
+              </Link>
+              <a
+                href="mailto:partners@finanshels.com"
+                className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-full border border-white/20 text-white font-semibold hover:bg-white/10 transition-all"
+              >
+                Email partners@finanshels.com
+              </a>
+            </div>
+            <div className="grid sm:grid-cols-2 gap-3 mt-6">
+              {referralExtras.map((item) => (
+                <div key={item} className="rounded-2xl border border-white/10 bg-white/5 p-3 text-sm text-slate-200 leading-relaxed flex gap-3">
+                  <ArrowRight size={16} className="text-cyan-300 mt-0.5 flex-shrink-0" />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
     </div>

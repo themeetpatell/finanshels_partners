@@ -2,42 +2,28 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
-import Jobs from './pages/Jobs'
-import JobDetail from './pages/JobDetail'
-import Life from './pages/Life'
-import DubaiWalkIn from './pages/DubaiWalkIn'
-import FieldSalesExecutive from './pages/dubaiWalkIn/FieldSalesExecutive'
-import BusinessDevelopment from './pages/dubaiWalkIn/BusinessDevelopment'
-import PartnershipsManager from './pages/dubaiWalkIn/PartnershipsManager'
-import AppointmentSetter from './pages/dubaiWalkIn/AppointmentSetter'
-import Onboarding from './pages/Onboarding'
+import About from './pages/About'
+import Partnerships from './pages/Partnerships'
+import Strategize from './pages/Strategize'
+import Contact from './pages/Contact'
 
 function App() {
   return (
     <Router>
-      <div className="flex flex-col min-h-screen">
-        <Routes>
-          <Route path="/onboarding" element={<Onboarding />} />
-          <Route path="*" element={
-            <>
-              <Navbar />
-              <main className="flex-1">
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/jobs" element={<Jobs />} />
-                  <Route path="/jobs/:id" element={<JobDetail />} />
-                  <Route path="/life" element={<Life />} />
-                  <Route path="/dubai-walkin" element={<DubaiWalkIn />} />
-                  <Route path="/dubai-walkin/field-sales-executive" element={<FieldSalesExecutive />} />
-                  <Route path="/dubai-walkin/business-development" element={<BusinessDevelopment />} />
-                  <Route path="/dubai-walkin/partnerships-manager" element={<PartnershipsManager />} />
-                  <Route path="/dubai-walkin/appointment-setter" element={<AppointmentSetter />} />
-                </Routes>
-              </main>
-              <Footer />
-            </>
-          } />
-        </Routes>
+      <div className="flex min-h-screen flex-col bg-slate-950 text-slate-50">
+        <Navbar />
+        <main className="flex-1 pt-20">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/partnerships" element={<Partnerships />} />
+            <Route path="/services" element={<Strategize />} />
+            <Route path="/strategize" element={<Strategize />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<Home />} />
+          </Routes>
+        </main>
+        <Footer />
       </div>
     </Router>
   )
