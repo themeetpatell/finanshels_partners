@@ -16,7 +16,7 @@ const pillars = [
 
 const milestones = [
   { year: '2022', title: 'Launched Finanshels', detail: 'Started in Dubai with a mission to modernize finance for founders.' },
-  { year: '2023', title: 'Scaled delivery pods', detail: 'Built specialized pods for SaaS, eCommerce, and services businesses.' },
+  { year: '2023', title: 'Specialized teams', detail: 'Built dedicated teams for SaaS, eCommerce, and services businesses.' },
   { year: '2024', title: 'Partner-first motion', detail: 'Introduced referral, channel, and strategic tiers with full visibility.' },
   { year: '2025', title: 'GTM studio', detail: 'Designing bespoke go-to-market plays with partners across the region.' },
 ]
@@ -90,10 +90,10 @@ export default function About() {
                 <p className="text-xl font-semibold text-white">Finance leaders, product builders, analysts</p>
               </div>
             </div>
-            <div className="space-y-4">
+              <div className="space-y-4">
               <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 p-4">
                 <div>
-                  <p className="text-sm text-slate-300">Delivery pods</p>
+                  <p className="text-sm text-slate-300">Specialist teams</p>
                   <p className="text-lg font-semibold text-white">Tax + Accounting + Payroll</p>
                 </div>
                 <ShieldCheck className="text-cyan-300" />

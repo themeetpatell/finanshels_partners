@@ -1,61 +1,45 @@
-# Finanshels Careers Website
+# Finanshels Partnership Desk
 
-A world-class, Apple-grade career website for Finanshels.com built with React, TailwindCSS, and premium UI components.
+A premium partnerships site for Finanshels that showcases referral, channel, and strategic programs with decision-ready proof, program details, and fast contact paths. Built with React, TailwindCSS, and Lucide icons.
 
 ## 🎯 About Finanshels
 
-Finanshels is a UAE-based fintech company (founded 2022) that automates accounting, tax, and compliance operations for 20M+ startups across MENA. Backed by MBRIF, in5 Tech, and Kube VC.
+Finanshels is a UAE-based fintech company (founded 2022) that runs accounting, tax, audit, and compliance for thousands of businesses across MENA. Partners get transparent attribution, live payout visibility, and compliance-grade delivery.
 
-## ✨ Features
+## ✨ Highlights
 
-- **Premium Design**: Apple-inspired UI with clean aesthetics, high contrast, and smooth animations
-- **Fully Responsive**: Optimized for all devices from mobile to desktop
-- **TailwindCSS**: Utility-first styling with custom brand tokens
-- **Form Validation**: Complete client-side validation for job applications
-- **Smooth Animations**: Fade-in, slide-up effects for premium feel
-- **SEO Friendly**: Semantic HTML and optimized structure
+- **Programs**: Referral, channel, and strategic partner motions with incentives, terms, and collaboration formats
+- **Proof-first**: Quantified trust signals, guardrails, and leadership access called out on the home and program pages
+- **Conversion-focused**: Clear CTAs to apply, talk to partnerships, or start a pilot on every hero and section
+- **Premium UI**: Gradient + glassmorphism styling, motion tokens, and responsive layouts tuned for mobile and desktop
+- **Content-first data**: Program cards, incentives, guardrails, and formats live in React arrays for quick edits
 
 ## 🛠 Tech Stack
 
-- React 18
+- React 18 + Vite
 - React Router v6
-- TailwindCSS
-- Vite
-- Lucide Icons
-- Custom shadcn-style UI components
+- TailwindCSS with extended brand tokens and animation keyframes
+- Lucide React icons
 
 ## 📄 Pages
 
-1. **Home** - Hero, stats, teams, latest openings
-2. **Jobs** - Searchable, filterable job listings
-3. **Job Detail** - Full JD with application form in hero banner
-4. **Life at Finanshels** - Culture, values, perks, team info
+- **Home**: Partnership desk hero, proof points, program overview, commitments, and referral CTA
+- **About**: Finanshels story, delivery model, and trust signals
+- **Partnerships**: Full breakdown of referral, channel, and strategic programs with incentives, terms, guardrails, and collaboration formats
+- **Services** (`/services` and `/strategize`): How the delivery pods, onboarding, and governance work
+- **Contact**: Simple contact and CTA to talk to the partnerships team
 
 ## 🚀 Getting Started
 
-### Install Dependencies
-
 ```bash
 npm install
+npm run dev   # http://localhost:5173
 ```
 
-### Run Development Server
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:5173](http://localhost:5173)
-
-### Build for Production
+Other scripts:
 
 ```bash
 npm run build
-```
-
-### Preview Production Build
-
-```bash
 npm run preview
 ```
 
@@ -64,101 +48,34 @@ npm run preview
 ```
 src/
 ├── components/
-│   ├── ui/              # Base UI components (Button, Input, Card)
 │   ├── Navbar.jsx
 │   ├── Footer.jsx
-│   ├── JobCard.jsx
-│   ├── StatCard.jsx
-│   └── TeamCard.jsx
+│   └── ui/           # Base UI primitives
 ├── pages/
 │   ├── Home.jsx
-│   ├── Jobs.jsx
-│   ├── JobDetail.jsx
-│   └── Life.jsx
-├── data/
-│   └── jobs.js          # Job listings and team data
+│   ├── About.jsx
+│   ├── Partnerships.jsx
+│   ├── Strategize.jsx
+│   └── Contact.jsx
 ├── lib/
-│   └── utils.js         # Utility functions
+│   └── utils.js
 ├── App.jsx
 └── index.css
 ```
 
-## 🎨 Design System
+## 🎨 Styling System
 
-### Colors
-- **Brand Black**: `#0B0B0C`
-- **Brand Blue**: `#1E90FF`
-- **Brand Grey**: `#F5F7FB`
+- Tailwind theme tokens in `tailwind.config.js` (`brand` colors, gradients, motion keyframes)
+- Rounded corners (up to `rounded-3xl`), glass panels, and soft shadows for premium feel
+- Motion utilities: fade, slide, float, glow animations for subtle emphasis
 
-### Typography
-- Clean, geometric, Apple-style font stack
-- Font sizes: 5xl-7xl for headlines, xl-2xl for body
+## ✏️ Content Edits
 
-### Components
-- Rounded corners (rounded-2xl)
-- Subtle shadows and hover effects
-- Glassmorphism with backdrop-blur
-- Smooth transitions (300ms)
-
-## 📝 Customization
-
-### Update Job Listings
-
-Edit `src/data/jobs.js`:
-
-```javascript
-export const JOBS = [
-  {
-    id: "unique-job-id",
-    title: "Job Title",
-    location: "Dubai, UAE",
-    team: "Growth",
-    type: "Full-time",
-    posted: "2025-11-02",
-    intro: "Short description",
-    jd: [
-      { h: "What you'll do", bullets: [...] },
-      { h: "What makes you a fit", bullets: [...] }
-    ],
-    benefits: [...]
-  }
-]
-```
-
-### Modify Brand Colors
-
-Edit `tailwind.config.js`:
-
-```javascript
-colors: {
-  brand: {
-    black: '#0B0B0C',
-    blue: '#1E90FF',
-    grey: '#F5F7FB',
-  }
-}
-```
-
-## 🌟 Key Features
-
-- **Application Form**: Full validation with error states
-- **Search & Filters**: Filter jobs by team, location, and search terms
-- **Responsive Design**: Mobile-first approach
-- **Smooth Animations**: CSS animations for premium feel
-- **Clean Code**: Modular, reusable components
-
-## 📱 Responsive Breakpoints
-
-- Mobile: < 640px
-- Tablet: 640px - 1024px
-- Desktop: > 1024px
+- Partnership program copy, incentives, and guardrails live in `src/pages/Partnerships.jsx`
+- Home page proof points and CTA copy live in `src/pages/Home.jsx`
+- Global nav/links come from `src/components/Navbar.jsx`
 
 ## 🔗 Links
 
 - Main Website: [https://finanshels.com](https://finanshels.com)
-- LinkedIn: [https://linkedin.com/company/finanshels](https://linkedin.com/company/finanshels)
-- Email: careers@finanshels.com
-
-## 📄 License
-
-© 2025 Finanshels. All rights reserved.
+- Partnerships: partners@finanshels.com
