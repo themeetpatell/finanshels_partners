@@ -17,7 +17,6 @@ export default function Navbar() {
     { name: 'About', path: '/about' },
     { name: 'Partnerships', path: '/partnerships' },
     { name: 'Services', path: '/services' },
-    { name: 'Contact', path: '/contact' },
   ]
 
   return (
@@ -48,7 +47,7 @@ export default function Navbar() {
               </Link>
             ))}
             <Link
-              to="/contact"
+              to="/become-a-partner"
               className="ml-3 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-500 text-slate-950 font-semibold shadow-lg shadow-indigo-500/20 hover:scale-[1.02] transition-transform"
             >
               Become a partner
@@ -83,7 +82,7 @@ export default function Navbar() {
               </Link>
             ))}
             <Link
-              to="/contact"
+              to="/become-a-partner"
               onClick={() => setMobileMenuOpen(false)}
               className="block text-center px-5 py-3.5 rounded-xl font-semibold bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-500 text-slate-950 shadow-lg shadow-indigo-500/20"
             >

@@ -1,10 +1,11 @@
+import { Link } from 'react-router-dom'
 import { Building2, Globe2, HeartHandshake, Rocket, Sparkles, Target, Users, ShieldCheck } from 'lucide-react'
 
 const stats = [
   { label: 'Founded', value: '2022', detail: 'Built by operators in Dubai' },
   { label: 'Customers', value: '5,000+', detail: 'SMBs and mid-market teams' },
-  { label: 'Team', value: '180+', detail: 'Finance, product, and success' },
-  { label: 'Coverage', value: '12 markets', detail: 'MENA-first with global rigor' },
+  { label: 'Team', value: '140+', detail: 'Finance, product, and success' },
+  { label: 'Market focus', value: 'UAE', detail: 'On-ground tax and compliance ops' },
 ]
 
 const pillars = [
@@ -15,10 +16,10 @@ const pillars = [
 ]
 
 const milestones = [
-  { year: '2022', title: 'Launched Finanshels', detail: 'Started in Dubai with a mission to modernize finance for founders.' },
-  { year: '2023', title: 'Specialized teams', detail: 'Built dedicated teams for SaaS, eCommerce, and services businesses.' },
-  { year: '2024', title: 'Partner-first motion', detail: 'Introduced referral, channel, and strategic tiers with full visibility.' },
-  { year: '2025', title: 'GTM studio', detail: 'Designing bespoke go-to-market plays with partners across the region.' },
+  { year: '2022', title: 'Launched Finanshels', detail: 'Started in Dubai with operators who know founders and finance.' },
+  { year: '2023', title: 'Tax + compliance rails', detail: 'Built VAT, corporate tax, and payroll pods dedicated to UAE businesses.' },
+  { year: '2024', title: '5,000+ customers', detail: 'Scaled delivery and reporting while keeping every client audit-ready.' },
+  { year: '2025', title: '140+ expert team', detail: 'Finance leaders, product builders, and analysts working on-ground in the UAE.' },
 ]
 
 export default function About() {
@@ -33,7 +34,7 @@ export default function About() {
           <div className="grid lg:grid-cols-2 gap-10 mt-6 items-start">
             <div className="space-y-5">
               <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight">
-                Finance, tax, and compliance for founders in MENA.
+                Finance, tax, and compliance for founders in the UAE.
               </h1>
               <p className="text-lg text-slate-300 leading-relaxed">
                 We built Finanshels to give teams a faster, clearer finance partner. Operators plus simple workflows keep clients compliant—whether they are growing, restructuring, or winding down.
@@ -43,7 +44,7 @@ export default function About() {
                   <Building2 size={16} /> HQ: Dubai, UAE
                 </span>
                 <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/15 text-white">
-                  <Globe2 size={16} /> Serving MENA founders
+                  <Globe2 size={16} /> Serving UAE founders
                 </span>
               </div>
             </div>
@@ -132,6 +133,24 @@ export default function About() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="rounded-3xl border border-white/10 bg-white/5 p-8 sm:p-10 shadow-2xl shadow-slate-900/40 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div className="space-y-2">
+            <p className="text-sm font-semibold text-cyan-200 uppercase tracking-[0.2em]">Partner with us</p>
+            <h3 className="text-2xl sm:text-3xl font-bold text-white">Ready to bring Finanshels to your clients?</h3>
+            <p className="text-slate-300">
+              Share your details and we&apos;ll align on scope, revenue model, and onboarding in one business day.
+            </p>
+          </div>
+          <Link
+            to="/become-a-partner"
+            className="inline-flex items-center justify-center px-5 py-3 rounded-full bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-500 text-slate-950 font-semibold shadow-lg hover:scale-[1.01] transition-transform"
+          >
+            Become a partner
+          </Link>
         </div>
       </section>
     </div>

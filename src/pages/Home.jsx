@@ -90,7 +90,7 @@ export default function Home() {
   return (
     <div className="space-y-20 pb-24">
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(56,189,248,0.14),transparent_35%),radial-gradient(circle_at_80%_10%,rgba(167,139,250,0.12),transparent_40%),radial-gradient(circle_at_50%_80%,rgba(59,130,246,0.08),transparent_35%)]" />
+        <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_20%_20%,rgba(56,189,248,0.14),transparent_35%),radial-gradient(circle_at_80%_10%,rgba(167,139,250,0.12),transparent_40%),radial-gradient(circle_at_50%_80%,rgba(59,130,246,0.08),transparent_35%)]" />
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-20">
           <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
             <div className="space-y-8">
@@ -105,7 +105,7 @@ export default function Home() {
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link
-                  to="/contact"
+                  to="/become-a-partner"
                   className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-500 text-slate-950 font-semibold shadow-lg shadow-indigo-500/20 hover:scale-[1.02] transition-transform"
                 >
                   Talk to partnerships <ArrowRight size={18} />
@@ -125,10 +125,6 @@ export default function Home() {
                 <div className="flex items-center gap-2">
                   <HeartHandshake size={18} className="text-indigo-400" />
                   <span>Partner-first governance</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Globe2 size={18} className="text-purple-400" />
-                  <span>MENA-first with global rigor</span>
                 </div>
               </div>
             </div>
@@ -302,17 +298,17 @@ export default function Home() {
             </p>
             <div className="flex flex-col gap-3">
               <Link
-                to="/contact"
+                to="/become-a-partner"
                 className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-full bg-white text-slate-900 font-semibold shadow-lg hover:scale-[1.01] transition-transform"
               >
                 Book the intro <ArrowRight size={16} />
               </Link>
-              <a
-                href="mailto:partners@finanshels.com"
+              <Link
+                to="/become-a-partner"
                 className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-full border border-white/20 text-white font-semibold hover:bg-white/10 transition-all"
               >
                 Email partners@finanshels.com
-              </a>
+              </Link>
             </div>
             <div className="grid sm:grid-cols-2 gap-3 mt-6">
               {referralExtras.map((item) => (

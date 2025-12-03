@@ -8,10 +8,6 @@ import {
   Sparkles,
   Workflow,
   Trophy,
-  Mail,
-  MapPin,
-  Clock,
-  Send,
 } from 'lucide-react'
 
 const programs = [
@@ -55,8 +51,6 @@ const formats = [
   'Newsletter and content swaps with simple approval paths',
   'Product or API hooks for embedded finance ops',
 ]
-
-const partnerTypes = ['Referral partner', 'Channel partner', 'Strategic partner', 'Other']
 
 const referralSteps = [
   { title: 'Join', detail: 'Apply to the Finanshels referral program and get mapped to a partner lead.', icon: Sparkles },
@@ -130,7 +124,7 @@ export default function Partnerships() {
               </p>
             </div>
             <a
-              href="mailto:partnerships@finanshels.com?subject=Referral%20program%20application"
+              href="/become-a-partner"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-slate-900 font-semibold shadow-lg hover:scale-[1.01] transition-transform"
             >
               Apply now <ArrowRight size={16} />
@@ -158,46 +152,6 @@ export default function Partnerships() {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-8 rounded-3xl border border-white/10 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 p-8 sm:p-10 shadow-2xl shadow-slate-900/50">
-          <div className="space-y-6">
-            <div className="flex items-center gap-3 text-sm font-semibold text-cyan-200 uppercase tracking-[0.2em]">
-              <HeartHandshake size={18} />
-              Contact partnerships
-            </div>
-            <div className="space-y-3">
-              <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight">Share the partner motion.</h2>
-              <h3 className="text-3xl sm:text-4xl font-bold text-white leading-tight">Expect a response within one business day.</h3>
-              <p className="text-lg text-slate-300 leading-relaxed">
-                Referral, channel, or strategic—give us the context and we&apos;ll route you to the right owner with next steps.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 gap-3">
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                <div className="flex items-center gap-2 text-cyan-200 font-semibold text-sm uppercase tracking-[0.16em]">
-                  <Mail size={16} /> Email
-                </div>
-                <p className="text-white font-semibold mt-2">partnerships@finanshels.com</p>
-              </div>
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                <div className="flex items-center gap-2 text-cyan-200 font-semibold text-sm uppercase tracking-[0.16em]">
-                  <MapPin size={16} /> HQ
-                </div>
-                <p className="text-white font-semibold mt-2">Dubai, UAE (Global Hub)</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-2 text-slate-200 text-sm">
-              <Clock size={16} className="text-cyan-300" />
-              Prefer a call? Suggest a slot and we&apos;ll send a calendar invite.
-            </div>
-          </div>
-
-          <div className="rounded-3xl border border-white/10 bg-slate-950/70 p-6 sm:p-7 shadow-inner shadow-slate-900/60">
-            <PartnershipForm />
-          </div>
-        </div>
-      </section>
-
       <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 space-y-6">
         {programs.map((program) => (
           <div
@@ -209,9 +163,17 @@ export default function Partnerships() {
                 <p className="text-sm font-semibold text-cyan-200 uppercase tracking-[0.2em]">Program</p>
                 <h2 className="text-3xl font-bold text-white mt-2">{program.name}</h2>
               </div>
-              <div className="flex items-center gap-2 px-3 py-2 rounded-full bg-white/10 border border-white/15 text-white">
-                <LineChart size={16} />
-                <span>Scale-ready</span>
+              <div className="flex items-center gap-2">
+                <a
+                  href="/become-a-partner"
+                  className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-white text-slate-950 font-semibold shadow-lg shadow-indigo-500/20 hover:scale-[1.02] transition-transform"
+                >
+                  Apply <ArrowRight size={14} />
+                </a>
+                <div className="flex items-center gap-2 px-3 py-2 rounded-full bg-white/10 border border-white/15 text-white">
+                  <LineChart size={16} />
+                  <span>Scale-ready</span>
+                </div>
               </div>
             </div>
             <p className="text-slate-200 leading-relaxed mb-6 max-w-3xl">{program.summary}</p>
@@ -283,77 +245,5 @@ export default function Partnerships() {
         </div>
       </section>
     </div>
-  )
-}
-
-function PartnershipForm() {
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    const formData = new FormData(event.currentTarget)
-    const name = formData.get('name') || ''
-    const email = formData.get('email') || ''
-    const company = formData.get('company') || ''
-    const partnerType = formData.get('partnerType') || ''
-    const context = formData.get('context') || ''
-
-    const subject = encodeURIComponent(`Partnership inquiry — ${partnerType || 'Partner motion'}`)
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nCompany: ${company}\nPartner type: ${partnerType}\n\nContext:\n${context}`
-    )
-
-    window.location.href = `mailto:partnerships@finanshels.com?subject=${subject}&body=${body}`
-  }
-
-  const baseInput =
-    'w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-400/70 focus:border-transparent transition'
-
-  return (
-    <form className="space-y-4" onSubmit={handleSubmit}>
-      <div className="grid sm:grid-cols-2 gap-3">
-        <div>
-          <label className="text-sm text-slate-300 mb-1 block">Name</label>
-          <input name="name" type="text" placeholder="Your name" className={baseInput} required />
-        </div>
-        <div>
-          <label className="text-sm text-slate-300 mb-1 block">Work email</label>
-          <input name="email" type="email" placeholder="you@company.com" className={baseInput} required />
-        </div>
-      </div>
-      <div className="grid sm:grid-cols-2 gap-3">
-        <div>
-          <label className="text-sm text-slate-300 mb-1 block">Company</label>
-          <input name="company" type="text" placeholder="Company name" className={baseInput} required />
-        </div>
-        <div>
-          <label className="text-sm text-slate-300 mb-1 block">Partner type</label>
-          <select name="partnerType" className={baseInput} defaultValue={partnerTypes[0]}>
-            {partnerTypes.map((type) => (
-              <option key={type} value={type} className="bg-slate-900">
-                {type}
-              </option>
-            ))}
-          </select>
-        </div>
-      </div>
-      <div>
-        <label className="text-sm text-slate-300 mb-1 block">What should we know?</label>
-        <textarea
-          name="context"
-          rows={4}
-          placeholder="Goals, target segment, timelines, or the play you want to run"
-          className={baseInput}
-          required
-        />
-      </div>
-      <button
-        type="submit"
-        className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-500 px-5 py-3 font-semibold text-slate-950 shadow-lg shadow-indigo-500/20 hover:scale-[1.01] transition-transform"
-      >
-        Send to partnerships <Send size={16} />
-      </button>
-      <p className="text-xs text-slate-400 text-center">
-        This opens your email client pre-filled with details. We&apos;ll reply within one business day.
-      </p>
-    </form>
   )
 }

@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Partnerships from './pages/Partnerships'
 import Strategize from './pages/Strategize'
+import BecomePartner from './pages/BecomePartner'
 import Contact from './pages/Contact'
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Route path="/partnerships" element={<Partnerships />} />
             <Route path="/services" element={<Strategize />} />
             <Route path="/strategize" element={<Strategize />} />
+            <Route path="/become-a-partner" element={<BecomePartner />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<Home />} />
           </Routes>

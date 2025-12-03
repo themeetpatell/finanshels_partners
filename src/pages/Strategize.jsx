@@ -1,4 +1,5 @@
 import { ArrowRight, BadgeCheck, Building2, ClipboardList, Coins, FileCheck2, FileWarning, Library, Sparkles, TrendingUp } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 const services = [
   {
@@ -134,12 +135,12 @@ export default function Strategize() {
               <p className="text-sm font-semibold text-cyan-200 uppercase tracking-[0.2em]">More we cover</p>
               <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2">Extras partners can tap into.</h2>
             </div>
-            <a
-              href="mailto:partners@finanshels.com?subject=Services%20walkthrough"
+            <Link
+              to="/become-a-partner"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-slate-900 font-semibold shadow-lg hover:scale-[1.01] transition-transform"
             >
               Book a walkthrough <ArrowRight size={16} />
-            </a>
+            </Link>
           </div>
           <ul className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {extras.map((item) => (
