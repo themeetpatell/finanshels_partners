@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, LogIn, Users } from 'lucide-react'
 import { useState } from 'react'
 import { cn } from '../lib/utils'
 
@@ -47,8 +47,22 @@ export default function Navbar() {
               </Link>
             ))}
             <Link
+              to="/login"
+              className="ml-3 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-400/30 text-cyan-300 font-semibold hover:bg-cyan-400/10 transition-all"
+            >
+              <LogIn size={16} />
+              Partner Login
+            </Link>
+            <Link
+              to="/team/login"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-purple-400/30 text-purple-300 font-semibold hover:bg-purple-400/10 transition-all"
+            >
+              <Users size={16} />
+              Team Login
+            </Link>
+            <Link
               to="/become-a-partner"
-              className="ml-3 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-500 text-slate-950 font-semibold shadow-lg shadow-indigo-500/20 hover:scale-[1.02] transition-transform"
+              className="ml-2 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-500 text-slate-950 font-semibold shadow-lg shadow-indigo-500/20 hover:scale-[1.02] transition-transform"
             >
               Become a partner
             </Link>
@@ -81,6 +95,24 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
+            <div className="grid grid-cols-2 gap-2 pt-2">
+              <Link
+                to="/login"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-cyan-400/30 text-cyan-300 font-semibold hover:bg-cyan-400/10 transition-all"
+              >
+                <LogIn size={16} />
+                Partner Login
+              </Link>
+              <Link
+                to="/team/login"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-purple-400/30 text-purple-300 font-semibold hover:bg-purple-400/10 transition-all"
+              >
+                <Users size={16} />
+                Team Login
+              </Link>
+            </div>
             <Link
               to="/become-a-partner"
               onClick={() => setMobileMenuOpen(false)}

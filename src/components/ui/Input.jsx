@@ -4,7 +4,7 @@ export function Input({ className, error, ...props }) {
   return (
     <input
       className={cn(
-        'flex h-12 w-full rounded-xl border-2 border-gray-200 bg-white px-4 py-2 text-base',
+        'flex h-12 w-full rounded-xl border-2 border-gray-200 bg-white px-4 py-2 text-base text-gray-900',
         'transition-colors',
         'placeholder:text-gray-400',
         'focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/20',
@@ -21,7 +21,7 @@ export function Textarea({ className, error, ...props }) {
   return (
     <textarea
       className={cn(
-        'flex min-h-[120px] w-full rounded-xl border-2 border-gray-200 bg-white px-4 py-3 text-base',
+        'flex min-h-[120px] w-full rounded-xl border-2 border-gray-200 bg-white px-4 py-3 text-base text-gray-900',
         'transition-colors',
         'placeholder:text-gray-400',
         'focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/20',
