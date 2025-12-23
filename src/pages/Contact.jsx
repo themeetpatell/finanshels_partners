@@ -1,14 +1,20 @@
-import { CalendarClock, Mail, MapPin, Sparkles, ArrowRight } from 'lucide-react'
+import { CalendarClock, Mail, MapPin, Sparkles, ArrowRight, MessageCircle } from 'lucide-react'
 
 const touchpoints = [
-  { title: 'Email', value: 'partners@finanshels.com', icon: Mail, href: 'mailto:partners@finanshels.com' },
+  { title: 'Email', value: 'partnership@finanshels.com', icon: Mail, href: 'mailto:partnership@finanshels.com' },
   { title: 'HQ', value: 'Dubai, UAE (Global Hub)', icon: MapPin },
+  {
+    title: 'WhatsApp',
+    value: '+971 50 495 4698',
+    icon: MessageCircle,
+    href: 'https://wa.me/971504954698?text=Hey%20Finanshels%2C%20I%27d%20like%20to%20discuss%20a%20partnership.',
+  },
 ]
 
 export default function Contact() {
   return (
     <div className="space-y-12 pb-16">
-      <section className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 pt-12">
+      <section className="max-w-5xl mx-auto px-3 sm:px-4 lg:px-6 pt-12">
         <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-8 sm:p-10 shadow-2xl shadow-slate-900/40 space-y-6">
           <div className="flex items-center gap-3 text-sm font-semibold text-cyan-200 uppercase tracking-[0.2em]">
             <Sparkles size={18} />

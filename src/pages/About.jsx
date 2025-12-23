@@ -1,56 +1,80 @@
 import { Link } from 'react-router-dom'
-import { Building2, Globe2, HeartHandshake, Rocket, Sparkles, Target, Users, ShieldCheck } from 'lucide-react'
+import { ArrowRight, Building2, CheckCircle2, Globe2, Rocket, Sparkles } from 'lucide-react'
 
 const stats = [
-  { label: 'Founded', value: '2022', detail: 'Built by operators in Dubai' },
-  { label: 'Customers', value: '5,000+', detail: 'SMBs and mid-market teams' },
-  { label: 'Team', value: '140+', detail: 'Finance, product, and success' },
-  { label: 'Market focus', value: 'UAE', detail: 'On-ground tax and compliance ops' },
-]
-
-const pillars = [
-  { title: 'Operator DNA', description: 'Partners speak to founders and finance leaders, not layers of account managers.', icon: Rocket },
-  { title: 'Regulatory confidence', description: 'Tax, compliance, and payroll handled locally with auditable workflows.', icon: ShieldCheck },
-  { title: 'Product + service', description: 'Automation where it matters, people where it counts. Reporting, closure, and insights in one place.', icon: Target },
-  { title: 'Partner obsession', description: 'We measure ourselves on your brand lift, revenue, and NPS. Every motion has shared OKRs.', icon: HeartHandshake },
+  { label: 'Founded', value: 'Nov 2022', detail: 'Built by operators in Dubai' },
+  { label: 'Customers', value: '5,000+', detail: 'Clients across the UAE' },
+  { label: 'Team', value: '140+', detail: 'Finance, product, and partnerships' },
+  { label: 'Market focus', value: 'UAE & GCC', detail: 'On-ground tax and compliance ops' },
 ]
 
 const milestones = [
   { year: '2022', title: 'Launched Finanshels', detail: 'Started in Dubai with operators who know founders and finance.' },
-  { year: '2023', title: 'Tax + compliance rails', detail: 'Built VAT, corporate tax, and payroll pods dedicated to UAE businesses.' },
+  { year: '2023', title: 'Tax + compliance rails', detail: 'Built VAT and corporate tax pods dedicated to UAE businesses.' },
   { year: '2024', title: '5,000+ customers', detail: 'Scaled delivery and reporting while keeping every client audit-ready.' },
   { year: '2025', title: '140+ expert team', detail: 'Finance leaders, product builders, and analysts working on-ground in the UAE.' },
 ]
 
 export default function About() {
   return (
-    <div className="space-y-16 pb-20">
-      <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-12">
-        <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-10 shadow-2xl shadow-slate-900/40">
+    <div className="space-y-16 pb-2">
+      <section className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 pt-12">
+        <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-5 sm:p-6 lg:p-8 shadow-2xl shadow-slate-900/40">
           <div className="flex items-center gap-3 text-sm font-semibold text-cyan-200 uppercase tracking-[0.2em]">
             <Sparkles size={18} />
             About Finanshels
           </div>
-          <div className="grid lg:grid-cols-2 gap-10 mt-6 items-start">
+          <div className="grid lg:grid-cols-2 gap-10 mt-2 items-start">
             <div className="space-y-5">
-              <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-cyan-200 uppercase tracking-[0.25em]">
+                Built for UAE operators
+              </div>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight">
                 Finance, tax, and compliance for founders in the UAE.
               </h1>
-              <p className="text-lg text-slate-300 leading-relaxed">
-                We built Finanshels to give teams a faster, clearer finance partner. Operators plus simple workflows keep clients compliant—whether they are growing, restructuring, or winding down.
+              <p className="text-base sm:text-lg text-slate-200 leading-relaxed">
+                Faster answers, audit-ready numbers, and clear ownership. We blend on-ground specialists with product so you stay compliant while you grow.
               </p>
-              <div className="flex flex-wrap gap-3">
-                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/15 text-white">
+              <ul className="space-y-2 text-sm sm:text-base text-slate-200">
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 size={16} className="mt-0.5 text-cyan-300" />
+                  On-ground tax and compliance pods in the UAE
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 size={16} className="mt-0.5 text-cyan-300" />
+                  Audit-ready books, leadership packs, and SLA visibility
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 size={16} className="mt-0.5 text-cyan-300" />
+                  Product for speed, people for complex cases and reviews
+                </li>
+              </ul>
+              <div className="flex flex-wrap gap-2">
+                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/15 text-white text-sm">
                   <Building2 size={16} /> HQ: Dubai, UAE
                 </span>
-                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/15 text-white">
-                  <Globe2 size={16} /> Serving UAE founders
+                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/15 text-white text-sm">
+                  <Globe2 size={16} /> Serving founders across UAE & GCC
                 </span>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Link
+                  to="/become-a-partner"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-500 text-slate-950 font-semibold shadow-lg shadow-indigo-500/20 hover:scale-[1.02] transition-transform"
+                >
+                  Talk to partnerships <ArrowRight size={16} />
+                </Link>
+                <a
+                  href="#journey"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full border border-white/15 text-white font-semibold hover:bg-white/5 transition-colors"
+                >
+                  View journey
+                </a>
               </div>
             </div>
             <div className="grid sm:grid-cols-2 gap-4">
               {stats.map((stat) => (
-                <div key={stat.label} className="rounded-2xl border border-white/10 bg-slate-950/50 p-4">
+                <div key={stat.label} className="rounded-2xl border border-white/10 bg-slate-950/50 p-3 sm:p-4">
                   <p className="text-xs uppercase tracking-[0.2em] text-slate-400 font-semibold">{stat.label}</p>
                   <p className="text-3xl font-bold text-white mt-2">{stat.value}</p>
                   <p className="text-sm text-slate-300">{stat.detail}</p>
@@ -61,65 +85,8 @@ export default function About() {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-10 items-start">
-          <div className="space-y-4">
-            <p className="text-sm font-semibold text-cyan-200 uppercase tracking-[0.2em]">Operating system</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-white">How we deliver results that stick.</h2>
-            <p className="text-slate-300 leading-relaxed">
-              Product where it helps, people where it matters. Partners get the same visibility as clients—no hidden steps, no surprises on timelines or scope.
-            </p>
-            <div className="space-y-3">
-              {pillars.map(({ title, description, icon: Icon }) => (
-                <div key={title} className="flex gap-4 rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400/30 to-purple-500/30 flex items-center justify-center text-cyan-200 flex-shrink-0">
-                    <Icon size={18} />
-                  </div>
-                  <div>
-                    <p className="text-lg font-semibold text-white">{title}</p>
-                    <p className="text-sm text-slate-300 leading-relaxed">{description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-2xl shadow-slate-900/40">
-            <div className="flex items-center gap-3 mb-6">
-              <Users className="text-cyan-300" />
-              <div>
-                <p className="text-sm text-slate-400">People who make it work</p>
-                <p className="text-xl font-semibold text-white">Finance leaders, product builders, analysts</p>
-              </div>
-            </div>
-              <div className="space-y-4">
-              <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 p-4">
-                <div>
-                  <p className="text-sm text-slate-300">Specialist teams</p>
-                  <p className="text-lg font-semibold text-white">Tax + Accounting + Payroll</p>
-                </div>
-                <ShieldCheck className="text-cyan-300" />
-              </div>
-              <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 p-4">
-                <div>
-                  <p className="text-sm text-slate-300">Insights & reporting</p>
-                  <p className="text-lg font-semibold text-white">Monthly FP&A dashboards</p>
-                </div>
-                <Target className="text-indigo-300" />
-              </div>
-              <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 p-4">
-                <div>
-                  <p className="text-sm text-slate-300">Partner care</p>
-                  <p className="text-lg font-semibold text-white">Dedicated partner desk</p>
-                </div>
-                <HeartHandshake className="text-purple-300" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="rounded-3xl border border-white/10 bg-gradient-to-r from-slate-900 via-white/5 to-slate-900 p-10 shadow-2xl shadow-slate-900/50">
+      <section id="journey" className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6">
+        <div className="rounded-3xl border border-white/10 bg-gradient-to-r from-slate-900 via-white/5 to-slate-900 p-6 sm:p-8 lg:p-10 shadow-2xl shadow-slate-900/50">
           <div className="flex items-center gap-3 text-sm font-semibold text-cyan-200 uppercase tracking-[0.2em]">
             <Rocket size={18} />
             Journey
@@ -136,21 +103,132 @@ export default function About() {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="rounded-3xl border border-white/10 bg-white/5 p-8 sm:p-10 shadow-2xl shadow-slate-900/40 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-          <div className="space-y-2">
-            <p className="text-sm font-semibold text-cyan-200 uppercase tracking-[0.2em]">Partner with us</p>
-            <h3 className="text-2xl sm:text-3xl font-bold text-white">Ready to bring Finanshels to your clients?</h3>
-            <p className="text-slate-300">
-              Share your details and we&apos;ll align on scope, revenue model, and onboarding in one business day.
-            </p>
+      <section className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6">
+        <div className="rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-8 lg:p-10 shadow-2xl shadow-slate-900/40">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+            <div className="space-y-3">
+              <p className="text-sm font-semibold text-cyan-200 uppercase tracking-[0.2em]">Partner with us</p>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white">Ready to bring Finanshels to your clients?</h3>
+              <p className="text-slate-300">
+                Share your details and we&apos;ll align on scope, revenue model, and onboarding in one business day.
+              </p>
+            </div>
+            <form
+              action="https://forms.zohopublic.com/finanshelsllc/form/BecomeFinanshelsPartner/formperma/jQvIbEZGWGnBBJUeK-did5uUNvQG8SY0NDdQseSJCcA/htmlRecords/submit"
+              name="form"
+              id="form"
+              method="POST"
+              acceptCharset="UTF-8"
+              encType="multipart/form-data"
+              className="space-y-4"
+            >
+              <input type="hidden" name="zf_referrer_name" value="" />
+              <input type="hidden" name="zf_redirect_url" value="" />
+              <input type="hidden" name="zc_gad" value="" />
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <label className="flex flex-col gap-2 text-sm font-semibold text-white">
+                  <span className="flex items-center gap-1">
+                    Your Name <span className="text-pink-300">*</span>
+                  </span>
+                  <input
+                    type="text"
+                    name="SingleLine"
+                    fieldType="1"
+                    maxLength="255"
+                    placeholder="i.e. Meet Patel"
+                    required
+                    className="w-full rounded-xl border border-white/10 bg-slate-950/50 px-3 py-2 text-white placeholder:text-slate-400 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/40"
+                  />
+                </label>
+
+                <label className="flex flex-col gap-2 text-sm font-semibold text-white">
+                  <span className="flex items-center gap-1">
+                    Your Email <span className="text-pink-300">*</span>
+                  </span>
+                  <input
+                    type="text"
+                    name="Email"
+                    fieldType="9"
+                    maxLength="255"
+                    placeholder="i.e. meet@finanshels.com"
+                    required
+                    className="w-full rounded-xl border border-white/10 bg-slate-950/50 px-3 py-2 text-white placeholder:text-slate-400 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/40"
+                  />
+                </label>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-end">
+                <label className="flex flex-col gap-2 text-sm font-semibold text-white">
+                  <span>Country Code</span>
+                  <input
+                    type="text"
+                    compname="PhoneNumber"
+                    name="PhoneNumber_countrycode"
+                    phoneFormat="1"
+                    isCountryCodeEnabled="true"
+                    maxLength="20"
+                    fieldType="11"
+                    id="international_PhoneNumber_countrycode"
+                    placeholder="+971"
+                    className="w-full rounded-xl border border-white/10 bg-slate-950/50 px-3 py-2 text-white placeholder:text-slate-400 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/40"
+                  />
+                </label>
+
+                <label className="flex flex-col gap-2 text-sm font-semibold text-white md:col-span-2">
+                  <span className="flex items-center gap-1">
+                    Your WhatsApp Number <span className="text-pink-300">*</span>
+                  </span>
+                  <input
+                    type="text"
+                    compname="PhoneNumber_countrycodeval"
+                    name="PhoneNumber_countrycodeval"
+                    phoneFormat="1"
+                    maxLength="10"
+                    id="international_PhoneNumber_countrycodeval"
+                    placeholder="XX XXX XXXX"
+                    required
+                    className="w-full rounded-xl border border-white/10 bg-slate-950/50 px-3 py-2 text-white placeholder:text-slate-400 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/40"
+                  />
+                </label>
+              </div>
+
+              <label className="flex flex-col gap-2 text-sm font-semibold text-white">
+                <span>Your Organization</span>
+                <input
+                  type="text"
+                  name="SingleLine1"
+                  fieldType="1"
+                  maxLength="255"
+                  placeholder="i.e. Finanshels LLC"
+                  className="w-full rounded-xl border border-white/10 bg-slate-950/50 px-3 py-2 text-white placeholder:text-slate-400 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/40"
+                />
+              </label>
+
+              <label className="flex flex-col gap-2 text-sm font-semibold text-white">
+                <span className="flex items-center gap-1">
+                  Partner Type <span className="text-pink-300">*</span>
+                </span>
+                <select
+                  name="Dropdown"
+                  required
+                  className="w-full rounded-xl border border-white/10 bg-slate-950/50 px-3 py-2 text-white focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/40"
+                  defaultValue="-Select-"
+                >
+                  <option value="-Select-">-Select-</option>
+                  <option value="Referral Partner">Referral Partner</option>
+                  <option value="Channel Partner">Channel Partner</option>
+                </select>
+              </label>
+
+              <button
+                type="submit"
+                className="w-full md:w-48 inline-flex items-center justify-center px-5 py-3 rounded-full bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-500 text-slate-950 font-semibold shadow-lg hover:scale-[1.01] transition-transform mx-auto"
+              >
+                Submit
+              </button>
+            </form>
           </div>
-          <Link
-            to="/become-a-partner"
-            className="inline-flex items-center justify-center px-5 py-3 rounded-full bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-500 text-slate-950 font-semibold shadow-lg hover:scale-[1.01] transition-transform"
-          >
-            Become a partner
-          </Link>
         </div>
       </section>
     </div>

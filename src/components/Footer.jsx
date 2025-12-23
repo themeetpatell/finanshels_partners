@@ -3,7 +3,7 @@ import { Linkedin, Twitter, Mail, Instagram, Youtube, ArrowRight } from 'lucide-
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-950 text-white py-14 px-6 sm:px-8 lg:px-12 border-t border-white/10">
+    <footer className="bg-slate-950 text-white py-14 px-3 sm:px-4 lg:px-6 border-t border-white/10">
       <div className="max-w-7xl mx-auto space-y-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           <div className="col-span-1 md:col-span-2 space-y-4">
@@ -47,11 +47,6 @@ export default function Footer() {
               <li>
                 <Link to="/partnerships" className="text-slate-300 hover:text-white transition-colors font-medium text-base">
                   Channel partners
-                </Link>
-              </li>
-              <li>
-                <Link to="/partnerships" className="text-slate-300 hover:text-white transition-colors font-medium text-base">
-                  Strategic partners
                 </Link>
               </li>
             </ul>
