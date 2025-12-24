@@ -9,6 +9,7 @@ import {
   Workflow,
   Trophy,
 } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import PartnerWithUs from '../components/PartnerWithUs'
 
 const programs = [
@@ -117,12 +118,12 @@ export default function Partnerships() {
                 We partner with consultants, creators, accountants, lawyers, B2B technology platforms among others. Bring qualified intros for bookkeeping, VAT, Corporate tax, or audits - we handle delivery and updates.
               </p>
             </div>
-            <a
-              href="/become-a-partner"
+            <Link
+              to="/become-a-partner"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-slate-900 font-semibold shadow-lg hover:scale-[1.01] transition-transform"
             >
               Become a partner <ArrowRight size={16} />
-            </a>
+            </Link>
           </div>
           <div className="grid md:grid-cols-3 gap-4 mt-6">
             {referralSteps.map(({ title, detail, icon: Icon }) => (
@@ -158,12 +159,12 @@ export default function Partnerships() {
                 <h2 className="text-3xl font-bold text-white mt-2">{program.name}</h2>
               </div>
               <div className="flex items-center gap-2">
-                <a
-                  href="/become-a-partner"
+                <Link
+                  to="/become-a-partner"
                   className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-white text-slate-950 font-semibold shadow-lg shadow-indigo-500/20 hover:scale-[1.02] transition-transform"
                 >
                   Become a partner <ArrowRight size={14} />
-                </a>
+                </Link>
                 <div className="flex items-center gap-2 px-3 py-2 rounded-full bg-white/10 border border-white/15 text-white">
                   <LineChart size={16} />
                   <span>Scale-ready</span>
