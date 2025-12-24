@@ -9,15 +9,16 @@ import {
   Workflow,
   Trophy,
 } from 'lucide-react'
+import PartnerWithUs from '../components/PartnerWithUs'
 
 const programs = [
   {
     name: 'Referral partners',
-    summary: 'Consultants, creators, and connectors who share qualified UAE intros. Earn up to AED 1,500 or up to 40% (tiered) per successful referral with transparent tracking.',
+    summary: 'Consultants, creators, and connectors who share qualified UAE intros. Earn up to AED 1,500 or 40% (tiered) per successful referral with transparent tracking.',
     incentives: [
       'Up to AED 1,500 or up to 40% commission per closed referral (tier-based)',
       'Live tracker with stage-by-stage updates',
-      'Exclusive experiences on annual/quarterly wins (safari, Burj Khalifa, yacht)',
+      'Partner rewards for top performing partners (safari, yacht trips, etc.)',
     ],
     terms: ['For individuals with warm intros', 'Bookkeeping, VAT, tax, and audits in scope', 'Payouts on closed and retained deals'],
     accent: 'from-cyan-400/30 via-indigo-500/20 to-purple-500/25',
@@ -48,12 +49,12 @@ const formats = [
 const referralSteps = [
   { title: 'Join', detail: 'Apply to the Finanshels referral program and get mapped to a partner lead.', icon: Sparkles },
   { title: 'Refer', detail: 'Share UAE businesses that need bookkeeping, VAT filing, corporate tax, or audits.', icon: ArrowRight },
-  { title: 'Earn & celebrate', detail: 'Earn up to AED 1,500 or up to 40% commission (tier-based) and unlock milestone perks.', icon: Trophy },
+  { title: 'Earn & celebrate', detail: 'Earn up to AED 1,500 or 40% commission (tier-based) and unlock milestone perks.', icon: Trophy },
 ]
 
 const referralPerks = [
   '4.9★ on Trustpilot with 5,000+ clients across the UAE—easy social proof for your intros',
-  'Experiences for annual/quarterly wins: desert safaris, Burj Khalifa, or yacht trips',
+  'Partner rewards for top performing partners (safari, yacht trips, etc.)',
   'Visibility perks like investor dinners and podcast/radio features',
 ]
 
@@ -111,9 +112,9 @@ export default function Partnerships() {
           <div className="flex items-center justify-between gap-6 flex-wrap">
             <div>
               <p className="text-sm font-semibold text-cyan-200 uppercase tracking-[0.2em]">Referral program</p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2">Start earning up to AED 1,500 or up to 40% (tiered).</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2">Start earning up to AED 1,500 or 40% commissions (tiered).</h2>
               <p className="text-slate-300 leading-relaxed mt-2">
-                We partner with consultants, creators, accountants, and UAE connectors. Bring qualified intros for bookkeeping, VAT, corporate tax, or audits—we handle delivery and updates.
+                We partner with consultants, creators, accountants, lawyers, B2B technology platforms among others. Bring qualified intros for bookkeeping, VAT, Corporate tax, or audits - we handle delivery and updates.
               </p>
             </div>
             <a
@@ -237,6 +238,8 @@ export default function Partnerships() {
           </ul>
         </div>
       </section>
+
+      <PartnerWithUs />
     </div>
   )
 }

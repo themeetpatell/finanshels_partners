@@ -1,5 +1,6 @@
 import { ArrowRight, BadgeCheck, Building2, ClipboardList, Coins, FileCheck2, FileWarning, Library, Sparkles, TrendingUp } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import PartnerWithUs from '../components/PartnerWithUs'
 
 const services = [
   {
@@ -152,6 +153,8 @@ export default function Strategize() {
           </ul>
         </div>
       </section>
+
+      <PartnerWithUs />
     </div>
   )
 }

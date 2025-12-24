@@ -3,8 +3,8 @@ import { ArrowRight, CheckCircle, Globe2, HeartHandshake, LineChart, LogIn, Rock
 
 const stats = [
   { label: 'NPS', value: '9.4', detail: 'Partners and clients across MENA' },
-  { label: 'Response time', value: '<24h', detail: 'Partner desk updates and decisions' },
   { label: 'Clients', value: '5,000+', detail: 'Clients across the UAE' },
+  { label: 'Partners', value: '100+', detail: 'Partners across the UAE' },
   { label: 'Retention', value: '97%', detail: 'We keep the intros you send' },
 ]
 
@@ -75,8 +75,8 @@ const referralSteps = [
 
 const referralExtras = [
   'Live tracker with payout dates—no spreadsheets',
-  '4.9★ on Trustpilot with 5,000+ clients across the UAE',
-  'Experiences for quarterly wins (safari, Burj Khalifa, yacht)',
+  '4.9★ on Trustpilot with 5,000+ happy clients across the UAE',
+  'Partner rewards for top performing partners (safaris, trips, and more)',
   'Visibility perks like investor dinners and media features',
 ]
 
@@ -92,17 +92,17 @@ export default function Home() {
                 Finance, tax & compliance for UAE
               </div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-white tracking-tight">
-                Finanshels delivers compliant books, clean tax, and leadership updates.
+                Accelarate your growth and revenues partnering with Finanshels
               </h1>
               <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-                Refer UAE businesses needing finance and tax services. Earn transparent commissions while we handle full compliance.
+                Earn industry leading commissions and offer more value to your clients by referring them to Finanshels for Accounting, Compliance, Payroll and Tax Related services.
               </p>
               <div className="flex flex-col sm:flex-row flex-wrap gap-3">
                 <Link
                   to="/become-a-partner"
                   className="inline-flex items-center justify-center gap-2 px-5 py-2.5 sm:py-3 rounded-full bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-500 text-slate-950 font-semibold shadow-lg shadow-indigo-500/20 hover:scale-[1.02] transition-transform w-full sm:w-auto"
                 >
-                  Talk to partnerships <ArrowRight size={18} />
+                  Become a Partner <ArrowRight size={18} />
                 </Link>
                 <Link
                   to="/partnerships"
@@ -117,7 +117,7 @@ export default function Home() {
               <div className="relative rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-4 sm:p-6 lg:p-8 shadow-2xl shadow-indigo-900/30 space-y-4 sm:space-y-6">
                 <div>
                   <p className="text-sm text-slate-400 font-semibold uppercase tracking-[0.2em]">Trust signals</p>
-                  <p className="text-lg font-semibold text-white">Proof you can share with leadership and clients</p>
+                  <p className="text-lg font-semibold text-white">Why Partner with Finanshels?</p>
                 </div>
                 <div className="grid grid-cols-2 gap-3 sm:gap-4">
                   {stats.map((item) => (
@@ -131,7 +131,7 @@ export default function Home() {
                 <div className="flex items-start gap-3 rounded-2xl border border-white/10 bg-slate-950/60 p-3 sm:p-4">
                   <CheckCircle className="text-cyan-300 mt-0.5" size={18} />
                   <p className="text-sm text-slate-200 leading-relaxed">
-                    Every partnership starts with a week-one plan: ICP, owners, approvals, and reporting cadence. No vague promises—just the steps, timelines, and accountability.
+                   Every partner receives personalized guidance and is mapped to a partnership manager, managing the relationship.
                   </p>
                 </div>
               </div>
@@ -144,8 +144,8 @@ export default function Home() {
         <div className="rounded-3xl border border-white/10 bg-gradient-to-r from-white/5 via-white/10 to-white/5 p-4 sm:p-6 lg:p-10 shadow-2xl shadow-slate-900/40 space-y-6 sm:space-y-8">
           <div className="flex items-center justify-between gap-6 flex-wrap">
             <div>
-              <p className="text-sm font-semibold text-cyan-200 uppercase tracking-[0.2em]">What we run</p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2">Finance, tax, compliance, and advisory in one partner.</h2>
+              <p className="text-sm font-semibold text-cyan-200 uppercase tracking-[0.2em]">What we manage</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2">Finance, tax, compliance, and advisory in one place.</h2>
               <p className="text-slate-300 leading-relaxed mt-2">
                 Clients stay compliant and confident. Partners get visibility, faster closes, and fewer escalations.
               </p>
@@ -262,7 +262,7 @@ export default function Home() {
             </div>
             <div className="flex items-center gap-2 mb-2">
               <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-cyan-500/10 text-cyan-300 text-xs font-semibold border border-cyan-400/20">
-                5,000+ clients across UAE
+                5,000+ hapy clients across UAE
               </span>
               <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-semibold border border-emerald-400/20">
                 Fast payouts
@@ -283,7 +283,7 @@ export default function Home() {
             </ul>
             <div className="flex justify-end mt-6">
               <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-400 text-white text-xs font-semibold shadow">
-                Trusted by 5,000+ clients across UAE
+                Trusted by 5,000+ happy clients across UAE
               </span>
             </div>
           </div>
