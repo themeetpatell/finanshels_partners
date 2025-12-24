@@ -121,7 +121,7 @@ export default function Partnerships() {
               href="/become-a-partner"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-slate-900 font-semibold shadow-lg hover:scale-[1.01] transition-transform"
             >
-              Apply now <ArrowRight size={16} />
+              Become a partner <ArrowRight size={16} />
             </a>
           </div>
           <div className="grid md:grid-cols-3 gap-4 mt-6">
@@ -162,7 +162,7 @@ export default function Partnerships() {
                   href="/become-a-partner"
                   className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-white text-slate-950 font-semibold shadow-lg shadow-indigo-500/20 hover:scale-[1.02] transition-transform"
                 >
-                  Apply <ArrowRight size={14} />
+                  Become a partner <ArrowRight size={14} />
                 </a>
                 <div className="flex items-center gap-2 px-3 py-2 rounded-full bg-white/10 border border-white/15 text-white">
                   <LineChart size={16} />
