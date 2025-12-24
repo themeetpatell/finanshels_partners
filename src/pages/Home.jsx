@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, CheckCircle, Globe2, HeartHandshake, LineChart, LogIn, Rocket, ShieldCheck, Sparkles, Users } from 'lucide-react'
 
@@ -80,7 +81,31 @@ const referralExtras = [
   'Visibility perks like investor dinners and media features',
 ]
 
+const testimonials = [
+  {
+    name: 'Pranav Shah, Founder',
+    review: 'Finanshels gave us the structure, reporting, and compliance we needed to close a round and scale without finance drama.',
+  },
+  {
+    name: 'Aisha Al Mazrouei, Partner',
+    review: 'Their team is fast, clear, and keeps every intro updated. Zero surprises and the payouts land when promised.',
+  },
+  {
+    name: 'Rahul Mehta, Advisor',
+    review: 'The partnership playbooks are plug-and-play. My clients stay compliant and I get line of sight on every SLA.',
+  },
+]
+
 export default function Home() {
+  const [activeTestimonial, setActiveTestimonial] = useState(0)
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setActiveTestimonial((prev) => (prev + 1) % testimonials.length)
+    }, 7000)
+    return () => clearInterval(id)
+  }, [])
+
   return (
     <div className="space-y-12 sm:space-y-16 lg:space-y-20 pb-16 sm:pb-20 lg:pb-24">
       <section className="relative overflow-hidden">
@@ -246,6 +271,54 @@ export default function Home() {
                 <p className="text-sm text-slate-300 leading-relaxed">{detail}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6">
+        <div className="rounded-3xl border border-white/10 bg-gradient-to-r from-slate-900 via-white/5 to-slate-900 p-6 sm:p-8 shadow-2xl shadow-slate-900/50">
+          <div className="flex items-center justify-between gap-4 flex-wrap mb-6 sm:mb-8">
+            <div>
+              <p className="text-sm font-semibold text-cyan-200 uppercase tracking-[0.2em]">Partner stories</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2">What partners say about working with us.</h2>
+            </div>
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                onClick={() => setActiveTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)}
+                className="inline-flex items-center justify-center w-10 h-10 rounded-full border border-white/15 text-white hover:bg-white/10 transition"
+                aria-label="Previous testimonial"
+              >
+                <ArrowRight className="rotate-180" size={16} />
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveTestimonial((prev) => (prev + 1) % testimonials.length)}
+                className="inline-flex items-center justify-center w-10 h-10 rounded-full border border-white/15 text-white hover:bg-white/10 transition"
+                aria-label="Next testimonial"
+              >
+                <ArrowRight size={16} />
+              </button>
+            </div>
+          </div>
+          <div className="relative overflow-hidden">
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-8 shadow-xl shadow-slate-900/40 min-h-[220px] flex flex-col justify-between gap-4">
+              <blockquote className="text-xl sm:text-2xl text-white leading-relaxed">
+                “{testimonials[activeTestimonial].review}”
+              </blockquote>
+              <p className="text-sm sm:text-base font-semibold text-cyan-200">— {testimonials[activeTestimonial].name}</p>
+            </div>
+            <div className="flex items-center gap-2 mt-4">
+              {testimonials.map((_, idx) => (
+                <button
+                  key={idx}
+                  type="button"
+                  onClick={() => setActiveTestimonial(idx)}
+                  className={`h-2.5 rounded-full transition-all ${idx === activeTestimonial ? 'w-6 bg-cyan-300' : 'w-2.5 bg-white/30'}`}
+                  aria-label={`Go to testimonial ${idx + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
