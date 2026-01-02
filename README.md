@@ -32,6 +32,8 @@ Finanshels is a UAE-based fintech company (founded 2022) that runs accounting, t
 ## 🚀 Getting Started
 
 ```bash
+git clone https://github.com/Finanshels/finanshels_partners.git
+cd finanshels_partners
 npm install
 npm run dev   # http://localhost:5173
 ```
@@ -77,5 +79,6 @@ src/
 
 ## 🔗 Links
 
+- Repository: [https://github.com/Finanshels/finanshels_partners](https://github.com/Finanshels/finanshels_partners)
 - Main Website: [https://finanshels.com](https://finanshels.com)
 - Partnerships: partners@finanshels.com
