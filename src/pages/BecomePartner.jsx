@@ -1,8 +1,23 @@
 import { HeartHandshake, Mail, MapPin, Sparkles } from 'lucide-react'
+import SEO from '../components/SEO'
 
 export default function BecomePartner() {
   return (
-    <div className="space-y-16 pb-20">
+    <>
+      <SEO
+        title="Become a Finanshels partner"
+        description="Apply to join Finanshels as a referral or channel partner. Expect a response within one business day and access to mapped partner owners."
+        path="/become-a-partner"
+        structuredData={({ canonicalUrl }) => ({
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          name: 'Become a Finanshels partner',
+          url: canonicalUrl,
+          description:
+            'Apply to the Finanshels referral or channel partner program and get routed to the right owner with next steps.',
+        })}
+      />
+      <div className="space-y-16 pb-20">
       <section className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 pt-12">
         <div className="grid grid-cols-1 gap-8 rounded-3xl border border-white/10 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 p-6 sm:p-8 shadow-2xl shadow-slate-900/50">
           <div className="space-y-6">
@@ -36,7 +51,8 @@ export default function BecomePartner() {
           <PartnerFormEmbed />
         </div>
       </section>
-    </div>
+      </div>
+    </>
   )
 }
 

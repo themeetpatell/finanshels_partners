@@ -5,6 +5,7 @@ import { mockAPI } from '../../lib/mockData';
 import { Button } from '../../components/ui/Button';
 import { Input } from '../../components/ui/Input';
 import { Card } from '../../components/ui/Card';
+import SEO from '../../components/SEO';
 
 const Register = () => {
   const navigate = useNavigate();
@@ -69,7 +70,14 @@ const Register = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-12 px-4">
+    <>
+      <SEO
+        title="Partner portal registration"
+        description="Register for the Finanshels partner portal to submit referrals, request services, and track commissions."
+        path="/portal/register"
+        noIndex
+      />
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-12 px-4">
       <Card className="max-w-2xl mx-auto p-8">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Partner Registration</h1>
@@ -352,7 +360,8 @@ const Register = () => {
           </p>
         </div>
       </Card>
-    </div>
+      </div>
+    </>
   );
 };
 

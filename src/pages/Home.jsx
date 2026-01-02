@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, CheckCircle, Globe2, HeartHandshake, LineChart, LogIn, Rocket, ShieldCheck, Sparkles, Users } from 'lucide-react'
+import SEO from '../components/SEO'
 
 const stats = [
   { label: 'NPS', value: '9.4', detail: 'Partners and clients across MENA' },
@@ -107,8 +108,28 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="space-y-12 sm:space-y-16 lg:space-y-20 pb-16 sm:pb-20 lg:pb-24">
-      <section className="relative overflow-hidden">
+    <>
+      <SEO
+        title="Finance, tax & compliance for UAE businesses"
+        description="Bookkeeping, VAT, corporate tax, AML, and advisory for 5,000+ UAE clients plus referral and channel partnerships with transparent attribution."
+        path="/"
+        structuredData={({ canonicalUrl }) => ({
+          '@context': 'https://schema.org',
+          '@type': 'Organization',
+          name: 'Finanshels',
+          url: canonicalUrl,
+          areaServed: 'AE',
+          contactPoint: [
+            {
+              '@type': 'ContactPoint',
+              contactType: 'Partnerships',
+              email: 'partnership@finanshels.com',
+            },
+          ],
+        })}
+      />
+      <div className="space-y-12 sm:space-y-16 lg:space-y-20 pb-16 sm:pb-20 lg:pb-24">
+        <section className="relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_20%_20%,rgba(56,189,248,0.14),transparent_35%),radial-gradient(circle_at_80%_10%,rgba(167,139,250,0.12),transparent_40%),radial-gradient(circle_at_50%_80%,rgba(59,130,246,0.08),transparent_35%)]" />
         <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 pt-16 sm:pt-20">
           <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 lg:gap-12 items-center">
@@ -393,6 +414,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   )
 }

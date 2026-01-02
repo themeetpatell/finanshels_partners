@@ -1,6 +1,7 @@
 import { ArrowRight, BadgeCheck, Building2, ClipboardList, Coins, FileCheck2, FileWarning, Library, Sparkles, TrendingUp } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import PartnerWithUs from '../components/PartnerWithUs'
+import SEO from '../components/SEO'
 
 const services = [
   {
@@ -67,7 +68,21 @@ const extras = [
 
 export default function Strategize() {
   return (
-    <div className="space-y-16 pb-20">
+    <>
+      <SEO
+        title="Finance, tax, and compliance services"
+        description="Corporate tax, VAT, accounting, AML, audit support, and liquidation services for UAE businesses with clear SLAs and single points of contact."
+        path="/services"
+        structuredData={({ canonicalUrl }) => ({
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          name: 'Finanshels services',
+          url: canonicalUrl,
+          description:
+            'Finance, tax, compliance, and closure services with documented scopes, SLAs, and dedicated delivery leads for UAE clients and partners.',
+        })}
+      />
+      <div className="space-y-16 pb-20">
       <section className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 pt-12">
         <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-6 sm:p-7 lg:p-8 shadow-2xl shadow-slate-900/40">
           <div className="flex items-center gap-3 text-sm font-semibold text-cyan-200 uppercase tracking-[0.2em]">
@@ -155,6 +170,7 @@ export default function Strategize() {
       </section>
 
       <PartnerWithUs />
-    </div>
+      </div>
+    </>
   )
 }

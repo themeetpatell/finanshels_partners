@@ -1,4 +1,5 @@
 import { CalendarClock, Mail, MapPin, Sparkles, ArrowRight, MessageCircle } from 'lucide-react'
+import SEO from '../components/SEO'
 
 const touchpoints = [
   { title: 'Email', value: 'partnership@finanshels.com', icon: Mail, href: 'mailto:partnership@finanshels.com' },
@@ -13,7 +14,28 @@ const touchpoints = [
 
 export default function Contact() {
   return (
-    <div className="space-y-12 pb-16">
+    <>
+      <SEO
+        title="Contact Finanshels"
+        description="Talk to Finanshels about partnerships or services. Email partnership@finanshels.com or message us on WhatsApp at +971 50 495 4698."
+        path="/contact"
+        structuredData={({ canonicalUrl }) => ({
+          '@context': 'https://schema.org',
+          '@type': 'ContactPage',
+          name: 'Contact Finanshels',
+          url: canonicalUrl,
+          contactPoint: [
+            {
+              '@type': 'ContactPoint',
+              contactType: 'sales',
+              email: 'partnership@finanshels.com',
+              telephone: '+971504954698',
+              areaServed: 'AE',
+            },
+          ],
+        })}
+      />
+      <div className="space-y-12 pb-16">
       <section className="max-w-5xl mx-auto px-3 sm:px-4 lg:px-6 pt-12">
         <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-8 sm:p-10 shadow-2xl shadow-slate-900/40 space-y-6">
           <div className="flex items-center gap-3 text-sm font-semibold text-cyan-200 uppercase tracking-[0.2em]">
@@ -57,6 +79,7 @@ export default function Contact() {
           </a>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   )
 }

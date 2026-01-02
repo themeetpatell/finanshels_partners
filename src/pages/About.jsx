@@ -1,5 +1,6 @@
 import { Building2, Globe2, Rocket, Sparkles } from 'lucide-react'
 import PartnerWithUs from '../components/PartnerWithUs'
+import SEO from '../components/SEO'
 
 const stats = [
   { label: 'Founded', value: 'Nov 2022', detail: 'Built by operators in Dubai' },
@@ -17,7 +18,21 @@ const milestones = [
 
 export default function About() {
   return (
-    <div className="space-y-16 pb-20">
+    <>
+      <SEO
+        title="About Finanshels"
+        description="Finanshels is a Dubai-founded finance, tax, and compliance partner serving 5,000+ UAE businesses with on-ground operators and clear SLAs."
+        path="/about"
+        structuredData={({ canonicalUrl }) => ({
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          name: 'About Finanshels',
+          url: canonicalUrl,
+          description:
+            'Finance, tax, and compliance partner built by operators in Dubai serving SMEs and mid-market teams across the UAE and GCC.',
+        })}
+      />
+      <div className="space-y-16 pb-20">
       <section className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 pt-12">
         <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-10 shadow-2xl shadow-slate-900/40">
           <div className="flex items-center gap-3 text-sm font-semibold text-cyan-200 uppercase tracking-[0.2em]">
@@ -30,7 +45,7 @@ export default function About() {
                 Finance, tax, and compliance for founders in the UAE.
               </h1>
               <p className="text-lg text-slate-300 leading-relaxed">
-                We built Finanshels to give founders both strategic and opoerations focused finance partner. Operators plus simple workflows keep clients compliant-whether they are growing, restructuring, or winding down.
+                We built Finanshels to give founders both strategic and operations-focused finance partners. Operators plus simple workflows keep clients compliant—whether they are growing, restructuring, or winding down.
               </p>
               <div className="flex flex-wrap gap-6">
                 <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/15 text-white">
@@ -73,6 +88,7 @@ export default function About() {
       </section>
 
       <PartnerWithUs />
-    </div>
+      </div>
+    </>
   )
 }

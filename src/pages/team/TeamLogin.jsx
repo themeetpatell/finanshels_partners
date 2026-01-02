@@ -5,17 +5,15 @@ import { Button } from '../../components/ui/Button';
 import { Input } from '../../components/ui/Input';
 import useAuthStore from '../../stores/authStore';
 import { Shield, Mail, Lock } from 'lucide-react';
+import SEO from '../../components/SEO';
 
 const TeamLogin = () => {
-  console.log('TeamLogin component rendering');
   const navigate = useNavigate();
   const { login } = useAuthStore();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-
-  console.log('TeamLogin state:', { email, password, loading, error });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -47,7 +45,14 @@ const TeamLogin = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center p-4">
+    <>
+      <SEO
+        title="Team portal login"
+        description="Secure access for Finanshels team members to manage partners, leads, and commissions."
+        path="/team/login"
+        noIndex
+      />
+      <div className="min-h-screen bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center p-4">
       <Card className="w-full max-w-md p-8">
         <div className="text-center mb-8">
           <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -121,7 +126,8 @@ const TeamLogin = () => {
           </a>
         </div>
       </Card>
-    </div>
+      </div>
+    </>
   );
 };
 

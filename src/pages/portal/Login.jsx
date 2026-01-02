@@ -5,6 +5,7 @@ import { mockAPI } from '../../lib/mockData';
 import { Button } from '../../components/ui/Button';
 import { Input } from '../../components/ui/Input';
 import { Card } from '../../components/ui/Card';
+import SEO from '../../components/SEO';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -30,12 +31,19 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
-      <Card className="w-full max-w-md p-8">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Partner Portal</h1>
-          <p className="text-gray-600">Sign in to access your dashboard</p>
-        </div>
+    <>
+      <SEO
+        title="Partner portal login"
+        description="Sign in to the Finanshels partner portal to manage referrals, services, and payouts."
+        path="/portal/login"
+        noIndex
+      />
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
+        <Card className="w-full max-w-md p-8">
+          <div className="text-center mb-8">
+            <h1 className="text-3xl font-bold text-gray-900 mb-2">Partner Portal</h1>
+            <p className="text-gray-600">Sign in to access your dashboard</p>
+          </div>
 
         {error && (
           <div className="mb-4 p-3 bg-red-50 border border-red-200 text-red-700 rounded-lg text-sm">
@@ -101,8 +109,9 @@ const Login = () => {
             For demo purposes, enter any email and password
           </p>
         </div>
-      </Card>
-    </div>
+        </Card>
+      </div>
+    </>
   );
 };
 

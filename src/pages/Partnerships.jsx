@@ -11,6 +11,7 @@ import {
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import PartnerWithUs from '../components/PartnerWithUs'
+import SEO from '../components/SEO'
 
 const programs = [
   {
@@ -61,7 +62,21 @@ const referralPerks = [
 
 export default function Partnerships() {
   return (
-    <div className="space-y-16 pb-20">
+    <>
+      <SEO
+        title="Partnership programs for UAE finance, tax, and compliance"
+        description="Referral and channel partnerships with Finanshels—earn up to AED 1,500 or up to 40% commissions with live attribution, SLAs, and co-sell support."
+        path="/partnerships"
+        structuredData={({ canonicalUrl }) => ({
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          name: 'Finanshels partnership programs',
+          url: canonicalUrl,
+          description:
+            'Referral and channel partnerships with Finanshels for bookkeeping, VAT, corporate tax, and audits across the UAE.',
+        })}
+      />
+      <div className="space-y-16 pb-20">
       <section className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 pt-12">
         <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-6 sm:p-8 shadow-2xl shadow-slate-900/40">
           <div className="flex items-center gap-3 text-sm font-semibold text-cyan-200 uppercase tracking-[0.2em]">
@@ -241,6 +256,7 @@ export default function Partnerships() {
       </section>
 
       <PartnerWithUs />
-    </div>
+      </div>
+    </>
   )
 }
