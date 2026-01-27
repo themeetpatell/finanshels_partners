@@ -1,53 +1,67 @@
+import { lazy, Suspense } from 'react'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-import Home from './pages/Home'
-import About from './pages/About'
-import Partnerships from './pages/Partnerships'
-import Strategize from './pages/Strategize'
-import BecomePartner from './pages/BecomePartner'
-import PartnerLanding from './pages/PartnerLanding'
-import Contact from './pages/Contact'
 
-// Portal imports
-import ProtectedRoute from './components/ProtectedRoute'
-import Login from './pages/portal/Login'
-import Register from './pages/portal/Register'
-import PortalLayout from './pages/portal/PortalLayout'
-import Dashboard from './pages/portal/Dashboard'
-import Leads from './pages/portal/Leads'
-import NewLead from './pages/portal/NewLead'
-import Services from './pages/portal/Services'
-import NewServiceRequest from './pages/portal/NewServiceRequest'
-import ServiceCatalog from './pages/portal/ServiceCatalog'
-import Commissions from './pages/portal/Commissions'
-import Analytics from './pages/portal/Analytics'
-import Profile from './pages/portal/Profile'
+// Lazy load pages for code splitting
+const Home = lazy(() => import('./pages/Home'))
+const About = lazy(() => import('./pages/About'))
+const Partnerships = lazy(() => import('./pages/Partnerships'))
+const Strategize = lazy(() => import('./pages/Strategize'))
+const BecomePartner = lazy(() => import('./pages/BecomePartner'))
+const PartnerLanding = lazy(() => import('./pages/PartnerLanding'))
+const Contact = lazy(() => import('./pages/Contact'))
 
-// Team Portal imports
-import TeamLogin from './pages/team/TeamLogin'
-import TeamLayout from './pages/team/TeamLayout'
-import TeamDashboard from './pages/team/TeamDashboard'
-import TeamPartners from './pages/team/TeamPartners'
-import PartnerDetail from './pages/team/PartnerDetail'
-import TeamLeads from './pages/team/TeamLeads'
-import TeamServices from './pages/team/TeamServices'
-import TeamCommissions from './pages/team/TeamCommissions'
+// Portal imports - lazy loaded
+const ProtectedRoute = lazy(() => import('./components/ProtectedRoute'))
+const Login = lazy(() => import('./pages/portal/Login'))
+const Register = lazy(() => import('./pages/portal/Register'))
+const PortalLayout = lazy(() => import('./pages/portal/PortalLayout'))
+const Dashboard = lazy(() => import('./pages/portal/Dashboard'))
+const Leads = lazy(() => import('./pages/portal/Leads'))
+const NewLead = lazy(() => import('./pages/portal/NewLead'))
+const Services = lazy(() => import('./pages/portal/Services'))
+const NewServiceRequest = lazy(() => import('./pages/portal/NewServiceRequest'))
+const ServiceCatalog = lazy(() => import('./pages/portal/ServiceCatalog'))
+const Commissions = lazy(() => import('./pages/portal/Commissions'))
+const Analytics = lazy(() => import('./pages/portal/Analytics'))
+const Profile = lazy(() => import('./pages/portal/Profile'))
+
+// Team Portal imports - lazy loaded
+const TeamLogin = lazy(() => import('./pages/team/TeamLogin'))
+const TeamLayout = lazy(() => import('./pages/team/TeamLayout'))
+const TeamDashboard = lazy(() => import('./pages/team/TeamDashboard'))
+const TeamPartners = lazy(() => import('./pages/team/TeamPartners'))
+const PartnerDetail = lazy(() => import('./pages/team/PartnerDetail'))
+const TeamLeads = lazy(() => import('./pages/team/TeamLeads'))
+const TeamServices = lazy(() => import('./pages/team/TeamServices'))
+const TeamCommissions = lazy(() => import('./pages/team/TeamCommissions'))
+
+// Loading component
+const PageLoader = () => (
+  <div className="flex items-center justify-center min-h-screen bg-slate-950">
+    <div className="text-center">
+      <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-orange-500"></div>
+      <p className="mt-4 text-slate-400">Loading...</p>
+    </div>
+  </div>
+)
 
 function App() {
   return (
     <Router>
-      <Routes>
-        {/* Public Website Routes */}
-        <Route path="/" element={
-          <div className="flex min-h-screen flex-col bg-slate-950 text-slate-50">
-            <Navbar />
-            <main className="flex-1 pt-20">
-              <Home />
-            </main>
-            <Footer />
-          </div>
-        } />
+      <Suspense fallback={<PageLoader />}>
+        <Routes>
+          {/* Public Website Routes */}
+          <Route path="/" element={
+            <div className="flex min-h-screen flex-col bg-slate-950 text-slate-50">
+              <Navbar />
+              <main className="flex-1 pt-20">
+                <Home />
+              </main>
+              <Footer />
+            </div>
+          } />
         <Route path="/about" element={
           <div className="flex min-h-screen flex-col bg-slate-950 text-slate-50">
             <Navbar />
@@ -152,7 +166,8 @@ function App() {
 
         {/* Fallback */}
         <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
+        </Routes>
+      </Suspense>
     </Router>
   )
 }
