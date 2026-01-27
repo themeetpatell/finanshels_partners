@@ -23,14 +23,14 @@ const programs = [
       'Partner rewards for top performing partners (safari, yacht trips, etc.)',
     ],
     terms: ['For individuals with warm intros', 'Bookkeeping, VAT, tax, and audits in scope', 'Payouts on closed and retained deals'],
-    accent: 'from-cyan-400/30 via-indigo-500/20 to-purple-500/25',
+    accent: 'from-orange-500/30 via-orange-600/20 to-orange-700/25',
   },
   {
     name: 'Channel partners',
     summary: 'Companies that bundle Finanshels or co-sell 10–50 qualified leads per quarter with shared governance.',
     incentives: ['Revenue share or wholesale pricing', 'Co-branded onboarding and playbooks', 'Named owners with escalation paths'],
     terms: ['For companies', '10–50 qualified leads per quarter', 'Shared pipeline and SLA tracking'],
-    accent: 'from-emerald-400/30 via-cyan-400/20 to-indigo-500/25',
+    accent: 'from-emerald-400/30 via-orange-500/20 to-orange-600/25',
   },
 ]
 
@@ -79,7 +79,7 @@ export default function Partnerships() {
       <div className="space-y-16 pb-20">
       <section className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 pt-12">
         <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-6 sm:p-8 shadow-2xl shadow-slate-900/40">
-          <div className="flex items-center gap-3 text-sm font-semibold text-cyan-200 uppercase tracking-[0.2em]">
+          <div className="flex items-center gap-3 text-sm font-semibold text-orange-200 uppercase tracking-[0.2em]">
             <HeartHandshake size={18} />
             Partnership programs
           </div>
@@ -103,7 +103,7 @@ export default function Partnerships() {
             <div className="rounded-2xl border border-white/10 bg-slate-950/60 p-5 shadow-inner shadow-slate-900/50">
               <div className="flex items-center justify-between mb-3">
                 <p className="text-sm text-slate-300">What you can expect</p>
-                <Trophy className="text-cyan-300" size={20} />
+                <Trophy className="text-orange-400" size={20} />
               </div>
               <ul className="space-y-3">
                 {[
@@ -113,7 +113,7 @@ export default function Partnerships() {
                   'Quarterly business reviews with joint OKRs.',
                 ].map((item) => (
                   <li key={item} className="flex gap-3 text-slate-200">
-                    <ArrowRight size={16} className="text-cyan-300 mt-1" />
+                    <ArrowRight size={16} className="text-orange-400 mt-1" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -127,7 +127,7 @@ export default function Partnerships() {
         <div className="rounded-3xl border border-white/10 bg-gradient-to-r from-slate-900 via-white/5 to-slate-900 p-6 sm:p-8 shadow-2xl shadow-slate-900/40">
           <div className="flex items-center justify-between gap-6 flex-wrap">
             <div>
-              <p className="text-sm font-semibold text-cyan-200 uppercase tracking-[0.2em]">Referral program</p>
+              <p className="text-sm font-semibold text-orange-200 uppercase tracking-[0.2em]">Referral program</p>
               <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2">Start earning up to AED 1,500 or 40% commissions (tiered).</h2>
               <p className="text-slate-300 leading-relaxed mt-2">
                 We partner with consultants, creators, accountants, lawyers, B2B technology platforms among others. Bring qualified intros for bookkeeping, VAT, Corporate tax, or audits - we handle delivery and updates.
@@ -143,7 +143,7 @@ export default function Partnerships() {
           <div className="grid md:grid-cols-3 gap-4 mt-6">
             {referralSteps.map(({ title, detail, icon: Icon }) => (
               <div key={title} className="rounded-2xl border border-white/10 bg-slate-950/60 p-4 sm:p-5 space-y-2">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400/30 to-purple-500/30 flex items-center justify-center text-cyan-200">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500/30 to-orange-600/30 flex items-center justify-center text-orange-200">
                   <Icon size={18} />
                 </div>
                 <p className="text-lg font-semibold text-white">{title}</p>
@@ -154,7 +154,7 @@ export default function Partnerships() {
           <div className="grid md:grid-cols-3 gap-3 mt-6">
             {referralPerks.map((item) => (
               <div key={item} className="rounded-2xl border border-white/10 bg-white/5 p-4 sm:p-5 text-sm text-slate-200 leading-relaxed flex gap-3">
-                <ArrowRight size={16} className="text-cyan-300 mt-0.5 flex-shrink-0" />
+                <ArrowRight size={16} className="text-orange-400 mt-0.5 flex-shrink-0" />
                 <span>{item}</span>
               </div>
             ))}
@@ -170,7 +170,7 @@ export default function Partnerships() {
           >
             <div className="flex items-center justify-between gap-4 flex-wrap mb-4">
               <div>
-                <p className="text-sm font-semibold text-cyan-200 uppercase tracking-[0.2em]">Program</p>
+                <p className="text-sm font-semibold text-orange-200 uppercase tracking-[0.2em]">Program</p>
                 <h2 className="text-3xl font-bold text-white mt-2">{program.name}</h2>
               </div>
               <div className="flex items-center gap-2">
@@ -193,7 +193,7 @@ export default function Partnerships() {
                 <ul className="space-y-3">
                   {program.incentives.map((item) => (
                     <li key={item} className="flex gap-3 text-slate-200">
-                      <ArrowRight size={16} className="text-cyan-300 mt-1" />
+                      <ArrowRight size={16} className="text-orange-400 mt-1" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -204,7 +204,7 @@ export default function Partnerships() {
                 <ul className="space-y-3">
                   {program.terms.map((item) => (
                     <li key={item} className="flex gap-3 text-slate-200">
-                      <ArrowRight size={16} className="text-cyan-300 mt-1" />
+                      <ArrowRight size={16} className="text-orange-400 mt-1" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -217,14 +217,14 @@ export default function Partnerships() {
 
       <section className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6">
         <div className="rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-8 shadow-2xl shadow-slate-900/40">
-          <div className="flex items-center gap-3 text-sm font-semibold text-cyan-200 uppercase tracking-[0.2em]">
+          <div className="flex items-center gap-3 text-sm font-semibold text-orange-200 uppercase tracking-[0.2em]">
             <Gauge size={18} />
             Partner guardrails
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
             {guardrails.map(({ title, detail, icon: Icon }) => (
               <div key={title} className="rounded-2xl border border-white/10 bg-slate-950/60 p-4 sm:p-5 space-y-2">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400/30 to-purple-500/30 flex items-center justify-center text-cyan-200">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500/30 to-orange-600/30 flex items-center justify-center text-orange-200">
                   <Icon size={18} />
                 </div>
                 <p className="text-lg font-semibold text-white">{title}</p>
@@ -237,7 +237,7 @@ export default function Partnerships() {
 
       <section className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 pb-6">
         <div className="rounded-3xl border border-white/10 bg-gradient-to-r from-slate-900 via-white/5 to-slate-900 p-6 sm:p-7 lg:p-8 shadow-2xl shadow-slate-900/50">
-          <div className="flex items-center gap-3 text-sm font-semibold text-cyan-200 uppercase tracking-[0.2em]">
+          <div className="flex items-center gap-3 text-sm font-semibold text-orange-200 uppercase tracking-[0.2em]">
             <Sparkles size={18} />
             Collaboration formats
           </div>
@@ -247,7 +247,7 @@ export default function Partnerships() {
           <ul className="grid md:grid-cols-2 gap-3 mt-5">
             {formats.map((item) => (
               <li key={item} className="flex gap-3 text-slate-200 leading-relaxed rounded-2xl border border-white/10 bg-slate-950/60 p-3 sm:p-4">
-                <ArrowRight size={16} className="text-cyan-300 mt-1 flex-shrink-0" />
+                <ArrowRight size={16} className="text-orange-400 mt-1 flex-shrink-0" />
                 <span>{item}</span>
               </li>
             ))}

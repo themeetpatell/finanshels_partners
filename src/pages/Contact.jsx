@@ -38,7 +38,7 @@ export default function Contact() {
       <div className="space-y-12 pb-16">
       <section className="max-w-5xl mx-auto px-3 sm:px-4 lg:px-6 pt-12">
         <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-8 sm:p-10 shadow-2xl shadow-slate-900/40 space-y-6">
-          <div className="flex items-center gap-3 text-sm font-semibold text-cyan-200 uppercase tracking-[0.2em]">
+          <div className="flex items-center gap-3 text-sm font-semibold text-orange-200 uppercase tracking-[0.2em]">
             <Sparkles size={18} />
             Contact
           </div>
@@ -58,7 +58,7 @@ export default function Contact() {
                   href={href}
                   className="flex flex-col gap-2 rounded-2xl border border-white/10 bg-white/5 p-4 shadow-inner shadow-slate-900/30 hover:bg-white/10 transition-colors"
                 >
-                  <div className="flex items-center gap-2 text-sm text-cyan-200">
+                  <div className="flex items-center gap-2 text-sm text-orange-200">
                     <Icon size={16} />
                     <span className="uppercase tracking-[0.2em] font-semibold">{title}</span>
                   </div>
@@ -68,12 +68,13 @@ export default function Contact() {
             })}
           </div>
           <div className="flex items-center gap-3 text-sm text-slate-300">
-            <CalendarClock size={18} className="text-cyan-300" />
+            <CalendarClock size={18} className="text-orange-400" />
             <span>Prefer a call? Suggest a slot and we&apos;ll send a calendar invite.</span>
           </div>
           <a
             href="/partnerships"
-            className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-full bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-500 text-slate-950 font-semibold shadow-lg shadow-indigo-500/20 hover:scale-[1.01] transition-transform"
+            className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-full text-white font-semibold shadow-lg shadow-orange-500/20 hover:scale-[1.01] transition-transform"
+            style={{background: '#F16610'}}
           >
             Go to Become a partner <ArrowRight size={16} />
           </a>

@@ -48,7 +48,8 @@ export default function Navbar() {
             ))}
             <Link
               to="/become-a-partner"
-              className="ml-2 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-500 text-slate-950 font-semibold shadow-lg shadow-indigo-500/20 hover:scale-[1.02] transition-transform"
+              className="ml-2 inline-flex items-center gap-2 px-4 py-2 rounded-full text-white font-semibold shadow-lg shadow-orange-500/20 hover:scale-[1.02] transition-transform"
+              style={{background: '#F16610'}}
             >
               Become a partner
             </Link>
@@ -85,7 +86,8 @@ export default function Navbar() {
               <Link
                 to="/become-a-partner"
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl font-semibold bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-500 text-slate-950 shadow-lg shadow-indigo-500/20 w-full"
+                className="flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl font-semibold text-white shadow-lg shadow-orange-500/20 w-full"
+                style={{background: '#F16610'}}
               >
                 Become a partner
               </Link>

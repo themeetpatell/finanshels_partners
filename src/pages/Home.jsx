@@ -134,7 +134,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 pt-16 sm:pt-20">
           <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 lg:gap-12 items-center">
             <div className="space-y-5 sm:space-y-6 lg:space-y-8">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur text-xs sm:text-sm font-semibold text-cyan-200">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur text-xs sm:text-sm font-semibold text-orange-200">
                 Finance, tax & compliance for UAE
               </div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-white tracking-tight">
@@ -146,7 +146,8 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row flex-wrap gap-3">
                 <Link
                   to="/become-a-partner"
-                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 sm:py-3 rounded-full bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-500 text-slate-950 font-semibold shadow-lg shadow-indigo-500/20 hover:scale-[1.02] transition-transform w-full sm:w-auto"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 sm:py-3 rounded-full text-white font-semibold shadow-lg shadow-orange-500/20 hover:scale-[1.02] transition-transform w-full sm:w-auto"
+                  style={{background: '#F16610'}}
                 >
                   Become a Partner <ArrowRight size={18} />
                 </Link>
@@ -159,7 +160,7 @@ export default function Home() {
               </div>
             </div>
             <div className="relative">
-              <div className="absolute inset-0 blur-3xl bg-gradient-to-br from-cyan-500/12 via-indigo-500/12 to-purple-600/12" />
+              <div className="absolute inset-0 blur-3xl bg-gradient-to-br from-orange-500/12 via-orange-600/12 to-orange-700/12" />
               <div className="relative rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-4 sm:p-6 lg:p-8 shadow-2xl shadow-indigo-900/30 space-y-4 sm:space-y-6">
                 <div>
                   <p className="text-sm text-slate-400 font-semibold uppercase tracking-[0.2em]">Trust signals</p>
@@ -175,7 +176,7 @@ export default function Home() {
                   ))}
                 </div>
                 <div className="flex items-start gap-3 rounded-2xl border border-white/10 bg-slate-950/60 p-3 sm:p-4">
-                  <CheckCircle className="text-cyan-300 mt-0.5" size={18} />
+                  <CheckCircle className="text-orange-400 mt-0.5" size={18} />
                   <p className="text-sm text-slate-200 leading-relaxed">
                    Every partner receives personalized guidance and is mapped to a partnership manager, managing the relationship.
                   </p>
@@ -190,7 +191,7 @@ export default function Home() {
         <div className="rounded-3xl border border-white/10 bg-gradient-to-r from-white/5 via-white/10 to-white/5 p-4 sm:p-6 lg:p-10 shadow-2xl shadow-slate-900/40 space-y-6 sm:space-y-8">
           <div className="flex items-center justify-between gap-6 flex-wrap">
             <div>
-              <p className="text-sm font-semibold text-cyan-200 uppercase tracking-[0.2em]">What we manage</p>
+              <p className="text-sm font-semibold text-orange-200 uppercase tracking-[0.2em]">What we manage</p>
               <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2">Finance, tax, compliance, and advisory in one place.</h2>
               <p className="text-slate-300 leading-relaxed mt-2">
                 Clients stay compliant and confident. Partners get visibility, faster closes, and fewer escalations.
@@ -206,7 +207,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-6">
             {services.map(({ title, description, points, icon: Icon }) => (
               <div key={title} className="rounded-3xl border border-white/10 bg-white/5 p-4 sm:p-5 lg:p-6 shadow-xl shadow-slate-900/30 space-y-3">
-                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-cyan-400/30 to-purple-500/30 flex items-center justify-center text-cyan-200">
+                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-orange-500/30 to-orange-600/30 flex items-center justify-center text-orange-200">
                   <Icon size={20} />
                 </div>
                 <h3 className="text-2xl font-semibold text-white">{title}</h3>
@@ -214,7 +215,7 @@ export default function Home() {
                 <div className="space-y-2 pt-2">
                   {points.map((point) => (
                     <div key={point} className="flex items-start gap-2 text-sm text-slate-200">
-                      <CheckCircle size={14} className="text-cyan-300 mt-0.5" />
+                      <CheckCircle size={14} className="text-orange-400 mt-0.5" />
                       <span>{point}</span>
                     </div>
                   ))}
@@ -228,7 +229,7 @@ export default function Home() {
       <section className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6">
         <div className="flex items-center justify-between gap-4 sm:gap-6 flex-wrap mb-6 sm:mb-8 lg:mb-10">
           <div>
-            <p className="text-sm font-semibold text-cyan-200 uppercase tracking-[0.2em]">Partner motions</p>
+            <p className="text-sm font-semibold text-orange-200 uppercase tracking-[0.2em]">Partner motions</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-white mt-3">Choose how we work together.</h2>
             <p className="text-slate-300 leading-relaxed mt-2">
               Referral or channel programs. Each motion comes with owners, attribution, and ready-to-send assets.
@@ -246,7 +247,7 @@ export default function Home() {
             <div key={program.title} className="relative rounded-3xl border border-white/10 bg-white/5 p-5 sm:p-6 lg:p-7 shadow-xl shadow-slate-900/30 overflow-hidden">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(34,211,238,0.12),transparent_35%),radial-gradient(circle_at_80%_0%,rgba(129,140,248,0.14),transparent_35%)]" />
               <div className="relative space-y-3">
-                <span className="inline-flex px-3 py-1.5 rounded-full bg-white/10 text-xs font-semibold text-cyan-100 border border-white/15">
+                <span className="inline-flex px-3 py-1.5 rounded-full bg-white/10 text-xs font-semibold text-orange-100 border border-white/15">
                   {program.badge}
                 </span>
                 <h3 className="text-xl sm:text-2xl font-semibold text-white">{program.title}</h3>
@@ -254,12 +255,12 @@ export default function Home() {
                 <div className="mt-4 space-y-2">
                   {program.highlights.map((point) => (
                     <div key={point} className="flex items-start gap-2 text-sm text-slate-200">
-                      <ArrowRight size={14} className="text-cyan-300 mt-0.5 flex-shrink-0" />
+                      <ArrowRight size={14} className="text-orange-400 mt-0.5 flex-shrink-0" />
                       <span>{point}</span>
                     </div>
                   ))}
                 </div>
-                <Link to="/contact" className="inline-flex items-center gap-2 text-cyan-200 font-semibold text-sm sm:text-base mt-4 pt-2">
+                <Link to="/contact" className="inline-flex items-center gap-2 text-orange-300 font-semibold text-sm sm:text-base mt-4 pt-2">
                   Start a pilot <ArrowRight size={16} />
                 </Link>
               </div>
@@ -272,7 +273,7 @@ export default function Home() {
         <div className="rounded-3xl border border-white/10 bg-gradient-to-r from-white/5 via-white/10 to-white/5 p-4 sm:p-6 lg:p-10 shadow-2xl shadow-slate-900/40">
           <div className="flex items-center justify-between gap-6 flex-wrap">
             <div>
-              <p className="text-sm font-semibold text-cyan-200 uppercase tracking-[0.2em]">Operating rhythm</p>
+              <p className="text-sm font-semibold text-orange-200 uppercase tracking-[0.2em]">Operating rhythm</p>
               <h2 className="text-3xl sm:text-4xl font-bold text-white mt-3">We co-design the play and show the receipts.</h2>
             </div>
             <Link
@@ -285,7 +286,7 @@ export default function Home() {
           <div className="grid md:grid-cols-4 gap-4 mt-8">
             {operatingSteps.map(({ title, detail, icon: Icon }) => (
               <div key={title} className="rounded-2xl border border-white/10 bg-slate-950/60 p-3 sm:p-4 space-y-2">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400/30 to-purple-500/30 flex items-center justify-center text-cyan-200">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500/30 to-orange-600/30 flex items-center justify-center text-orange-200">
                   <Icon size={18} />
                 </div>
                 <h3 className="text-lg font-semibold text-white">{title}</h3>
@@ -300,7 +301,7 @@ export default function Home() {
         <div className="rounded-3xl border border-white/10 bg-gradient-to-r from-slate-900 via-white/5 to-slate-900 p-6 sm:p-8 shadow-2xl shadow-slate-900/50">
           <div className="flex items-center justify-between gap-4 flex-wrap mb-6 sm:mb-8">
             <div>
-              <p className="text-sm font-semibold text-cyan-200 uppercase tracking-[0.2em]">Partner stories</p>
+              <p className="text-sm font-semibold text-orange-200 uppercase tracking-[0.2em]">Partner stories</p>
               <h2 className="text-3xl sm:text-4xl font-bold text-white mt-2">What partners say about working with us.</h2>
             </div>
             <div className="flex items-center gap-2">
@@ -327,7 +328,7 @@ export default function Home() {
               <blockquote className="text-xl sm:text-2xl text-white leading-relaxed">
                 “{testimonials[activeTestimonial].review}”
               </blockquote>
-              <p className="text-sm sm:text-base font-semibold text-cyan-200">— {testimonials[activeTestimonial].name}</p>
+              <p className="text-sm sm:text-base font-semibold text-orange-300">— {testimonials[activeTestimonial].name}</p>
             </div>
             <div className="flex items-center gap-2 mt-4">
               {testimonials.map((_, idx) => (
@@ -335,7 +336,7 @@ export default function Home() {
                   key={idx}
                   type="button"
                   onClick={() => setActiveTestimonial(idx)}
-                  className={`h-2.5 rounded-full transition-all ${idx === activeTestimonial ? 'w-6 bg-cyan-300' : 'w-2.5 bg-white/30'}`}
+                  className={`h-2.5 rounded-full transition-all ${idx === activeTestimonial ? 'w-6 bg-orange-400' : 'w-2.5 bg-white/30'}`}
                   aria-label={`Go to testimonial ${idx + 1}`}
                 />
               ))}
@@ -348,14 +349,14 @@ export default function Home() {
         <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-6 sm:gap-8 lg:gap-10">
           <div className="rounded-3xl border border-white/10 bg-white/5 p-4 sm:p-6 lg:p-8 shadow-2xl shadow-slate-900/40">
             <div className="flex items-center gap-3 mb-4">
-              <Rocket className="text-cyan-300" size={22} />
+              <Rocket className="text-orange-400" size={22} />
               <div>
                 <p className="text-sm text-slate-300">Referral program</p>
-                <p className="text-xl font-semibold text-white">Earn up to AED 1,500 or <span className='font-bold text-cyan-300'>up to 40%</span> per client (tier-based)</p>
+                <p className="text-xl font-semibold text-white">Earn up to AED 1,500 or <span className='font-bold text-orange-400'>up to 40%</span> per client (tier-based)</p>
               </div>
             </div>
             <div className="flex items-center gap-2 mb-2">
-              <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-cyan-500/10 text-cyan-300 text-xs font-semibold border border-cyan-400/20">
+              <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-orange-500/10 text-orange-300 text-xs font-semibold border border-orange-400/20">
                 5,000+ hapy clients across UAE
               </span>
               <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-semibold border border-emerald-400/20">
@@ -365,7 +366,7 @@ export default function Home() {
             <ul className="space-y-4 mt-2">
               {referralSteps.map(({ title, detail, icon: Icon }) => (
                 <li key={title} className="flex gap-3 text-slate-200 leading-relaxed rounded-2xl border border-white/10 bg-slate-950/60 p-3">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400/30 to-purple-500/30 flex items-center justify-center text-cyan-200 flex-shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500/30 to-orange-600/30 flex items-center justify-center text-orange-200 flex-shrink-0">
                     <Icon size={18} />
                   </div>
                   <div>
@@ -376,13 +377,13 @@ export default function Home() {
               ))}
             </ul>
             <div className="flex justify-end mt-6">
-              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-400 text-white text-xs font-semibold shadow">
+              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-white text-xs font-semibold shadow" style={{background: '#F16610'}}>
                 Trusted by 5,000+ happy clients across UAE
               </span>
             </div>
           </div>
-          <div className="rounded-3xl border border-white/10 bg-gradient-to-b from-cyan-500/15 via-indigo-500/10 to-purple-600/10 p-4 sm:p-6 lg:p-8 shadow-xl shadow-indigo-900/40">
-            <p className="text-sm font-semibold text-cyan-200 uppercase tracking-[0.2em] mb-3">Let&apos;s build</p>
+          <div className="rounded-3xl border border-white/10 bg-gradient-to-b from-orange-500/15 via-orange-600/10 to-orange-700/10 p-4 sm:p-6 lg:p-8 shadow-xl shadow-orange-900/40">
+            <p className="text-sm font-semibold text-orange-200 uppercase tracking-[0.2em] mb-3">Let&apos;s build</p>
             <h3 className="text-2xl font-bold text-white mb-4">We respond in under 24 hours with a tailored plan.</h3>
             <p className="text-slate-200 leading-relaxed mb-6">
               Expect the goals, owners, playbook, and reporting cadence you need to brief leadership. No PDFs—just a plan you can approve.
@@ -406,7 +407,7 @@ export default function Home() {
             <div className="grid sm:grid-cols-2 gap-2 sm:gap-3 mt-4 sm:mt-6">
               {referralExtras.map((item) => (
                 <div key={item} className="rounded-2xl border border-white/10 bg-white/5 p-2.5 sm:p-3 text-sm text-slate-200 leading-relaxed flex gap-2 sm:gap-3">
-                  <ArrowRight size={16} className="text-cyan-300 mt-0.5 flex-shrink-0" />
+                  <ArrowRight size={16} className="text-orange-400 mt-0.5 flex-shrink-0" />
                   <span>{item}</span>
                 </div>
               ))}

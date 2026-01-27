@@ -21,7 +21,7 @@ export default function BecomePartner() {
       <section className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 pt-12">
         <div className="grid grid-cols-1 gap-8 rounded-3xl border border-white/10 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 p-6 sm:p-8 shadow-2xl shadow-slate-900/50">
           <div className="space-y-6">
-            <div className="flex items-center gap-3 text-sm font-semibold text-cyan-200 uppercase tracking-[0.2em]">
+            <div className="flex items-center gap-3 text-sm font-semibold text-orange-200 uppercase tracking-[0.2em]">
               <HeartHandshake size={18} />
               Become a partner
             </div>
@@ -34,13 +34,13 @@ export default function BecomePartner() {
             </div>
             <div className="grid grid-cols-1 gap-3">
               <div className="rounded-2xl border border-white/10 bg-white/5 p-4 sm:p-4.5">
-                <div className="flex items-center gap-2 text-cyan-200 font-semibold text-sm uppercase tracking-[0.16em]">
+                <div className="flex items-center gap-2 text-orange-200 font-semibold text-sm uppercase tracking-[0.16em]">
                   <Mail size={16} /> Email
                 </div>
                 <p className="text-white font-semibold mt-2">partnership@finanshels.com</p>
               </div>
               <div className="rounded-2xl border border-white/10 bg-white/5 p-4 sm:p-4.5">
-                <div className="flex items-center gap-2 text-cyan-200 font-semibold text-sm uppercase tracking-[0.16em]">
+                <div className="flex items-center gap-2 text-orange-200 font-semibold text-sm uppercase tracking-[0.16em]">
                   <MapPin size={16} /> HQ
                 </div>
                 <p className="text-white font-semibold mt-2">Dubai, UAE (Global Hub)</p>
@@ -60,7 +60,7 @@ function PartnerFormEmbed() {
   return (
     <div className="rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-8 shadow-2xl shadow-slate-900/40 space-y-4">
       <div className="flex items-center gap-2">
-        <Sparkles size={16} className="text-cyan-300" />
+        <Sparkles size={16} className="text-orange-400" />
         <p className="text-sm font-semibold text-white">Apply to become a Finanshels partner</p>
       </div>
       <form
@@ -88,7 +88,7 @@ function PartnerFormEmbed() {
               maxLength="255"
               placeholder="i.e. Meet Patel"
               required
-              className="w-full rounded-xl border border-white/10 bg-slate-950/50 px-3 py-2 text-white placeholder:text-slate-400 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/40"
+              className="w-full rounded-xl border border-white/10 bg-slate-950/50 px-3 py-2 text-white placeholder:text-slate-400 focus:border-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-400/40"
             />
           </label>
 
@@ -103,7 +103,7 @@ function PartnerFormEmbed() {
               maxLength="255"
               placeholder="i.e. meet@finanshels.com"
               required
-              className="w-full rounded-xl border border-white/10 bg-slate-950/50 px-3 py-2 text-white placeholder:text-slate-400 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/40"
+              className="w-full rounded-xl border border-white/10 bg-slate-950/50 px-3 py-2 text-white placeholder:text-slate-400 focus:border-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-400/40"
             />
           </label>
         </div>
@@ -121,7 +121,7 @@ function PartnerFormEmbed() {
               fieldType="11"
               id="international_PhoneNumber_countrycode"
               placeholder="+971"
-              className="w-full rounded-xl border border-white/10 bg-slate-950/50 px-3 py-2 text-white placeholder:text-slate-400 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/40"
+              className="w-full rounded-xl border border-white/10 bg-slate-950/50 px-3 py-2 text-white placeholder:text-slate-400 focus:border-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-400/40"
             />
           </label>
 
@@ -138,7 +138,7 @@ function PartnerFormEmbed() {
               id="international_PhoneNumber_countrycodeval"
               placeholder="XX XXX XXXX"
               required
-              className="w-full rounded-xl border border-white/10 bg-slate-950/50 px-3 py-2 text-white placeholder:text-slate-400 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/40"
+              className="w-full rounded-xl border border-white/10 bg-slate-950/50 px-3 py-2 text-white placeholder:text-slate-400 focus:border-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-400/40"
             />
           </label>
         </div>
@@ -151,7 +151,7 @@ function PartnerFormEmbed() {
             fieldType="1"
             maxLength="255"
             placeholder="i.e. Finanshels LLC"
-            className="w-full rounded-xl border border-white/10 bg-slate-950/50 px-3 py-2 text-white placeholder:text-slate-400 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/40"
+            className="w-full rounded-xl border border-white/10 bg-slate-950/50 px-3 py-2 text-white placeholder:text-slate-400 focus:border-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-400/40"
           />
         </label>
 
@@ -162,7 +162,7 @@ function PartnerFormEmbed() {
           <select
             name="Dropdown"
             required
-            className="w-full rounded-xl border border-white/10 bg-slate-950/50 px-3 py-2 text-white focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/40"
+            className="w-full rounded-xl border border-white/10 bg-slate-950/50 px-3 py-2 text-white focus:border-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-400/40"
             defaultValue="-Select-"
           >
             <option value="-Select-">-Select-</option>
@@ -173,7 +173,8 @@ function PartnerFormEmbed() {
 
         <button
           type="submit"
-          className="w-full md:w-48 inline-flex items-center justify-center px-5 py-3 rounded-full bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-500 text-slate-950 font-semibold shadow-lg hover:scale-[1.01] transition-transform mx-auto"
+          className="w-full md:w-48 inline-flex items-center justify-center px-5 py-3 rounded-full text-white font-semibold shadow-lg hover:scale-[1.01] transition-transform mx-auto"
+          style={{background: '#F16610'}}
         >
           Submit
         </button>

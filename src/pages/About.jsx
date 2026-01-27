@@ -35,7 +35,7 @@ export default function About() {
       <div className="space-y-16 pb-20">
       <section className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 pt-12">
         <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-white/5 to-white/10 p-10 shadow-2xl shadow-slate-900/40">
-          <div className="flex items-center gap-3 text-sm font-semibold text-cyan-200 uppercase tracking-[0.2em]">
+          <div className="flex items-center gap-3 text-sm font-semibold text-orange-200 uppercase tracking-[0.2em]">
             <Sparkles size={18} />
             About Finanshels
           </div>
@@ -71,7 +71,7 @@ export default function About() {
 
       <section className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6">
         <div className="rounded-3xl border border-white/10 bg-gradient-to-r from-slate-900 via-white/5 to-slate-900 p-10 shadow-2xl shadow-slate-900/50">
-          <div className="flex items-center gap-3 text-sm font-semibold text-cyan-200 uppercase tracking-[0.2em]">
+          <div className="flex items-center gap-3 text-sm font-semibold text-orange-200 uppercase tracking-[0.2em]">
             <Rocket size={18} />
             Journey
           </div>

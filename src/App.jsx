@@ -6,6 +6,7 @@ import About from './pages/About'
 import Partnerships from './pages/Partnerships'
 import Strategize from './pages/Strategize'
 import BecomePartner from './pages/BecomePartner'
+import PartnerLanding from './pages/PartnerLanding'
 import Contact from './pages/Contact'
 
 // Portal imports
@@ -101,6 +102,9 @@ function App() {
             <Footer />
           </div>
         } />
+
+        {/* Partner Landing Page - Standalone (no nav/footer for conversion) */}
+        <Route path="/SEF" element={<PartnerLanding />} />
 
         {/* Auth Routes */}
         <Route path="/login" element={<Login />} />

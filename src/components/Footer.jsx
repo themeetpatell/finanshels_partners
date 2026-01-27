@@ -81,7 +81,7 @@ export default function Footer() {
 
         <div className="flex flex-wrap items-center justify-between gap-4 border-t border-white/10 pt-6 text-sm text-slate-400 font-medium">
           <p>© 2025 Finanshels. All rights reserved.</p>
-          <Link to="/contact" className="inline-flex items-center gap-2 text-white font-semibold hover:text-cyan-200 transition-colors">
+          <Link to="/contact" className="inline-flex items-center gap-2 text-white font-semibold hover:text-orange-300 transition-colors">
             Talk to partnerships <ArrowRight size={16} />
           </Link>
         </div>

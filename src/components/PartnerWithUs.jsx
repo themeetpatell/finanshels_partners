@@ -4,7 +4,7 @@ export default function PartnerWithUs() {
       <div className="rounded-3xl border border-white/10 bg-white/5 p-8 sm:p-10 shadow-2xl shadow-slate-900/40">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           <div className="space-y-3">
-            <p className="text-sm font-semibold text-cyan-200 uppercase tracking-[0.2em]">Partner with us</p>
+            <p className="text-sm font-semibold text-orange-200 uppercase tracking-[0.2em]">Partner with us</p>
             <h3 className="text-2xl sm:text-3xl font-bold text-white">Ready to bring Finanshels to your clients?</h3>
             <p className="text-slate-300">
               Share your details and we&apos;ll align on scope, revenue model, and onboarding in one business day.
@@ -35,7 +35,7 @@ export default function PartnerWithUs() {
                   maxLength="255"
                   placeholder="i.e. Meet Patel"
                   required
-                  className="w-full rounded-xl border border-white/10 bg-slate-950/50 px-3 py-2 text-white placeholder:text-slate-400 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/40"
+                  className="w-full rounded-xl border border-white/10 bg-slate-950/50 px-3 py-2 text-white placeholder:text-slate-400 focus:border-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-400/40"
                 />
               </label>
 
@@ -50,7 +50,7 @@ export default function PartnerWithUs() {
                   maxLength="255"
                   placeholder="i.e. meet@finanshels.com"
                   required
-                  className="w-full rounded-xl border border-white/10 bg-slate-950/50 px-3 py-2 text-white placeholder:text-slate-400 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/40"
+                  className="w-full rounded-xl border border-white/10 bg-slate-950/50 px-3 py-2 text-white placeholder:text-slate-400 focus:border-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-400/40"
                 />
               </label>
             </div>
@@ -68,7 +68,7 @@ export default function PartnerWithUs() {
                   fieldType="11"
                   id="international_PhoneNumber_countrycode"
                   placeholder="+971"
-                  className="w-full rounded-xl border border-white/10 bg-slate-950/50 px-3 py-2 text-white placeholder:text-slate-400 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/40"
+                  className="w-full rounded-xl border border-white/10 bg-slate-950/50 px-3 py-2 text-white placeholder:text-slate-400 focus:border-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-400/40"
                 />
               </label>
 
@@ -85,7 +85,7 @@ export default function PartnerWithUs() {
                   id="international_PhoneNumber_countrycodeval"
                   placeholder="XX XXX XXXX"
                   required
-                  className="w-full rounded-xl border border-white/10 bg-slate-950/50 px-3 py-2 text-white placeholder:text-slate-400 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/40"
+                  className="w-full rounded-xl border border-white/10 bg-slate-950/50 px-3 py-2 text-white placeholder:text-slate-400 focus:border-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-400/40"
                 />
               </label>
             </div>
@@ -98,7 +98,7 @@ export default function PartnerWithUs() {
                 fieldType="1"
                 maxLength="255"
                 placeholder="i.e. Finanshels LLC"
-                className="w-full rounded-xl border border-white/10 bg-slate-950/50 px-3 py-2 text-white placeholder:text-slate-400 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/40"
+                className="w-full rounded-xl border border-white/10 bg-slate-950/50 px-3 py-2 text-white placeholder:text-slate-400 focus:border-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-400/40"
               />
             </label>
 
@@ -109,7 +109,7 @@ export default function PartnerWithUs() {
               <select
                 name="Dropdown"
                 required
-                className="w-full rounded-xl border border-white/10 bg-slate-950/50 px-3 py-2 text-white focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/40"
+                className="w-full rounded-xl border border-white/10 bg-slate-950/50 px-3 py-2 text-white focus:border-orange-400 focus:outline-none focus:ring-2 focus:ring-orange-400/40"
                 defaultValue="-Select-"
               >
                 <option value="-Select-">-Select-</option>
@@ -120,7 +120,8 @@ export default function PartnerWithUs() {
 
             <button
               type="submit"
-              className="w-full md:w-48 inline-flex items-center justify-center px-5 py-3 rounded-full bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-500 text-slate-950 font-semibold shadow-lg hover:scale-[1.01] transition-transform mx-auto"
+              className="w-full md:w-48 inline-flex items-center justify-center px-5 py-3 rounded-full text-white font-semibold shadow-lg hover:scale-[1.01] transition-transform mx-auto"
+              style={{background: '#F16610'}}
             >
               Submit
             </button>
