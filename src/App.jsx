@@ -104,7 +104,7 @@ function App() {
         } />
 
         {/* Partner Landing Page - Standalone (no nav/footer for conversion) */}
-        <Route path="/SEF" element={<PartnerLanding />} />
+        <Route path="/sef" element={<PartnerLanding />} />
 
         {/* Auth Routes */}
         <Route path="/login" element={<Login />} />
